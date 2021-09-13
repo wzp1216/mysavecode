@@ -27,15 +27,24 @@ class formlay(QWidget):
         super(formlay,self).__init__()
         self.init()
     def init(self):
-        self.lineedit1=QLineEdit("test the edit:")
-        self.lineedit2=QLineEdit("input the name")
-        self.lineedit3=QLineEdit("input the phone")
+        self.lineedit1=QLineEdit("a")
+        self.lineedit2=QLineEdit("b")
+        self.lineedit3=QLineEdit("a.b")
 
         lay=QFormLayout()
-        lay.addRow("edit:",self.lineedit1)
-        lay.addRow("name:",self.lineedit2)
-        lay.addRow("hpone:",self.lineedit3)
+        lay.addRow("frist name:",self.lineedit1)
+        lay.addRow("second name:",self.lineedit2)
+        lay.addRow("name:",self.lineedit3)
         self.setLayout(lay)
+
+        self.lineedit1.textChanged.connect(self.change)
+        self.lineedit2.textChanged.connect(self.change)
+
+    def change(self):
+        self.text1=self.lineedit1.text()
+        self.text2=self.lineedit2.text()
+        self.lineedit3.setText(self.text1+'.'+self.text2)
+
 
 if __name__=="__main__":
     app=QApplication(sys.argv)
