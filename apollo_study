@@ -1,0 +1,102 @@
+
+sudo bash docker/scrisp/dev_start.sh
+bash docker/scrisp/dev_into.sh
+
+apollo.sh bulid // frist run build
+
+cyber:
+source cyber/setup.bash
+
+run dreamview:
+bash apollo/scrisp/bootrasp.sh    //  stop can stop;;
+ip:8888   //browser the dreamware;
+./scripts/bootstrap.sh [start | stop | restart]
+
+
+
+cbyer_recorder   |  play info
+cyber_recorder play -f filename -loop;
+cyber_minitor    |  look the status;
+
+
+
+##########################################################################################
+车辆硬件：
+IPC 工控机
+GPS
+IMU
+CAN
+GPS 天线
+GPS 接收器
+
+软件：
+ubuntu liux ;
+apollo linux kernel
+
+------------------------------------------
+a.install ubuntu 
+b.install apollo linux kernel
+
+--------------------------------------------
+install apollo linux kernel :
+1 down github.com/apolloauto/apollo-kernel/releases
+2 tar xzvf liux-4.4.32-apollo.tar.gz
+3  cd install
+4 sudo bash install_kernel.sh
+5 reboot
+##########################################################################################
+
+
+算法；工程架构；硬件车辆；
+
+多视角感知；基于场景规划；
+精准控制：PID  LQR MPC  MBAC
+定位：RTK 多传感器定位；
+cyber RT 实时通信框架；
+
+丰富硬件平台  多种开发平台选择；
+
+自动驾驶－－框架    规划    定位感知
+APOLLO －－cyber  dreamlan   dreamview 
+学习内容－－掌握开发工作；了解规划算法；定位算法；
+
+4.0加车型  升级软件 硬件；增加云端服务；
+lite----standard----advanced;三个套件；
+
+##########################################################################################
+高精地图与定位
+卫星－－－－无信号---加惯性－－－加视觉雷达
+感知－－－－控制－－－－决策
+存在时间同步问题；
+
+定位方法
+卫星  惯性   车辆测距  视觉   雷达  超宽带 5G
+GNSS双频  IMU失信号时用；   车轮
+
+##########################################################################################
+apollo.doxygen    ---docker project file;
+apollo.sh         ---apollo build sh file;
+bazel-apollo
+bazel-bin
+bazel-out
+bazel-testlogs
+BUILD
+CONTRIBUTING.md
+CPPLINT.cfg
+cyber
+data
+docker
+docs
+env.json
+LICENSE
+MANIFESTO.md
+modules
+nohup.out
+README.md
+readthedocs.yml
+RELEASE.md
+scripts
+third_party
+tools
+tox.ini
+WORKSPACE

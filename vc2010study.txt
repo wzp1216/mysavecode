@@ -1,0 +1,21 @@
+
+cmfc1app:派生于WINAPP类，代表程序；
+CDOC  文档类
+CVIEW 视图类
+CMAINFRAME 框架类
+
+
+在程序中显示内容，使用CVIET类的 ONDRAW 函数修改；
+
+
+发行版，调试版：
+  编写初期，先用调试版，方便调试；
+  发行版运行速度快，程序小；
+TRACE协助调试
+  static i;
+  i++;
+  TRACE("i=%d;",i) //相当于printf函数；
+
+
+预编译，用于提高效率；
+

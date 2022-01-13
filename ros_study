@@ -1,0 +1,211 @@
+ROS command
+#######################################################
+shell command: 
+roscd   rosls rosed roscp rospd rosd
+run command:
+roscore  rosrun  roslaunch rosclean
+ros information:
+rostopic rossevice rosnode rosparam rosbag rosmsg rossrv roswtf
+ros catkin:
+catkin_creat_pkg  catkin_make catkin_init_workspace
+other:
+rospack   rosinstall rosdep roslocate
+
+use offen:
+rospack find xxpackage;
+rospack list
+rosls packname;
+catkin_create_pkg packname depspkg
+rosdep install packname 
+rosrun pkgname nodename
+rosnode list
+rosnode info
+rosnode kill nodename
+roslaunch pkgname launchfile //a launch include n node;
+
+#######################################################
+create a workspace:
+mkdir -p ~/catkin/src 
+catkin_make
+source devel/setup.bash
+cd catkin/src;
+catkin_create_pkg mypkg std_msgs rospy roscpp
+
+edit test.cpp:
+#include <ros/ros.h>
+int main(int argc ,char **argv){
+ros::init(argc,argv,"test");
+ros::NodeHandle n;
+....}
+
+edit Cmaklist.txt:
+add_executable(test test.cpp)
+target_link_libraries(test $(catkin_LIBRARIES})
+
+
+
+
+
+#################################################
+ROS  install:
+printenv |grep ROS  // look the env ;
+source /opt/ros/<distro>/setup.bash  //set env;
+
+creat a ROS workspace:
+mkdir -p ~/catin_ws/src
+cd ~/catkin_ws/    
+catkin_make
+source devel/setup.bash   //add this worksapce to env;
+#################################################
+ROS command:
+rospack  //look the pack info
+roscd  log //cd log dir;
+rosls
+ros support tab;
+
+#################################################
+catkin package:
+一个包要想称为catkin软件包，必须符合以下要求：
+这个包必须有一个符合catkin规范的package.xml文件
+这个package.xml文件提供有关该软件包的元信息
+这个包必须有一个catkin版本的CMakeLists.txt文件
+如果它是个Catkin元包的话，则需要有一个CMakeList.txt文件的相关样板
+每个包必须有自己的目录
+这意味着在同一个目录下不能有嵌套的或者多个软件包存在
+最简单的软件包看起来就像这样：
+my_package/
+  CMakeLists.txt
+  package.xml
+之前在使用catkin_create_pkg命令时提供了几个软件包作为依赖关系，现在我们可以使用rospack命令工具来查看这些一级依赖包。
+$ rospack depends1 beginner_tutorials 
+
+#################################################
+build  package:
+使用catkin_make
+catkin_make 是一个命令行工具，它简化了标准catkin工作流程。你可以认为catkin_make是在标准CMake工作流程中依次调用了cmake和make。
+
+用法:
+
+
+# 在catkin工作空间下
+$ catkin_make [make_targets] [-DCMAKE_VARIABLES=...]
+如果你不熟悉什么是标准CMake工作流程，可以认为是以下几个步骤：
+
+
+注意：直接运行以下命令是无效的，因为它只是一个演示CMake工作流程的例子。
+
+
+# 在CMake工作空间下
+$ mkdir build  $ cd build  $ cmake ..  $ make  $ make install  # （可选）每个CMake项目都要单独进行这样的步骤。相反，多个catkin项目可以放在工作空间中一起构建，在工作空间中构建零到多个catkin软件包为以下工作流程：
+
+# 在catkin工作空间下
+$ catkin_make
+$ catkin_make install  # （可选）
+上述命令会构建src目录下的所有catkin项目。该过程遵循REP128的建议。如果你的源代码不在默认位置（catkin_ws/src），比如说存放在了my_src中，那可以这样来使用catkin_make:
+
+注意：直接运行以下命令是无效的，因为my_src可能不存在。
+
+# 在catkin工作空间下
+$ catkin_make --source my_src
+$ catkin_make install --source my_src  # （可选）
+
+开始构建你的软件包
+
+如果现在就要构建自己的代码，请同时看一下后面的（C++）/（Python）教程，因为你可能需要修改CMakeLists.txt文件。
+
+按照之前的创建ROS软件包教程，你应该已经创建好了一个catkin工作空间和一个名为beginner_tutorials的catkin软件包。现在切换到catkin工作空间并查看src目录：
+$ cd ~/catkin_ws/
+$ ls src
+beginner_tutorials/  CMakeLists.txt@  
+你可以看到一个名为beginner_tutorials的目录，这就是你之前用catkin_create_pkg命令创建的。现在我们可以使用catkin_make来构建它了:
+$ catkin_make
+你可以看到很多cmake和make的输出信息
+#################################################
+计算图（Computation Graph）是一个由ROS进程组成的点对点网络，它们能够共同处理数据。ROS的基本计算图概念有节点（Nodes）、主节点（Master）、参数服务器（Parameter Server）、消息（Messages）、服务（Services）、话题（Topics）和袋（Bags），它们都以不同的方式向图（Graph）提供数据。
+节点（Nodes）：节点是一个可执行文件，它可以通过ROS来与其他节点进行通信。
+消息（Messages）：订阅或发布话题时所使用的ROS数据类型。
+话题（Topics）：节点可以将消息发布到话题，或通过订阅话题来接收消息。
+主节点（Master）：ROS的命名服务，例如帮助节点发现彼此。
+rosout：在ROS中相当于stdout/stderr（标准输出/标准错误）。
+roscore：主节点 + rosout + 参数服务器（会在以后介绍）。
+
+ROS客户端库可以让用不同编程语言编写的节点进行相互通信：
+
+rospy = Python客户端库
+roscpp = C++客户端库
+roscore是你在运行所有ROS程序前首先要运行的命令。
+请运行：
+$ roscore
+rosnode显示当前正在运行的ROS节点信息。rosnode list命令会列出这些活动的节点：
+$ rosnode list
+rosrun  package_name  node-name;
+#################################################
+ROS话题
+turtlesim_node节点和turtle_teleop_key节点之间是通过一个ROS话题来相互通信的。turtle_teleop_key在话题上发布键盘按下的消息，turtlesim则订阅该话题以接收消息。让我们使用rqt_graph来显示当前运行的节点和话题。
+
+使用rqt_graph
+rqt_graph用动态的图显示了系统中正在发生的事情。rqt_graph是rqt程序包中的一部分。如果你发现没有安装，请：
+$ sudo apt-get install ros-<distro>-rqt
+$ sudo apt-get install ros-<distro>-rqt-common-plugins
+将<distro>替换成你安装的ROS发行版简称（比如kinetic或noetic等）。
+打开一个新终端：
+$ rosrun rqt_graph rqt_graph
+你会看到一个窗口：display 2 node and 1 topic;
+rostopic -h //show the help;
+rostopic echo //look the data on the topic;
+rostopic list // show the all topic;
+rostopic type命令用来查看所发布话题的消息类型。
+用法：rostopic type [topic]
+
+使用rostopic pub
+rostopic pub可以把数据发布到当前某个正在广播的话题上。
+用法：
+rostopic pub [topic] [msg_type] [args]
+$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
+
+rostopic hz报告数据发布的速率。
+用法：
+rostopic hz [topic]
+我们看一下turtlesim_node发布/turtle/pose得有多快：
+$ rostopic hz /turtle1/pose
+
+rosservice list;
+rosservice type service;
+rosservice call sercice rags;
+sample:
+rosservice call /clear ;
+rosservice call /spawn 2 2 0.5 "my"  //made a new turtle;
+rosparam能让我们在ROS参数服务器（Parameter Server）上存储和操作数据。参数服务器能够存储整型（integer）、浮点（float）、布尔（boolean）、字典（dictionaries）和列表（list）等数据类型。rosparam使用YAML标记语言的语法。一般而言，YAML的表述很自然：1是整型，1.0是浮点型，one是字符串，true是布尔型，[1, 2, 3]是整型组成的列表，{a: b, c: d}是字典。rosparam有很多命令可以用来操作参数，如下所示：
+rosparam set            设置参数
+rosparam get            获取参数
+rosparam load           从文件中加载参数
+rosparam dump           向文件中转储参数
+rosparam delete         删除参数
+rosparam list           列出参数名
+
+rosparam set和rosparam get
+用法：
+rosparam set [param_name]
+rosparam get [param_name]
+现在我们修改背景颜色的红色通道值：
+$ rosparam set /turtlesim/background_r 150
+上述指令修改了参数的值，现在我们需要调用clear服务使得参数的修改能生效：
+$ rosservice call /clear
+也可以用rosparam get /来显示参数服务器上的所有内容：
+
+rosparam dump和rosparam load
+用法：
+
+rosparam dump [file_name] [namespace]
+rosparam load [file_name] [namespace]
+在这里，我们将所有的参数写入params.yaml文件：
+
+$ rosparam dump params.yaml
+你甚至可以将yaml文件重载入新的命名空间，例如copy_turtle：
+
+$ rosparam load params.yaml copy_turtle
+$ rosparam get /copy_turtle/turtlesim/background_b
+#################################################
+
+
+
