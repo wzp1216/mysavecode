@@ -4,6 +4,10 @@ import numpy as np
 import argparse
 
 morph_size = 0
+
+
+
+
 max_operator = 4
 max_elem = 2
 max_kernel_size = 21
