@@ -1,5 +1,7 @@
 import numpy as np
 import cv2 as cv
+import matplotlib
+matplotlib.use('TkAgg')
 from matplotlib import pyplot as plt
 
 def test1():
