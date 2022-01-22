@@ -245,4 +245,8 @@ opencv 库引入后 matplotlib 不能使用办法：
 apt insatll python3-tk
 import matplotlib; matplotlib.use("TkAgg")
 
-##############################################################
+#############################################################
+当OPENCV SAMPLE FINDFILE ERROR时
+export OPENCV_SAMPLES_DATA_PATH=/home/wzp/opencv-4.5.2/samples/data
+#############################################################
+
