@@ -241,4 +241,8 @@ if __name__=='__main__':
 
 
 ##############################################################
-#
+opencv 库引入后 matplotlib 不能使用办法：
+apt insatll python3-tk
+import matplotlib; matplotlib.use("TkAgg")
+
+##############################################################
