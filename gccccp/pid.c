@@ -10,6 +10,7 @@ int main()
     printf("the valid user ID  is %d \n",geteuid());
     printf("the gruop id is %d \n",getgid());
     printf("the valid group id is %d \n",getegid());
+    
     return 0;
 }
 

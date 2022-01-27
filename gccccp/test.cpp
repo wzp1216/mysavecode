@@ -12,8 +12,6 @@ int main()
         if (x==4) y=4;
     }
     cout<<y;
-
-
     
 
     return 0;

@@ -3,12 +3,16 @@ using namespace std;
 
 int main()
 {
-    unsigned long long a;
-    unsigned long long b;
+    long double a;
+    long double b;
     char ch;
+    cout<<"a:"<<endl;
     cin>>a;
+    cout<<"b:"<<endl;
     cin>>b;
+    cout<<"input +-*/:"<<endl;
     cin>>ch;
+    
     switch (ch)
     {
     case '+':cout <<"a+b="<<a+b<<endl;
