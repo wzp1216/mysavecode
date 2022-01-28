@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 
 def test3():
-    img=cv.imread("test.jpg",0)
+    img=cv.imread("./image/test1.jpg",0)
     ret,th1=cv.threshold(img,127,255,cv.THRESH_BINARY)
     ret,th2=cv.threshold(img,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
     blur=cv.GaussianBlur(img,(5,5),0)
@@ -30,13 +30,8 @@ def test3():
 
 
 
-
-
-
-
-
 def test2():
-    img=cv.imread("test1.jpg",0)
+    img=cv.imread("./image/test1.jpg",0)
     img=cv.medianBlur(img,5)
     ret,th1=cv.threshold(img,127,255,cv.THRESH_BINARY)
     th2=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,2)
@@ -69,9 +64,6 @@ def test1():
         plt.title(title[i])
         plt.xticks([]),plt.yticks([])  #hide the xtiks,yticks number
     plt.show()
-
-
-
 
 
 
