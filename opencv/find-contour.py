@@ -22,6 +22,8 @@ for i in range(defects.shape[0]):
     cv.line(img,start,end,[0,255,0],2)
     cv.circle(img,far,5,[0,0,255],-1)
 
+print(start,end,far,d)
+
 cv.imshow('img',img)
 cv.waitKey(0)
 cv.destroyAllWindows()
