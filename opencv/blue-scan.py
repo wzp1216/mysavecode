@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 
-img=cv.imread("test.jpg")
+img=cv.imread("./image/test.jpg")
 hsv=cv.cvtColor(img,cv.COLOR_BGR2HSV)
 
 low_blue=np.array([110,50,50])
