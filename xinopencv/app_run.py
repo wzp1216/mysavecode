@@ -9,59 +9,63 @@ import sys
 import time
 from PyQt5 import QtCore
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QVBoxLayout,QProgressBar
+from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QVBoxLayout,QProgressBar,QDesktopWidget
 from PyQt5.QtCore import QThread,QBasicTimer,pyqtSignal
 from PyQt5.Qt import Qt, QRect
 from time import sleep
 
+from loadui import  Ui_load
+# load界面类 -----------
 from mainwin import my_main_win
 # 主页界面类 -----------
 
+ 
 
 
-
-class LoadWin(QWidget):  # 启动画面类 -----------
+class LoadWin(QWidget,Ui_load):  # 启动画面类 -----------
     def __init__(self):
         super(LoadWin, self).__init__()
-        self.ui_init()
+        self.setupUi(self)
+
+        screen = QDesktopWidget().screenGeometry()
+        high = screen.height()
+        width = screen.width()
+        self.resize(width * 5 // 6, high * 5 // 6)
+        size = self.geometry()
+        self.move(int((screen.width() - size.width()) / 2), int((screen.height() - size.height()) / 2))
+
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.timer = QBasicTimer()  # 定时器对象
-        self.main_win = my_main_win()  # 进度结束后要显示的主页
         self.step = 0  # 进度值
+        self.status=0
         self.proess_run()
-
-    def ui_init(self):
-        self.label_1=QLabel("test.................")
-        self.progressBar=QProgressBar()
-        lay=QVBoxLayout()
-        lay.addChildWidget(self.label_1)
-        lay.addChildWidget(self.progressBar)
-        self.setLayout(lay)
 
 
     def proess_run(self):  # 启动进度线程
         self.cal = LoadThread()  # 线程对象
-        self.cal.part_signal.connect(self.process_set_part)
-        self.cal.data_signal.connect(self.show_main_win)
+        self.cal.part_signal.connect(self.process_set)
+        self.cal.data_signal.connect(self.show_main)
         self.cal.start()  # 调用线程run
 
-    def process_set_part(self, num):
-        self.step = num  # 进度从num开始
+    def process_set(self):
         self.progressBar.setValue(self.step)
-        if num == 0:
+        if self.status== 0:
             self.timer.start(20, self)  # 启动QBasicTimer, 每20毫秒调用一次回调函数
-            self.label_1.setText("正在加载系统资源...")
-        if num == 1:
+
+        self.label_hit.setText("正在加载系统资源...")
+            
+        if self.step == 100:
             self.timer.stop()  # 重启，调整进度条增值速度
-            self.timer.start(10, self)
-            self.label_1.setText("加载完成，欢迎使用本系统...")
+            self.label_hit.setText("加载完成，欢迎使用本系统...")
+            self.status=1
 
     def timerEvent(self, *args, **kwargs):  # QBasicTimer的事件回调函数
         self.progressBar.setValue(self.step)  # 设置进度条的值
         if self.step < 100:
             self.step += 1
 
-    def show_main_win(self):
+    def show_main(self):
+        self.main_win = my_main_win()  # 进度结束后要显示的主页
         self.main_win.showMaximized()
         self.close()
 

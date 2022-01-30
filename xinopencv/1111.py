@@ -6,13 +6,13 @@ from PIL import Image
 global h_min, h_max, s_min, s_max, v_min, v_max, blur, logyex, area
 
 # 滑动条的回调函数，获取滑动条位置处的值
-def empty(a):
-    h_min = cv2.getTrackbarPos("Hue Min", "TrackBars")
-    h_max = cv2.getTrackbarPos("Hue Max", "TrackBars")
-    s_min = cv2.getTrackbarPos("Sat Min", "TrackBars")
-    s_max = cv2.getTrackbarPos("Sat Max", "TrackBars")
-    v_min = cv2.getTrackbarPos("Val Min", "TrackBars")
-    v_max = cv2.getTrackbarPos("Val Max", "TrackBars")
+def empty():
+    h_min = cv2.getTrackbarPos("HueMin", "TrackBars")
+    h_max = cv2.getTrackbarPos("HueMax", "TrackBars")
+    s_min = cv2.getTrackbarPos("SatMin", "TrackBars")
+    s_max = cv2.getTrackbarPos("SatMax", "TrackBars")
+    v_min = cv2.getTrackbarPos("ValMin", "TrackBars")
+    v_max = cv2.getTrackbarPos("ValMax", "TrackBars")
     blur = cv2.getTrackbarPos("blur", "TrackBars")
     logyex = cv2.getTrackbarPos("logyex", "TrackBars")
     area = cv2.getTrackbarPos("area", "TrackBars")
@@ -40,15 +40,15 @@ with open('./tool_paraments.json', 'r', encoding='utf-8') as json_file:
 size = data['size']
 path = "./test.jpg"
 # 创建一个窗口，放置6个滑动条
-cv2.namedWindow("TrackBars")
+cv2.namedWindow( "TrackBars")
 cv2.resizeWindow("TrackBars", 500, 400)
 
-cv2.createTrackbar("Hue Min", "TrackBars", 0, 255, empty)
-cv2.createTrackbar("Hue Max", "TrackBars", 255, 255, empty)
-cv2.createTrackbar("Sat Min", "TrackBars", 0, 255, empty)
-cv2.createTrackbar("Sat Max", "TrackBars", 255, 255, empty)
-cv2.createTrackbar("Val Min", "TrackBars", 0, 255, empty)
-cv2.createTrackbar("Val Max", "TrackBars", 255, 255, empty)
+cv2.createTrackbar("HueMin", "TrackBars", 0, 255, empty)
+cv2.createTrackbar("HueMax", "TrackBars", 255, 255, empty)
+cv2.createTrackbar("SatMin", "TrackBars", 0, 255, empty)
+cv2.createTrackbar("SatMax", "TrackBars", 255, 255, empty)
+cv2.createTrackbar("ValMin", "TrackBars", 0, 255, empty)
+cv2.createTrackbar("ValMax", "TrackBars", 255, 255, empty)
 cv2.createTrackbar("blur", "TrackBars", 1, 100, empty)
 cv2.createTrackbar("logyex", "TrackBars", 1, 20, empty)
 cv2.createTrackbar("area", "TrackBars", 1, 600, empty)
@@ -60,7 +60,7 @@ while True:
     # imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     # 调用回调函数，获取滑动条的值
-    h_min, h_max, s_min, s_max, v_min, v_max, blur, logyex, area= empty(0)
+    h_min, h_max, s_min, s_max, v_min, v_max, blur, logyex, area= empty()
     lower = np.array([h_min, s_min, v_min])
     upper = np.array([h_max, s_max, v_max])
     img_blur = cv2.blur(imgHSV, (blur, blur))
