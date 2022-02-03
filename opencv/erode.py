@@ -5,7 +5,7 @@ matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
 
 def test1():
-    img=cv.imread("opencv_logo.jpg",0)
+    img=cv.imread("./image/opencv_logo.jpg",0)
     kernel=np.ones((5,5),np.uint8)
     erosion=cv.erode(img,kernel,iterations=1)
     dilation=cv.dilate(img,kernel,iterations=1)
