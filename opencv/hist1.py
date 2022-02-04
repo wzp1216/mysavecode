@@ -6,7 +6,8 @@ matplotlib.use('tkAgg')
 from matplotlib import pyplot as plt
 
 
-img=cv.imread('./image/test.jpg')
+#img=cv.imread('./image/test.jpg')
+img=cv.imread('./image/lena.jpg')
 img2=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 plt.subplot(2,2,1)
@@ -14,7 +15,7 @@ plt.imshow(img2,'gray')
 plt.subplot(2,2,2)
 plt.hist(img2.ravel(),256,[0,255]);
 
-img1=cv.imread('./image/test.jpg')
+img1=cv.imread('./image/lena.jpg')
 plt.subplot(2,2,3)
 plt.imshow(img1)
 

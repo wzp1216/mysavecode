@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 import sys
-img = cv.imread('./image/aaa.png')
+img = cv.imread('./image/aaa.png',1)
 grey = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 sobelx = cv.Sobel(grey, cv.CV_32F, 1, 0)
 # find minimum and maximum intensities

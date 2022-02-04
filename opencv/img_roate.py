@@ -5,7 +5,7 @@ matplotlib.use('TkAgg')
 from matplotlib import pyplot as plt
 
 def test1():
-    img=cv.imread("test.jpg",0)
+    img=cv.imread("./image/lena.jpg")
     rows,cols=img.shape
     m=cv.getRotationMatrix2D((cols/2,rows/2),90,1.5)
     img2=cv.warpAffine(img,m,(2*cols,2*rows))
@@ -15,7 +15,7 @@ def test1():
     cv.destroyAllWindows()
 
 def test2():
-    img=cv.imread("test.jpg")
+    img=cv.imread("./image/lena.jpg")
     rows,cols,ch=img.shape
     ps1=np.float32([[50,50],[200,50],[50,200]])
     ps2=np.float32([[10,100],[200,50],[100,200]])

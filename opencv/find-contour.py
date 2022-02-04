@@ -24,6 +24,7 @@ for i in range(defects.shape[0]):
 
 print(start,end,far,d)
 
+cv.namedWindow('img',cv.WINDOW_NORMAL)
 cv.imshow('img',img)
 cv.waitKey(0)
 cv.destroyAllWindows()

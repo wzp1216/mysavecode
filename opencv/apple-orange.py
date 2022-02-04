@@ -5,13 +5,13 @@ import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
 
-a=cv.imread('apple.jpg')
+a=cv.imread('./image/apple.jpg')
 channel=a.shape
 if channel[2]==3:
     b,g,r=cv.split(a)
     a=cv.merge([r,g,b])
 
-b=cv.imread('orange.jpg')
+b=cv.imread('./image/orange.jpg')
 channel=b.shape
 if channel[2]==3:
     b,g,r=cv.split(b)
