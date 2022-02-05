@@ -43,11 +43,12 @@ src=cv.imread(cv.samples.findFile(args.input))
 if src is None:
     print("clould not open or find imge",args.input)
     exit(0)
-cv.namedWindow(title_window)
+cv.namedWindow(title_window,1)
 cv.createTrackbar(title_trackbar_operator_type, title_window, 0, max_operator,morphology_operations)
 cv.createTrackbar(title_trackbar_element_type, title_window, 0, max_elem,morphology_operations)
 cv.createTrackbar(title_trackbar_kernel_size, title_window, 0, max_kernel_size,morphology_operations)
 
+morphology_operations(0)
 cv.waitKey()
 cv.destroyAllWindows()
 
