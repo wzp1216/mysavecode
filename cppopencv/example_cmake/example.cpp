@@ -12,7 +12,8 @@ int main( int argc, char** argv )
 {
     CommandLineParser parser( argc, argv, "{@input | stuff.jpg | input image}" );
     //Mat src = imread(cv::samples::findFile( parser.get<String>( "@input" ) ) );
-    Mat src = imread("/home/wzp/opencv-4.5.2/samples/data/stuff.jpg");
+    //Mat src = imread("/home/wzp/opencv-4.5.2/samples/data/stuff.jpg");
+    Mat src = imread("/home/wzp/opencv-4.5.1/samples/data/stuff.jpg");
     if( src.empty() )
     {
         cout << "Could not open or find the image!\n" << endl;
