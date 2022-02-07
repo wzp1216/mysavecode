@@ -1,36 +1,20 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QDir>
+#include <QDebug>
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
 using namespace std;
-/*
-int main(int argc, char *argv[])
-{
-    Mat image;
-    char keyPress;
-    cout<<"Welcome to Qt\n";
-    image=imread("./lena.jpg",IMREAD_COLOR);
-    imshow("Opnecv && QT",image);
-    while (1) {
-        keyPress=waitKey();
-        if(keyPress=='q')
-        {
-            destroyAllWindows();
-            break;
-        }
-    }
-    return 0;
-}
-*/
-int main(int argc, char *argv[])
+
+
+void testimshow()
 {
     try{
         QString mydir,myfile;
         mydir=QDir::currentPath();
         myfile=mydir.append("/../qtopencv/image/lena.jpg");
-        cout<<myfile.toStdString().data()<<endl;
+        qDebug()<<myfile.toStdString().data();
         cv::Mat img;
         //img=cv::imread("/home/wzp/git/mysavecode/qtopencv/image/lena.jpg");
         img=cv::imread(myfile.toStdString().data());
@@ -40,13 +24,19 @@ int main(int argc, char *argv[])
         cv::destroyAllWindows();
     }
     catch (...){
-        cout<<"file read error "<<endl;
+        qDebug()<<"file read error ";
     }
+}
+
+
+
+int main(int argc, char *argv[])
+{
+    testimshow();
     return 0;
     //QApplication a(argc, argv);
     //MainWindow w;
     //w.show();
-
     //return a.exec();
 }
 
