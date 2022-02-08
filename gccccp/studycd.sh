@@ -5,8 +5,10 @@ menu_choice=""
 curent_cd=""
 title_file="title.cdb"
 tracks_file="tracks.cdb"
+# 2 files save data
 temp_file=/tmp/cdb.$$
 trap 'rm -f $temp_file' EXIT
+# del before exit 0;
 
 get_return(){
     echo -e " Press return \c"
@@ -36,6 +38,7 @@ set_menu_choice(){
     echo 
     echo " a) Add new CD "
     echo " f) Find  CD "
+    echo " s) Show all CDs "
     echo " c) Count CDs and tracks in the catalog  "
     if [ "$cdcatnum" != "" ]; then
         echo " l) List tracks on $cdtitle "
@@ -69,10 +72,6 @@ add_record_tracks(){
         echo -e " Track $cdtrack , track title? \c"
         read tmp
         cdttitle=${tmp%%,*}
-        echo "tmp="
-        echo $tmp
-        echo "cdttitle="
-        echo $cdttitle
         if [ "$tmp" != "$cdttitle" ]; then
             echo "Sorry, no commas allowed "
             continue
@@ -162,7 +161,7 @@ find_cd(){
     get_return
 
     if [ "$asklist" = "y" ]; then
-        echo -e "Vies tracks for this cd? \c"
+        echo -e " Views tracks for this cd? \c"
         read x
         if [ "$x" = "y" ]; then
             echo
@@ -180,8 +179,13 @@ update_cd(){
 
 
 count_cds(){
-    echo " count_cds..."
-    return 0
+    set $(wc -l $title_file)
+    num_titles=$1
+    set $(wc -l $tracks_file)
+    num_tracks=$1
+    echo found $num_titles CDs with a total of $num_tracks tracks
+    get_return
+    return
 }
 
 
@@ -202,9 +206,9 @@ list_tracks(){
             echo no tracks found for $cdtitle
         else {
             echo 
-            echo "$cdtitle :"
+            echo "$cdtitle :----->"
             echo 
-            cut -f 2 -d , $temp_file
+            cut -f 2- -d , $temp_file
             echo 
         } | ${PAGER:-more}
         fi
@@ -213,8 +217,25 @@ list_tracks(){
     return
 }
 
+show_cds(){
+    set $(wc -l $title_file)
+    num_cd=$1
+    if [ "$num_cd" = "0" ]; then
+        echo no CD found in database
+    else {
+        echo
+        echo " There are  $num_cd CDS in this list : "   
+        echo catalog title type artist/composer
+        echo ----------------------------------
+        cat $title_file
+        echo 
+    } | ${PAGER:-more}
+    fi
+    get_return
+    return
+}
 
-
+#main()
 rm -f $temp_file
 if [ ! -f $title_file ]; then
     touch $title_file
@@ -235,6 +256,7 @@ do
         a) add_records;;
         r) remove_records;;
         f) find_cd;;
+        s) show_cds;;
         u) update_cd;;
         c) count_cds;;
         l) list_tracks;;
