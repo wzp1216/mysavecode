@@ -1,5 +1,5 @@
 import halcon as ha
-img=ha.read_image('./pcb.png')
+img=ha.read_image('test.jpg')
 wid,hei=ha.get_image_size(img)
 print(wid[0],hei[0])
 

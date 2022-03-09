@@ -16,7 +16,7 @@ if __name__=='__main__':
     print(f'Number of Regions" {num_regions}')
 """
 if __name__=='__main__':
-    img=ha.read_image('test1.jpg')
+    img=ha.read_image('test.jpg')
     width,height=ha.get_image_size(img)
     winhandle=ha.open_window(0,0,width[0]/2,height[0]/2,father_window=0,
                              mode='visible',machine='')
