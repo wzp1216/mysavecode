@@ -36,7 +36,7 @@ void printdir(const char *dir, int depth)
 int main()
 {
     printf("Directory san of /home:\n*");
-    printdir("/home/wzy/wzp/mysavecode",0);
+    printdir("/home/wzp/git/",0);
     printf("Done.\n");
     exit(0);
 }
