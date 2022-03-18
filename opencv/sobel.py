@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 
 
 def test1():
-    img=cv.imread("./image/lena.jpg",0)
+    img=cv.imread("./image/blox.jpg",0)
     sobel1=cv.Sobel(img,cv.CV_8U,1,0,ksize=5)
     sobel2=cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
     abs_sobel=np.absolute(sobel2)
@@ -27,7 +27,7 @@ def test1():
 
 
 def test():
-    img=cv.imread("./image/lena.jpg",0)
+    img=cv.imread("./image/blox.jpg",0)
     laplacian=cv.Laplacian(img,cv.CV_64F)
     sobelx=cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
     sobely=cv.Sobel(img,cv.CV_64F,0,1,ksize=5)
@@ -47,4 +47,4 @@ def test():
 
 
 
-test1()
+test()
