@@ -132,7 +132,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../qtopencv/qtopencv.pro ../qtopencv/mainwindow.h ../qtopencv/main.cpp \
+		../qtopencv/qtopencv.pro ../qtopencv/mainwindow.h \
+		../qtopencv/core.h ../qtopencv/main.cpp \
 		../qtopencv/mainwindow.cpp \
 		../qtopencv/core.cpp
 QMAKE_TARGET  = qtopencv
@@ -320,7 +321,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../qtopencv/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../qtopencv/mainwindow.h ../qtopencv/core.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../qtopencv/main.cpp ../qtopencv/mainwindow.cpp ../qtopencv/core.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../qtopencv/mainwindow.ui $(DISTDIR)/
 
@@ -388,7 +389,7 @@ mainwindow.o: ../qtopencv/mainwindow.cpp ../qtopencv/mainwindow.h \
 		../qtopencv/ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../qtopencv/mainwindow.cpp
 
-core.o: ../qtopencv/core.cpp 
+core.o: ../qtopencv/core.cpp ../qtopencv/core.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o core.o ../qtopencv/core.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

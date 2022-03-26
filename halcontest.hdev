@@ -12,35 +12,58 @@
 <l>disp_message (WindowHandle, Message, 'window', 12, 12, 'black', 'true')</l>
 <l>disp_continue_message (WindowHandle, 'black', 'true')</l>
 <c></c>
-<c>* </c>
 <c>* Show input images with different illumination</c>
-<l>*read_image (Images, 'photometric_stereo/blister_back_0' + [1:4])</l>
 <l>read_image (Images, '/home/wzp/git/mysavecode/opencv/test_img/side/Image_3'+[0:7]+'.jpg')</l>
 <l>for   I := 1 to 8  by 1</l>
 <l>    Message := 'Acquire image ' + I+ ' of 8'</l>
 <l>    select_obj (Images, Image, I)</l>
+<l>    dev_clear_window()</l>
 <l>    dev_display (Image)</l>
 <l>    disp_message (WindowHandle, Message, 'window', 12, 12, 'black', 'true')</l>
-<l>    stop()</l>
+<l>    *stop()</l>
 <c></c>
 <c>*mean image;  cut bottle;</c>
-<l>    mean_image (Image, ImageMean, 5, 5)</l>
-<l>    auto_threshold(Image,whiteimage,3)</l>
-<l>    connection(whiteimage,connections)</l>
-<l>    select_shape (connections, SelectedRegions1, 'area', 'and', 1000000, 6000000)</l>
-<l>    shape_trans (SelectedRegions1, RegionTrans, 'rectangle1')</l>
-<l>    *dyn_threshold (Image, ImageMean, RegionDynThresh, 15, 'light')</l>
-<l>    dev_display (Image)</l>
-<l>    dev_display (RegionTrans)</l>
-<l>    Message := 'Regions segmented with dyn_threshold'</l>
-<l>    disp_message (WindowHandle, Message, 'window', 12, 12, 'black', 'true')</l>
-<l>    disp_continue_message (WindowHandle, 'black', 'true')</l>
-<l>    stop ()</l>
+<l>    gen_rectangle1 (ROI, 580, 680, 1500, 1620)</l>
+<l>    reduce_domain(Image,ROI,OKimage)</l>
+<l>    dev_clear_window()</l>
+<l>    dev_display (OKimage)</l>
+<l>    *stop ()</l>
 <c></c>
+<c>*find scratch</c>
+<l>    mean_image (OKimage, ImageMean, 5, 5)</l>
+<l>    dyn_threshold (OKimage, ImageMean, DarkPixels, 3, 'not_equal')</l>
+<l>    connection (DarkPixels, ConnectedRegions)</l>
+<l>    select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 10, 3000)</l>
+<l>    dev_clear_window()</l>
+<l>    dev_display(OKimage)</l>
+<l>    dev_display (SelectedRegions)</l>
+<l>    stop()</l>
 <c>    </c>
-<c>    </c>
-<c>    </c>
-<c>    </c>
+<c>*rft   find scratch</c>
+<l>    get_image_size(OKimage,Width,Height)</l>
+<l>    invert_image (OKimage, ImageInverted)</l>
+<l>    gen_sin_bandpass (ImageBandpass, 0.4, 'none', 'rft', Width, Height)</l>
+<l>    rft_generic (ImageInverted, ImageFFT, 'to_freq', 'none', 'complex', Width)</l>
+<l>    convol_fft (ImageFFT, ImageBandpass, ImageConvol)</l>
+<l>    rft_generic (ImageConvol, Lines, 'from_freq', 'n', 'byte', Width)</l>
+<c>    * </c>
+<c>    * Segment the scratches by using morphology</c>
+<l>    threshold (Lines, Region, 5, 255)</l>
+<l>    connection (Region, ConnectedRegions)</l>
+<l>    select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 5, 5000)</l>
+<l>    dilation_circle (SelectedRegions, RegionDilation, 5.5)</l>
+<l>    union1 (RegionDilation, RegionUnion)</l>
+<l>    reduce_domain (Image, RegionUnion, ImageReduced)</l>
+<l>    lines_gauss (ImageReduced, LinesXLD, 0.8, 3, 5, 'dark', 'false', 'bar-shaped', 'false')</l>
+<l>    union_collinear_contours_xld (LinesXLD, UnionContours, 60, 3, 3, 0.2, 'attr_keep')</l>
+<l>    select_shape_xld (UnionContours, SelectedXLD, 'contlength', 'and', 10, 2000)</l>
+<l>    gen_region_contour_xld (SelectedXLD, RegionXLD, 'filled')</l>
+<l>    union1 (RegionXLD, RegionUnion)</l>
+<l>    dilation_circle (RegionUnion, RegionScratches, 10.5)</l>
+<l>    dev_clear_window()</l>
+<l>    dev_display (OKimage)</l>
+<l>    dev_display (RegionScratches)</l>
+<l>    stop()</l>
 <c>    </c>
 <c>*IOS  </c>
 <c></c>

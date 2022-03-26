@@ -9,18 +9,12 @@ from matplotlib import pyplot as plt
 def test1():
     img=cv.imread("./test_img/side/Image_30.jpg",0)
     sobel1=cv.Sobel(img,cv.CV_8U,1,0,ksize=5)
-    sobel2=cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
-    abs_sobel=np.absolute(sobel2)
-    sobel8=np.uint8(abs_sobel)
+    sobel2=cv.Sobel(img,cv.CV_64F,1,0,ksize=11)
 
-    plt.subplot(2,2,1),plt.imshow(img,'gray')
-    plt.title('original'),plt.xticks([]),plt.yticks([])
-    plt.subplot(2,2,2),plt.imshow(sobel1,'gray')
+    plt.subplot(1,2,1),plt.imshow(sobel1,'gray')
     plt.title('soble1'),plt.xticks([]),plt.yticks([])
-    plt.subplot(2,2,3),plt.imshow(sobel2,'gray')
+    plt.subplot(1,2,2),plt.imshow(sobel2,'gray')
     plt.title('sobel2'),plt.xticks([]),plt.yticks([])
-    plt.subplot(2,2,4),plt.imshow(sobel8,'gray')
-    plt.title('sobel8'),plt.xticks([]),plt.yticks([])
 
     plt.show()
 
