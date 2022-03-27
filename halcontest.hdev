@@ -64,17 +64,44 @@
 <l>    dev_display (OKimage)</l>
 <l>    dev_display (RegionScratches)</l>
 <l>    stop()</l>
+<c></c>
+<c>*sub-gauss</c>
+<l>    Sigma1 := 10.0</l>
+<l>    Sigma2 := 3.0</l>
+<l>    gen_gauss_filter (GaussFilter1, Sigma1, Sigma1, 0.0, 'none', 'rft', Width, Height)</l>
+<l>    gen_gauss_filter (GaussFilter2, Sigma2, Sigma2, 0.0, 'none', 'rft', Width, Height)</l>
+<l>    sub_image (GaussFilter1, GaussFilter2, Filter, 1, 0)</l>
+<l>    rft_generic (OKimage, ImageFFT, 'to_freq', 'none', 'complex', Width)</l>
+<l>    convol_fft (ImageFFT, Filter, ImageConvol)</l>
+<l>    rft_generic (ImageConvol, ImageFiltered, 'from_freq', 'n', 'real', Width)</l>
+<c>    * </c>
+<c>    * Process the filtered image</c>
+<l>    gray_range_rect (ImageFiltered, ImageResult, 10, 10)</l>
+<l>    min_max_gray (ImageResult, ImageResult, 0, Min, Max, Range)</l>
+<l>    threshold (ImageResult, RegionDynThresh, max([5.55,Max * 0.8]), 255)</l>
+<l>    connection (RegionDynThresh, ConnectedRegions)</l>
+<l>    select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 4, 99999)</l>
+<l>    union1 (SelectedRegions, RegionUnion)</l>
+<l>    closing_circle (RegionUnion, RegionClosing, 10)</l>
+<l>    connection (RegionClosing, ConnectedRegions1)</l>
+<l>    select_shape (ConnectedRegions1, SelectedRegions1, 'area', 'and', 10, 99999)</l>
+<l>    area_center (SelectedRegions1, Area, Row, Column)</l>
+<l>    dev_display (OKimage)</l>
+<l>    Number := |Area|</l>
+<l>    if (Number)</l>
+<l>        gen_circle_contour_xld (ContCircle, Row, Column, gen_tuple_const(Number,30), gen_tuple_const(Number,0), gen_tuple_const(Number,rad(360)), 'positive', 1)</l>
+<l>        ResultMessage := ['Not OK',Number + ' defect(s) found']</l>
+<l>        Color := ['red','black']</l>
+<l>        dev_display (ContCircle)</l>
+<l>    else</l>
+<l>        ResultMessage := 'OK'</l>
+<l>        Color := 'forest green'</l>
+<l>    endif</l>
+<l>    stop()</l>
+<c></c>
 <c>    </c>
-<c>*IOS  </c>
-<c></c>
-<c></c>
-<c></c>
-<c></c>
-<c> </c>
+<c>    </c>
 <l>endfor</l>
-<c></c>
-<c></c>
-<c></c>
 <c></c>
 <l>* closing_rectangle1 (RegionDynThresh, RegionClosing, 8.5, 10)</l>
 <l>* opening_rectangle1 (RegionClosing, RegionOpening, 6.5, 10)</l>
