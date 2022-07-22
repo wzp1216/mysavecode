@@ -1,0 +1,15 @@
+{
+    "server": "38.95.108.14",
+    "local_address": "127.0.0.1",
+    "local_port": 1080,
+    "timeout": 300,
+    "workers": 1,
+    "server_port": 55895,
+    "password": "yj7REN",
+    "method": "rc4-md5",
+    "obfs": "plain",
+    "obfs_param": "",
+    "protocol": "origin",
+    "protocol_param": ""
+}
+                                               

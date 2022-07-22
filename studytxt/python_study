@@ -1,0 +1,32 @@
+##################################################################################
+ipython:   debug  command
+%run -d xx.py
+s    #step 
+b 6  #break at 6;
+n    #next
+q    #quit
+l    #list
+w    #where
+
+
+
+
+##################################################################################
+PYQT
+mainwin:
+新建一个类，在主函数中调用此类即可；
+
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow,QWidget,QFileDialog
+from main import Ui_MainWindow
+class mywin(QMainWindow,Ui_MainWindow):
+    def __init__(self):
+        super(mywin,self).__init__()
+        self.setupUi(self)
+if __name__=='__main__':
+    app = QApplication(sys.argv)
+    mainwin=mywin();
+    mainwin.show()
+    sys.exit(app.exec_())
+
+
