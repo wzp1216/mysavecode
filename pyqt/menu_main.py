@@ -1,54 +1,25 @@
 # -*- coding: utf-8 -*-
-
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QDesktopWidget
-from PyQt5.QtWidgets import QCheckBox,QLabel,QGraphicsView,QGraphicsScene,QGraphicsPixmapItem
-from PyQt5.QtWidgets import QVBoxLayout
-from PyQt5.QtGui import QImage,QPixmap
-
-import cv2 as cv
 
 
-class my_main_win(QMainWindow):
-    def __init__(self):
-        super(my_main_win,self).__init__()
-        self.initUI()
+
+class mainwin(QMainWindow):
+    def __init__(self, parent=None):
+        super(mainwin, self).__init__(parent)
+        self.setObjectName("MainWindow")
+        screen = QDesktopWidget().screenGeometry()
+        high = screen.height()
+        width = screen.width()
+        self.resize(width * 5 // 6, high * 5 // 6)
+        size = self.geometry()
+        self.move(int((screen.width() - size.width()) / 2), int((screen.height() - size.height()) / 2))
+        self.init()
         self.addmenu()
 
-    def initUI(self):
-        #set title and add label1  check1  view
-        centerwidget=QWidget()
-        self.setWindowTitle('QMainWindow')
-        label1=QLabel("main windows test")
-        check1=QCheckBox('check box test:',self)
-        view=QGraphicsView()
-        
-        lay=QVBoxLayout()
-        lay.addWidget(label1)
-        lay.addWidget(check1)
-        lay.addWidget(view)
-        centerwidget.setLayout(lay)
-        self.setCentralWidget(centerwidget)
-        
-
-        #add a image;
-        img=cv.imread("./test.jpg",cv.IMREAD_GRAYSCALE)
-        #res=cv.equalizeHist(img)
-        res=cv.cvtColor(img,cv.COLOR_GRAY2BGR)
-        cv.putText(res,"text",(10,50),cv.FONT_HERSHEY_COMPLEX,2,(0,255,0),2)
-        frame=cv.cvtColor(res,cv.COLOR_BGR2RGB)
-        h,w,c=frame.shape
-        imgshow=QImage(frame,w,h,w*3,QImage.Format_RGB888)
-        pix=QPixmap.fromImage(imgshow)
-        self.item=QGraphicsPixmapItem(pix)
-        self.scene=QGraphicsScene()
-        self.scene.addItem(self.item)
-        self.scene.clearSelection()
-        self.item.setSelected(True)
-        view.setScene(self.scene)
-        view.fitInView(QGraphicsPixmapItem(QPixmap(imgshow)))
-
+    def init(self):
+        self.show()
 
     def addmenu(self):
         self.menubar = QtWidgets.QMenuBar(self)
@@ -94,12 +65,9 @@ class my_main_win(QMainWindow):
         self.actionAbout.setText(_translate("MainWindow", "About"))
 
 
-       
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    w=my_main_win()
-    w.show()
+    mywin = mainwin()
+    mywin.show()
     sys.exit(app.exec_())
-

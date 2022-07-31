@@ -39,6 +39,12 @@ def json1():
     for news in data1['newslist']:
         print(news['title'])
 
+def json_dayenglish():
+    resp=requests.get("http://api.tianapi.com/everyday/index?key=e44c6978de6908de52862597c7aed92e&num=10")
+    data1=json.loads(resp.text)
+    for ddd in data1['newslist']:
+        print(ddd['content'])
+        print(ddd['note'])
 
 def json2():
     conn = http.client.HTTPSConnection('api.tianapi.com') 
@@ -51,6 +57,6 @@ def json2():
 
 
 if __name__=='__main__':
-    json1()
-    json2()
+    json_dayenglish()
+
 
