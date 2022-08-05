@@ -1,18 +1,16 @@
 #include <iostream>
-#include <math>
 
 using namespace std;
 
 int main()
 {
-    int y{5};
-
+    int y=6;
+    std::cout<<"this is starting ..."<<std::endl;
     {
         int x;
-        cin>>x;
-        if (x==4) y=4;
+        std::cout<<"x="<<x<<endl;
     }
-    cout<<y;
+    std::cout<<y;
     
 
     return 0;
