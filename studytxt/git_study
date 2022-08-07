@@ -826,4 +826,22 @@ git branch -d brh
 
 在整个git中，分支的管理是最麻烦但是这个是最重要的操作，所以这部分可以反复查看，分支是进行开发使用的，最终必须都在master上，这点最重要，切记。
 
--END-
+use proxy:
+git config --global http.proxy sock5://127.0.0.1:7891
+
+git clone http://github.com/wzp1216/mysaveclode.git
+note:  https-->http
+
+remove proxy:
+git config --global --unset http.proxy
+
+
+查看使用的clone方式：
+git remote -v
+可以删除原CLONE方式，并改用SSH方式：
+git remote rm origin
+git remote add orgin git@github.com:wzp1216/wzp.git
+
+
+
+
