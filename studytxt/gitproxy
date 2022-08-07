@@ -1,0 +1,7 @@
+git config --global http.proxy sock5://127.0.0.1:7891
+
+
+git clone http://github.com/wzp1216/mysaveclode.git
+note:  https-->http
+
+
