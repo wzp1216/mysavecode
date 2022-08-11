@@ -840,7 +840,8 @@ git config --global --unset http.proxy
 git remote -v
 可以删除原CLONE方式，并改用SSH方式：
 git remote rm origin
-git remote add orgin git@github.com:wzp1216/wzp.git
+git remote add origin git@github.com:wzp1216/mysavecode.git
+git branch --set-upstream-to=origin/master
 
 
 
