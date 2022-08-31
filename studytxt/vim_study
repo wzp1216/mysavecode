@@ -179,4 +179,14 @@ zc  close
 zR  open all
 zM  close all
  
-
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8	设置编码格式，encoding 选项用于缓存的文本、寄存器、Vim 脚本文件等；fileencoding 选项是 Vim 写入文件时采用的编码类型；termencoding 选项表示输出到终端时采用的编码类型。
+set nu
+set number	nu 是 number 的缩写，所以上面两个配置命令是完全等效的，二选一即可。取消行号可使用 set nonu。
+set cursorline	突出显示当前行。
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key	Vim 编辑器里默认是不启用鼠标的，通过此设置即可启动鼠标。
+set autoindent	设置自动缩进，即每行的缩进同上一节相同。
+set tabstop=4	设置 Tab 键宽度为 4 个空格。

@@ -33,7 +33,7 @@ class my_main_win(QMainWindow):
         
 
         #add a image;
-        img=cv.imread("./test.jpg",cv.IMREAD_GRAYSCALE)
+        img=cv.imread("./gui/zjipc.png",cv.IMREAD_GRAYSCALE)
         #res=cv.equalizeHist(img)
         res=cv.cvtColor(img,cv.COLOR_GRAY2BGR)
         cv.putText(res,"text",(10,50),cv.FONT_HERSHEY_COMPLEX,2,(0,255,0),2)
