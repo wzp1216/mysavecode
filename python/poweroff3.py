@@ -56,9 +56,9 @@ def json_read1():
 
         tim1=date_read()
 #判断时间，时间大于60则关机；
-        if (tim1['usertime']>=60):
+        if (tim1['usertime']>=80):
             os.system("bash /home/wzp/Public/shut2_msg.sh")
-            os.system("echo 'wzy091030' | sudo -S shutdown -h +3")
+            os.system("echo 'wzy091030' | sudo -S shutdown -h +1")
    
 #判断时间，时间整除20则提示；
         tim1=date_read()
