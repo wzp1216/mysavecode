@@ -199,4 +199,42 @@ p=[4 4 4 1] //4x^3+4x^2+4*x+1;
 A=compan(p)求P的伴随矩阵；eig(A)可以求得三个根；
 或者 roots(p);
 
+inv(A)  逆矩阵；   pinv(A) 广义逆
+rank(A)  矩阵秩； 满秩则线性无关；
+trace(A)  迹   对角线元素和； 也是 特征值之和；
+范数；norm  
+sqrtm  平方根；S＊S＝A；
+expm  logm  指数 对数；
+sparse(A) 稀疏矩阵；  nnz(A) 计算非0元素个数；
+
+#############################################
+m文件编写；
+％加注释； ％％ 注意双百分号加空格；分段，还可以通过标题定位；
+if ... else ... end
+
+for i=1:10 ... end 
+while conition ... end
+switch case ...end
+
+函数文件；脚本文件(输入文件名可以运行)；
+fun_name.m  
+function fun_name(input)
+    ...
+end
+disp('xxxxxxx') display;
+
+#############################################
+save xx.mat A,B
+load xx.mat; 
+M=importdata('xx.txt')
+dd=M.data  把数据给dd
+xlswrite('xx.xls',A)
+A=xlsread('xx.xls')
+cvswrite;  cvsread;
+
+#############################################
+clear all;
+clc;
+publish 可以生成带目录的文件；
+
 
