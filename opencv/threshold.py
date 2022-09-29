@@ -28,7 +28,7 @@ def test3():
 
 
 def test2():
-    img=cv.imread("./image/test.jpg",0)
+    img=cv.imread("./image/test1.jpg",0)
     img=cv.medianBlur(img,5)
     ret,th1=cv.threshold(img,127,255,cv.THRESH_BINARY)
     th2=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,2)
