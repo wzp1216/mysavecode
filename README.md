@@ -7,6 +7,7 @@ study recorde;  include c   cpp  python    opencv   sql   linux   git  apollo
 软件架构说明
 
 
+<<<<<<< HEAD
 #### 安装教程
 
 1.  xxxx
@@ -19,6 +20,8 @@ study recorde;  include c   cpp  python    opencv   sql   linux   git  apollo
 2.  xxxx
 3.  xxxx
 
+=======
+>>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
 #### 参与贡献
 
 1.  Fork 本仓库
@@ -28,6 +31,7 @@ study recorde;  include c   cpp  python    opencv   sql   linux   git  apollo
 
 
 #### 特技
+<<<<<<< HEAD
 
 1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
 2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
@@ -35,3 +39,5 @@ study recorde;  include c   cpp  python    opencv   sql   linux   git  apollo
 4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+=======
+>>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453

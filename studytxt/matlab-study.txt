@@ -4,6 +4,16 @@ MATLAB 入门之旅摘要
 x = pi	使用等号 (=) 创建变量。
 左侧 (x) 是变量的名称，其值为右侧 (pi) 的值。
 y = sin(-5)	您可以使用括号提供函数的输入。
+<<<<<<< HEAD
+=======
+
+matlab变量类型：int8  int16 double uint32  uint64
+single 
+whos列出变量；
+size(a,1) 行 size(a,2)列
+length(str)列出字符串长度；
+变量字母开头；
+>>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
  
 
 桌面管理
@@ -106,3 +116,131 @@ end	循环计数器 (c) 遍历
 循环体显示 c 的每个值。
 
 
+<<<<<<< HEAD
+=======
+#########################################################
+大仙学习MATLAB基础117
+A' 转置  inv(A)逆
+cell(3,4) 元胞数组创建；
+round  fix  floor ceil  取整
+real imag abs angle complex  复数；
+显示格式；
+format short ;format long;format long e ;format rational;
+
+matlab非0为真；
+functions()返回函数句柄相关信息；
+
+cellplot() iscell()  num2cell()矩阵转cell
+c={'wang',180,23}
+fields={'name','weight','height'}
+s=cell2struct(c,fields,2)可以将单元数组转化为结构体；
+
+struct() creat a struct; struct('a',{'xx'},'color',{'blue'})
+rmfield() isstruct() isfield();
+getfiel()  setfiled()
+struct2cell()
+
+> >=  <  <= ==  &  |  ~  xor  
+dec2bin bin2dec hex2dec
+
+syms x;定义符号变量；
+quad 积分求解；单变量 数值积分求解；
+quadl 高精度；
+dblquad  双重积分；triplequal 三重积分；
+
+dsolve 求微分 通解，以t为默认变量；
+odeset 设置微分数值解求解参数；
+
+fminbnd(@cos,1,5) 求函数最小值；
+fminsearch  求解多元函数最小值；
+fzero(f,[-5,5])   求一元函数0点；
+
+#########################################################
+matlab--string
+disp(str);   size(str);  str(end:-1:1)
+strcat(str1,str2)-->str1+str2;
+strncmp(a,b,5) 前5字符是否相等；
+strfind(a,b)    strrep  replace;
+num2str  str2double isspace  isletter;
+eval(str) 执行str表示的命令；
+upper  lower   转变为大小写；
+help strfun 可以获得字符函数帮助；
+
+#########################################################
+数组 或 矩阵 初始化是用[]
+调用时用A（）；
+size   length返回最大值；
+find(A==5) 返回值为5的下标；
+A（A＝＝5）＝200；
+sort  排序；
+
+
+#########################################################
+0910 矩阵；
+注意：矩阵按列进行存储；
+第二行 A（2，：）   第二列 A（：，2）
+A=rand(4,4);
+index= sub2ind(size(A),2,3) 双下标转化为单下标； 10;
+[i,]=ind2sub(size(A),10)   单下标10－－转化为双下标； i=2,j=3
+元素编号从1开始；
+A(5,5)=0  则矩阵自动扩充；
+矩阵行相同可以水平合并；可以对角块生成新矩阵；可以块操作；
+A([1 3],:)=[] 删除1 3行； A（：，2）＝[] 删除第2列；
+复数矩阵转置用A.'
+rot90(A) 逆时针90度；fliplr flipud 左右 上下翻转；
+reshape  变换行列；
+行列数完全一样可以加减；
+
+sum(A) 每一列进行求和；
+sum(A,2) 行求和；
+diff(A) 每一列差分； diff(A,2) 列二阶差分；diff(A,1,2) 行进行差分；
+eye(5)对角线为1；
+rand(2,5)  randn() 标准方差矩阵；
+magic(5)
+求方阵行列式 det(A)
+eig(A) 计算特征值；
+
+p=[4 4 4 1] //4x^3+4x^2+4*x+1;
+A=compan(p)求P的伴随矩阵；eig(A)可以求得三个根；
+或者 roots(p);
+
+inv(A)  逆矩阵；   pinv(A) 广义逆
+rank(A)  矩阵秩； 满秩则线性无关；
+trace(A)  迹   对角线元素和； 也是 特征值之和；
+范数；norm  
+sqrtm  平方根；S＊S＝A；
+expm  logm  指数 对数；
+sparse(A) 稀疏矩阵；  nnz(A) 计算非0元素个数；
+
+#############################################
+m文件编写；
+％加注释； ％％ 注意双百分号加空格；分段，还可以通过标题定位；
+if ... else ... end
+
+for i=1:10 ... end 
+while conition ... end
+switch case ...end
+
+函数文件；脚本文件(输入文件名可以运行)；
+fun_name.m  
+function fun_name(input)
+    ...
+end
+disp('xxxxxxx') display;
+
+#############################################
+save xx.mat A,B
+load xx.mat; 
+M=importdata('xx.txt')
+dd=M.data  把数据给dd
+xlswrite('xx.xls',A)
+A=xlsread('xx.xls')
+cvswrite;  cvsread;
+
+#############################################
+clear all;
+clc;
+publish 可以生成带目录的文件；
+
+
+>>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453

@@ -826,4 +826,32 @@ git branch -d brh
 
 在整个git中，分支的管理是最麻烦但是这个是最重要的操作，所以这部分可以反复查看，分支是进行开发使用的，最终必须都在master上，这点最重要，切记。
 
+<<<<<<< HEAD
 -END-
+=======
+use proxy:
+git config --global http.proxy sock5://127.0.0.1:7891
+
+git clone http://github.com/wzp1216/mysaveclode.git
+note:  https-->http
+
+remove proxy:
+git config --global --unset http.proxy
+
+
+查看使用的clone方式：
+git remote -v
+可以删除原CLONE方式，并改用SSH方式：
+git remote rm origin
+git remote add origin git@github.com:wzp1216/mysavecode.git
+git branch --set-upstream-to=origin/master
+
+
+
+Git解决冲突的方法
+1、使用git fetch origin master将远程分支拉下来
+2、使用git merge origin master手动合并冲突的内容，首先合并代码并输入备注信息，然后按esc，再按***+;，输入wq保存并退出
+3、使用git add xxx和git commit -m "xxx" 将改动提交
+4、使用git push origin master将改动提交到远程分支
+
+>>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
