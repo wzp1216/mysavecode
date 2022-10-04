@@ -15,22 +15,25 @@ import sys
 
 
 def show(imga):
-    imgstr=str(imga)
-    cv.imshow(imgstr,imga)
+    cv.imshow('a',imga)
 
-def gass(img)
+def gass(img):
     cv.GaussianBlur(img,5,5,None,None)
 
 def main():
-    imgs=cv.imread('./test_img/side/Image_29.jpg')
+    imgs=cv.imread('./test_img/side/Image_30.jpg')
     show(imgs)
+    
+    '''
     for img in imgs:
         imggass=gass(img)
         show(imggass)
+    '''
 
 
 
 if __name__ == '__main__':
     print(__doc__)
     main()
+    cv.waitKey()
     cv.destroyAllWindows()

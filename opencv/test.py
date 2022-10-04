@@ -10,6 +10,7 @@ def nothing(x):
 img=np.zeros((300,512,3),np.uint8)
 cv.namedWindow('img')
 
+
 cv.createTrackbar('R','img',0,255,nothing)
 cv.createTrackbar('G','img',0,255,nothing)
 cv.createTrackbar('B','img',0,255,nothing)

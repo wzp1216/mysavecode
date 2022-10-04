@@ -24,7 +24,7 @@ svm=cv.ml.SVM_create()
 result=svm.train(data,cv.ml.ROW_SAMPLE,label)
 
 #分类
-test=np.vstack([[98,90],[90,99]])
+test=np.vstack([[98,91],[90,99]])
 test=np.array(test,dtype='float32')
 
 (p1,p2)=svm.predict(test)
