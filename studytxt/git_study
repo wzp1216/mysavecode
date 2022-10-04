@@ -845,4 +845,9 @@ git branch --set-upstream-to=origin/master
 
 
 
+Git解决冲突的方法
+1、使用git fetch origin master将远程分支拉下来
+2、使用git merge origin master手动合并冲突的内容，首先合并代码并输入备注信息，然后按esc，再按***+;，输入wq保存并退出
+3、使用git add xxx和git commit -m "xxx" 将改动提交
+4、使用git push origin master将改动提交到远程分支
 

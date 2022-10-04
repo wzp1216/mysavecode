@@ -15,14 +15,15 @@ import sys
 
 
 def show(imga):
-    imgstr=str(imga)
-    cv.imshow(imgstr,imga)
+    cv.imshow("img",imga)
 
-def gass(img)
-    cv.GaussianBlur(img,5,5,None,None)
+def gass(img):
+    img_gass=cv.GaussianBlur(img,5,5,None,None)
+    return img_gass
+
 
 def main():
-    imgs=cv.imread('./test_img/side/Image_29.jpg')
+    imgs=cv.imread("./image/test1.jpg")
     show(imgs)
     for img in imgs:
         imggass=gass(img)
