@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 
 
 def test():
-    img=cv.imread("opencv_logo.jpg")
+    img=cv.imread("./image/opencv_logo.jpg")
     kernel=np.ones((5,5),np.float32)/25
     dst=cv.filter2D(img,-1,kernel)
     blur=cv.blur(img,(5,5))
