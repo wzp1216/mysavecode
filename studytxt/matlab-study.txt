@@ -240,7 +240,33 @@ cvswrite;  cvsread;
 #############################################
 clear all;
 clc;
+%%可以分段； 生成目录；
 publish 可以生成带目录的文件；
 
+#############################################
+debug:
+help debug 查看帮助；
+dbstop a.m  at n  //add a stop ;
+dbstep   //单步执行
 
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
+try
+  xxxx
+catch
+  disp("error")
+end
+发现xxx语句中的错误；
+error  warning 
+
+edit mean 可以查看源代码；
+利用MATLAB菜单中分析代码  功能可以查看分析程序
+
+如何提高MATLAB效率：
+1减少用循环；2尽量使用向量；
+
+notebook -setup 可以用于设置MATLAB与WORD交互
+
+
+
+
+
+

@@ -221,4 +221,29 @@ A;进入插入模式输入分号；
 <Esc>回到普通模式完成插入。
 
 ###################################################################
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
+录制宏：
+	qa			Start recording a macro in register a.
+	^			Move to the beginning of the line.
+	i#include "<Esc>	Insert the string #include " at the beginning
+				of the line.
+	$			Move to the end of the line.
+	a"<Esc>			Append the character double quotation mark (")
+				to the end of the line.
+	j			Go to the next line.
+	q			Stop recording the macro.
+Now that you have done the work once, you can repeat the change by typing the
+command "@a" three times.
+可以重复在四个文件前加上 ＃include " "
+	#include "stdio.h "
+	#include "fcntl.h "
+	#include "unistd.h "
+	#include "stdlib.h "
+
+
+
+
+
+
+
+
+
