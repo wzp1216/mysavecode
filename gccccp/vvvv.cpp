@@ -1,4 +1,4 @@
-
+// cout !!+2!+3!+4!+... n!;
 #include <cstring>
 #include <algorithm>
 #include <cstdio>
@@ -23,7 +23,7 @@ struct Bigint{
     void flatten(int L){
         len=L;
         for (int i=1;i<=len;i++)
-            a[i+1]=a[i]/10,a[i]%=10;
+            a[i+1]+=a[i]/10,a[i]%=10;
         for(;!a[len]; )
             len--;
     }
@@ -43,8 +43,8 @@ Bigint operator+(Bigint a,Bigint b){
     }
     
 Bigint operator*(Bigint a,int b){
-        Bigint c(a.len+11);
-        int len;
+        Bigint c;
+        int len=a.len;
         for (int i=1;i<=len;i++)
             c[i]=a[i]*b;
         c.flatten(len+11);
@@ -53,17 +53,19 @@ Bigint operator*(Bigint a,int b){
 
 int main()
 {
-    Bigint ans(2342),fac(7849);
-    /*
-    int m;
+    Bigint ans(0),fac(1);
+   int m;
     cin>>m;
     for(int i=1;i<=m;i++){
         fac=fac*i;
         ans=ans+fac;
     }
-    */
+    ans.print();
+ 
+   /*  
     fac.print();
     fac=ans*2;
     ans.print();
     fac.print();
+       */
 }
