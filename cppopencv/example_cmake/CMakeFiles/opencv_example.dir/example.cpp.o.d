@@ -1,6 +1,9 @@
 CMakeFiles/opencv_example.dir/example.cpp.o: \
  /home/wzp/git/mysavecode/cppopencv/example_cmake/example.cpp \
- /usr/include/stdc-predef.h /usr/local/include/opencv4/opencv2/core.hpp \
+ /usr/include/stdc-predef.h \
+ /usr/local/include/opencv4/opencv2/highgui/highgui.hpp \
+ /usr/local/include/opencv4/opencv2/highgui.hpp \
+ /usr/local/include/opencv4/opencv2/core.hpp \
  /usr/local/include/opencv4/opencv2/core/cvdef.h \
  /usr/local/include/opencv4/opencv2/core/version.hpp \
  /usr/include/c++/8/limits \
@@ -214,9 +217,9 @@ CMakeFiles/opencv_example.dir/example.cpp.o: \
  /usr/local/include/opencv4/opencv2/core/optim.hpp \
  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
  /usr/local/include/opencv4/opencv2/core/cvdef.h \
- /usr/local/include/opencv4/opencv2/imgproc.hpp \
- /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
- /usr/local/include/opencv4/opencv2/highgui.hpp \
  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
  /usr/local/include/opencv4/opencv2/videoio.hpp \
+ /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
+ /usr/local/include/opencv4/opencv2/imgproc.hpp \
+ /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
  /usr/include/c++/8/iostream

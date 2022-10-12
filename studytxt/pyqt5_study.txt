@@ -13,3 +13,8 @@ class myclass:
 __init__是类的构造函数，一个类只能有一个__init__方法，用于初始化类及其变量
 
 
+##################################################
+opencv  pyqt5 matplotlib 共同使用出错提示 could not load qt platform plugin "xcb"时
+import matplotlib
+matplotlib.use("TkAgg")
+
