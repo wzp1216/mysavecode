@@ -9,7 +9,7 @@ import json
 
 def date_read():
     try:
-        with open('/home/wzp/Public/user_time.json','r') as fs:
+        with open('/opt/user_time/user_time.json','r') as fs:
             t=json.load(fs)
             return t; 
     except IOError as e:
@@ -19,7 +19,7 @@ def date_read():
 
 def date_write(t):
     try:
-        with open('/home/wzp/Public/user_time.json','w') as fs:
+        with open('/opt/user_time/user_time.json','w') as fs:
             json.dump(t,fs)
     except IOError as e:
         print(e)
@@ -56,14 +56,14 @@ def json_read1():
 
         tim1=date_read()
 #判断时间，时间大于60则关机；
-        if (tim1['usertime']>=80):
-            os.system("bash /home/wzp/Public/shut2_msg.sh")
-            os.system("echo 'wzy091030' | sudo -S shutdown -h +1")
+        if (tim1['usertime']>=51):
+            os.system("bash /opt/user_time/shut2_msg.sh")
+            os.system("echo 'wzy091030' | sudo -S shutdown -h now")
    
 #判断时间，时间整除20则提示；
         tim1=date_read()
-        if (tim1['usertime']%20==0):
-            #print("user time 20 mins")
+        if (tim1['usertime']%10==0):
+            #print("user time 10 mins")
             showUI=True
 
     if (not sameday):
@@ -77,7 +77,7 @@ def json_read1():
 if __name__=='__main__':
     a=json_read1()
     if (a):
-        os.system("bash /home/wzp/Public/tim20.sh")
+        os.system("bash /opt/user_time/tim20.sh")
 
 
 

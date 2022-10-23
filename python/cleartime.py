@@ -9,7 +9,7 @@ import json
 
 def date_read():
     try:
-        with open('/home/wzp/Public/user_time.json','r') as fs:
+        with open('/opt/user_time/user_time.json','r') as fs:
             t=json.load(fs)
             return t; 
     except IOError as e:
@@ -19,7 +19,7 @@ def date_read():
 
 def date_write(t):
     try:
-        with open('/home/wzp/Public/user_time.json','w') as fs:
+        with open('/opt/user_time/user_time.json','w') as fs:
             json.dump(t,fs)
     except IOError as e:
         print(e)
