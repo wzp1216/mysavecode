@@ -18,3 +18,6 @@ opencv  pyqt5 matplotlib 共同使用出错提示 could not load qt platform plu
 import matplotlib
 matplotlib.use("TkAgg")
 
+##################################################
+opencv与PYQT5冲突；可以安装opencv-crontib-python-headless,但安装这个包，不能使用imshow函数；
+
