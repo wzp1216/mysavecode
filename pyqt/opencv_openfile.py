@@ -45,10 +45,11 @@ class opencv_win(QDialog):
         self.refreshShow()
 
     def refreshShow(self):
-        h,w,channel=self.img.shape
-        bytesPerLine=3*w;
-        self.qtimg=QImage(self.img.data,w,h,bytesPerLine,QImage.Format_RGB888).rgbSwapped()
-        self.label.setPixmap(QPixmap.fromImage(self.qtimg))
+        if len(self.img.shape)==3:
+            h,w,channel=self.img.shape
+            bytesPerLine=3*w;
+            self.qtimg=QImage(self.img.data,w,h,bytesPerLine,QImage.Format_RGB888).rgbSwapped()
+            self.label.setPixmap(QPixmap.fromImage(self.qtimg))
 
 
 if __name__=='__main__':

@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import * 
 from PyQt5.QtCore import  Qt,QRect
 
-class Drawing(QWidget):
+class Drawing(QDialog):
     def __init__(self,parent=None):
         super(Drawing,self).__init__(parent)
         self.setWindowTitle("draw in window")
@@ -20,7 +20,7 @@ class Drawing(QWidget):
     def drawPoints(self,qp):
             qp.setPen(Qt.red)
             size=self.size()
-            print(size)
+            print("this windows size is ",size)
             for i in range(1000):
                 x=200*(-1+2.0*i/1000)+size.width()/2.0
                 y=-50*math.sin((x-size.width()/2.0)*math.pi/50)+size.height()/2.0
