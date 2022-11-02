@@ -13,7 +13,7 @@ void testimshow()
     try{
         QString mydir,myfile;
         mydir=QDir::currentPath();
-        myfile=mydir.append("/../qtopencv/image/lena.jpg");
+        myfile=mydir.append("./image/lena.jpg");
         qDebug()<<myfile.toStdString().data();
         cv::Mat img;
         //img=cv::imread("/home/wzp/git/mysavecode/qtopencv/image/lena.jpg");

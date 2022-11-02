@@ -8,6 +8,7 @@ from layout_sample import testwin
 from draw1_sample import Drawing 
 from opencv_openfile import opencv_win
 from timer_sample import  time_winForm
+from draw_sin_sample import Draw_sin
 
 class mainwin(QMainWindow):
     def __init__(self, parent=None):
@@ -36,23 +37,29 @@ class mainwin(QMainWindow):
         time_btn=QPushButton("time sample")
         time_btn.clicked.connect(self.time_sample)
 
+        draw_sin=QPushButton("draw a sin wave sample")
+        draw_sin.clicked.connect(self.draw_sin_sample)
+
         layout=QGridLayout()
         layout.addWidget(msgbut,0,0)
         layout.addWidget(layout_but,0,1)
         layout.addWidget(draw_bnt,0,2)
         layout.addWidget(opencv_openfile_btn,1,0)
         layout.addWidget(time_btn,1,1)
+        layout.addWidget(draw_sin,1,2)
 
         main_frame=QWidget()
         main_frame.setLayout(layout)
         self.setCentralWidget(main_frame)
+    def draw_sin_sample(self):
+        draw_win=Draw_sin(self)
+        draw_win.exec()
     def time_sample(self):
         self.time_sample_win=time_winForm()
         self.time_sample_win.exec()
     def opencv_openfile(self):
         self.openfile_win=opencv_win()
         self.openfile_win.exec()
-
     def draw_sample(self):
         self.draw1_win=Drawing()
         self.draw1_win.exec()

@@ -3,6 +3,8 @@
 
 CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
   /usr/include/stdc-predef.h \
+  /usr/local/include/opencv4/opencv2/highgui/highgui.hpp \
+  /usr/local/include/opencv4/opencv2/highgui.hpp \
   /usr/local/include/opencv4/opencv2/core.hpp \
   /usr/local/include/opencv4/opencv2/core/cvdef.h \
   /usr/local/include/opencv4/opencv2/core/version.hpp \
@@ -267,21 +269,21 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
   /usr/local/include/opencv4/opencv2/core/optim.hpp \
   /usr/local/include/opencv4/opencv2/core/ovx.hpp \
   /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
   /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
   /usr/local/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
   /usr/include/c++/8/iostream
 
 
 /usr/include/c++/8/iostream:
 
-/usr/local/include/opencv4/opencv2/videoio.hpp:
-
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
 
 /usr/local/include/opencv4/opencv2/imgproc.hpp:
+
+/usr/local/include/opencv4/opencv2/videoio.hpp:
 
 /usr/local/include/opencv4/opencv2/core/ovx.hpp:
 
@@ -397,7 +399,7 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/usr/include/c++/8/bits/exception_ptr.h:
+/usr/include/linux/limits.h:
 
 /usr/include/c++/8/stdexcept:
 
@@ -408,14 +410,6 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 /usr/local/include/opencv4/opencv2/core/base.hpp:
 
 /usr/local/include/opencv4/opencv2/opencv_modules.hpp:
-
-/usr/local/include/opencv4/opencv2/highgui.hpp:
-
-/usr/include/c++/8/bits/locale_classes.h:
-
-/usr/include/c++/8/type_traits:
-
-/usr/include/linux/limits.h:
 
 /usr/include/c++/8/bits/char_traits.h:
 
@@ -487,13 +481,13 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/8/bits/atomic_word.h:
 
-/usr/include/c++/8/memory:
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
 
-/usr/include/x86_64-linux-gnu/c++/8/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/usr/include/c++/8/bits/std_function.h:
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+/usr/lib/gcc/x86_64-linux-gnu/8/include/stddef.h:
 
 /usr/local/include/opencv4/opencv2/core/version.hpp:
 
@@ -505,47 +499,9 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 
 /usr/include/c++/8/cstddef:
 
-/usr/include/x86_64-linux-gnu/c++/8/bits/c++locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
 /usr/include/x86_64-linux-gnu/bits/libio.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/8/bits/ios_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/c++/8/bits/os_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/local/include/opencv4/opencv2/core/hal/interface.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/c++/8/bits/stl_iterator_base_funcs.h:
-
-/usr/include/c++/8/exception:
-
-/usr/include/c++/8/backward/binders.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/8/cfloat:
-
-/usr/include/c++/8/limits:
-
-/usr/include/c++/8/bits/basic_string.tcc:
 
 /usr/include/c++/8/algorithm:
 
@@ -555,9 +511,71 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 
 /usr/include/c++/8/ext/string_conversions.h:
 
+/usr/include/c++/8/cfloat:
+
+/usr/include/c++/8/limits:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/8/bits/basic_string.tcc:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/c++/8/bits/locale_classes.h:
+
+/usr/include/c++/8/type_traits:
+
+/usr/local/include/opencv4/opencv2/highgui.hpp:
+
+/usr/include/c++/8/bits/cpp_type_traits.h:
+
+example.cpp:
+
+/usr/include/c++/8/bits/cxxabi_forced.h:
+
+/usr/include/x86_64-linux-gnu/c++/8/bits/c++locale.h:
+
+/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/local/include/opencv4/opencv2/highgui/highgui.hpp:
+
+/usr/local/include/opencv4/opencv2/core/types.hpp:
+
+/usr/include/c++/8/bits/shared_ptr_atomic.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/c++/8/bits/exception.h:
+
+/usr/include/c++/8/bits/localefwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
 /usr/include/c++/8/ext/new_allocator.h:
 
-/usr/include/c++/8/cstdlib:
+/usr/include/c++/8/bits/ios_base.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/c++/8/bits/os_defines.h:
+
+/usr/include/c++/8/memory:
+
+/usr/include/x86_64-linux-gnu/c++/8/bits/cpu_defines.h:
+
+/usr/include/c++/8/bits/std_function.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -565,17 +583,15 @@ CMakeFiles/opencv_example.dir/example.cpp.o: example.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/c++/8/cstdlib:
 
-example.cpp:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/c++/8/bits/cxxabi_forced.h:
+/usr/include/c++/8/bits/stl_iterator_base_funcs.h:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+/usr/include/c++/8/exception:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+/usr/include/c++/8/backward/binders.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
@@ -584,6 +600,12 @@ example.cpp:
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+
+/usr/local/include/opencv4/opencv2/core/hal/interface.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/c++/8/bits/exception_ptr.h:
 
 /usr/include/c++/8/cstdint:
 
@@ -602,20 +624,6 @@ example.cpp:
 /usr/include/c++/8/bits/concept_check.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/local/include/opencv4/opencv2/core/types.hpp:
-
-/usr/include/c++/8/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/8/bits/localefwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/c++/8/bits/exception.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
@@ -670,8 +678,6 @@ example.cpp:
 /usr/include/c++/8/bits/stl_algobase.h:
 
 /usr/include/c++/8/bits/functexcept.h:
-
-/usr/include/c++/8/bits/cpp_type_traits.h:
 
 /usr/include/x86_64-linux-gnu/c++/8/bits/ctype_inline.h:
 
@@ -728,6 +734,12 @@ example.cpp:
 /usr/include/c++/8/bits/allocator.h:
 
 /usr/include/x86_64-linux-gnu/c++/8/bits/c++allocator.h:
+
+/usr/include/c++/8/sstream:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/c++/8/iosfwd:
 
 /usr/include/c++/8/bits/refwrap.h:
 
@@ -810,9 +822,3 @@ example.cpp:
 /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/c++/8/sstream:
-
-/usr/include/c++/8/iosfwd:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
