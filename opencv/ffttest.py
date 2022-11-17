@@ -1,6 +1,9 @@
 import cv2 as cv
 import numpy as np
+import matplotlib
+matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
+
 
 img=cv.imread('./image/messi5.jpg',0)
 f=np.fft.fft2(img)
