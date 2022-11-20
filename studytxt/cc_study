@@ -259,3 +259,19 @@ if:条件语句
 	#define
 
 
+gdb
+gcc -g 可以生成调试文件；
+gdb a.out 开展调试；
+list 显示代码
+b ---break
+s ---step  //进入函数  可以finsh 跳出函数；
+n ---next
+watch sum //sum变化则显示；
+p a ---显示结果  =print a
+info locals  显示所有本地变量； 简写 i lo;
+
+help =h  run=r  start单步执行，运行程序，停在第一句
+list=l    set next=n step=s  braktrace==bt 查看调用栈
+info=i  continue=c print=p quit=q break=b
+i break display
+
