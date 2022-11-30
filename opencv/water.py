@@ -17,8 +17,17 @@ ret,sure_fg=cv.threshold(dist_transform,0.7*dist_transform.max(),255,0)
 sure_fg=np.uint8(sure_fg)
 unknow=cv.subtract(sure_bg,sure_fg)
 
-plt.subplot(221),plt.imshow(img,cmap='gray')
-plt.subplot(222),plt.imshow(gray,cmap='gray')
-plt.subplot(223),plt.imshow(sure_bg,cmap='gray')
-plt.subplot(224),plt.imshow(sure_fg,cmap='gray')
+ret,markers1=cv.connectedComponents(sure_fg)
+markers=markers1+1
+markers[unknow==255]=0
+markers3=cv.watershed(img,markers)
+img[markers3==-1]==[255,0,0]
+
+
+plt.subplot(231),plt.imshow(markers)
+plt.subplot(232),plt.imshow(markers3)
+plt.subplot(233),plt.imshow(sure_bg,cmap='gray')
+plt.subplot(234),plt.imshow(sure_fg,cmap='gray')
+plt.subplot(235),plt.imshow(unknow,cmap='gray')
+plt.subplot(236),plt.imshow(dist_transform,cmap='gray')
 plt.show()
