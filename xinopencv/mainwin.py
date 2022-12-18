@@ -1,26 +1,23 @@
 # -*- coding: utf-8 -*-
 
 import sys
-<<<<<<< HEAD
 from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget
-=======
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QDesktopWidget
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
 from PyQt5.QtWidgets import QCheckBox,QLabel,QGraphicsView,QGraphicsScene,QGraphicsPixmapItem
 from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtGui import QImage,QPixmap
 
 import cv2 as cv
 
-
-<<<<<<< HEAD
+'''
 class my_main_win(QWidget):
     def __init__(self):
         super(my_main_win,self).__init__()
         self.initUI()
     def initUI(self):
 =======
+'''
 class my_main_win(QMainWindow):
     def __init__(self):
         super(my_main_win,self).__init__()
@@ -30,7 +27,6 @@ class my_main_win(QMainWindow):
     def initUI(self):
         #set title and add label1  check1  view
         centerwidget=QWidget()
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
         self.setWindowTitle('QMainWindow')
         label1=QLabel("main windows test")
         check1=QCheckBox('check box test:',self)
@@ -40,13 +36,10 @@ class my_main_win(QMainWindow):
         lay.addWidget(label1)
         lay.addWidget(check1)
         lay.addWidget(view)
-<<<<<<< HEAD
         self.setLayout(lay)
-=======
         centerwidget.setLayout(lay)
         self.setCentralWidget(centerwidget)
         
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
 
         #add a image;
         img=cv.imread("./test.jpg",cv.IMREAD_GRAYSCALE)
@@ -66,8 +59,6 @@ class my_main_win(QMainWindow):
         view.fitInView(QGraphicsPixmapItem(QPixmap(imgshow)))
 
 
-<<<<<<< HEAD
-=======
     def addmenu(self):
         self.menubar = QtWidgets.QMenuBar(self)
         self.menubar.setObjectName("menubar")
@@ -114,7 +105,6 @@ class my_main_win(QMainWindow):
 
        
 
->>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
