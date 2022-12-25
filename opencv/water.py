@@ -21,11 +21,15 @@ ret,markers1=cv.connectedComponents(sure_fg)
 markers=markers1+1
 markers[unknow==255]=0
 markers3=cv.watershed(img,markers)
-img[markers3==-1]==[255,0,0]
+img1=gray
+img1[markers3==-1]==[255,0,0]
 
+xx=cv.subtract(gray,img1)
+plt.imshow(xx)
+plt.show()
 
-plt.subplot(231),plt.imshow(markers)
-plt.subplot(232),plt.imshow(markers3)
+plt.subplot(231),plt.imshow(gray)
+plt.subplot(232),plt.imshow(img1)
 plt.subplot(233),plt.imshow(sure_bg,cmap='gray')
 plt.subplot(234),plt.imshow(sure_fg,cmap='gray')
 plt.subplot(235),plt.imshow(unknow,cmap='gray')

@@ -44,6 +44,7 @@ chomd  664 filename  可以设置文件属性；
 chown 更改所有者  -R  可以更改下级子目录及文件；
 stat 显示文件信息；
 du -sh  显示目录所占空间
+du --max-depth=1 -h 显示每个子目录所占空间
 cp --	copy文件 cp sourse  newfile;
 mv	--  移动文件，使用与cp相同；
 ln  	--创建文件硬链接，源文件丢失后新文件仍可使用；
