@@ -11,6 +11,12 @@ struct ROAD{
     int t;
 };
 
+bool cmp(int a,int b){
+    if (a>=b) return 1;
+    else return 0;
+}
+
+
 int main(){
     //村庄数V   公路数R  公路双向 修好路所用时间t 
     //read from file title.in
@@ -32,7 +38,10 @@ int main(){
         V_all[i+road]=R[i].B;
     }
     
-    sort(V_all,
+    sort(V_all,V_all+2*road);
+
+    for(int i=0;i<2*road;i++)
+        cout<<V_all[i]<<endl;
 
     for(int i=0;i<road;i++)
         cout<<R[i].A<<" "<<R[i].B<<" "<<R[i].t<<endl;
