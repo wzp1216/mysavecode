@@ -308,3 +308,12 @@ Ctrl + C：复制
 Ctrl + V：粘贴
 Ctrl + X：剪切
 Ctrl + Q：退出
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+systemd-analyze blame 查看开机项耗时
+
+sudo systemctl mask plymouth-quit-wait.service 关闭开机启动画面
+
+sudo systemctl stop xx.service
+sudo systemctl start xx.service
+sudo systemctl disable xx.service
+sudo systemctl reenable xx.service
