@@ -317,3 +317,9 @@ sudo systemctl stop xx.service
 sudo systemctl start xx.service
 sudo systemctl disable xx.service
 sudo systemctl reenable xx.service
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+查看启动日志 dmesg   内核日志
+其他日志     /var/log
+
