@@ -4,8 +4,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ag	./english_word.c	/^ag(){$/;"	f
-agri	./english_word.c	/^agri(){$/;"	f
-ann	./english_word.c	/^ann(){$/;"	f
-astro	./english_word.c	/^astro(){$/;"	f
-audi	./english_word.c	/^audi(){$/;"	f
+ag	english_word.c	/^ag(){$/;"	f
+agri	english_word.c	/^agri(){$/;"	f
+ann	english_word.c	/^ann(){$/;"	f
+astro	english_word.c	/^astro(){$/;"	f
+audi	english_word.c	/^audi(){$/;"	f
+form	english_word.c	/^form(){$/;"	f

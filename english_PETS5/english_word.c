@@ -204,6 +204,28 @@ form(){
     uniformed  adj 穿着制服的；  ed形容词后缀;
     uniformity i 连字符 -ty名词后缀；
 
+}
+
+struct(){
+    structure;
+
+
+
+        microphone; 小型扩音器；  micro-微小 phon  声音 e名词后缀;
+        macro-structure 宏观结构；
+        元音发音区别 
+    
+
+    instruct;
+
+    obstruct;
+
+    construct;
+
+    destruct;
+
+}
+
 
 
 

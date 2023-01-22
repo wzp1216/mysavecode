@@ -189,8 +189,9 @@ b: 块 (编程语言)
 set foldmethod=indent
 zo  open
 zc  close
-zR  open all
-zM  close all
+zR  open all   Reset;
+zM  close all  Make;
+za  打开则关闭，关闭则打开；
  
 <<<<<<< HEAD
 
