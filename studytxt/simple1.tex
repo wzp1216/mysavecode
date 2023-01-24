@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX 模板，主要针对 A4 纸的中文Paper。
+% 文章模板：utf-8编码，A4 纸，10磅，文章类型为article，
+% 这里设置UTF8后，下面只需要使用ctex包就能直接用中文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[UTF8,a4paper,10pt]{article}
+\usepackage{ctex} % 中文支持
+\usepackage{fancyhdr}
+\usepackage{multicol} % 正文单双栏混排
+\usepackage{lastpage} % 用于获得最大页数，页眉显示用
+\usepackage{geometry} % 用于设置页边距
+\usepackage[subfigure,AllowH]{graphfig} %图片相关
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%定义页边距
+\geometry{left=3cm,right=3.8cm,top=2.5cm,bottom=2.5cm}
+%定义行间距为1.1倍行距
+\renewcommand{\baselinestretch}{1.1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 标题，作者，通信地址定义
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% texbf{…}为加粗
+% huge{…}等等调节字体的
+\title{\textbf{\huge{Latex中文模板}}}
+\author{wanzhiping（浙江工业职业技术学院）}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 文章正文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%
+% 此行使文献引用以上标形式显示
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+% 显示title
+\maketitle
+
+\begin{center}摘要\end{center}
+中文摘要详细内容
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 目录页－－－－－－－－－－－－－－－－－－－－－－－－－
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文由此开始－－－－－－－－－－－－－－－－－－－－－
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{引用文献}
+\indent 文献\supercite{ref1,ref2}中提到：这是文献一二中提到的内容；
+\subsection{列表}
+\begin{itemize}  \item 身是菩提树，心如明镜台  \item 时时勤拂拭，勿使惹尘埃.  \item 菩提本无树，明镜亦非台  \item 本来无一物，何处惹尘埃.  \end{itemize}\par
+这是一个列表的示范；
+
+\section{插入图片}
+pic和tex文件保存在同一路径下  graphfile[30]1.png[picture]\par
+可以在tex所在路径建立一个fig 文件夹放图片\par
+graphfile[60]fig.1.png[picture]\par
+\begin{Figure}[H]{aaa}[qwd]
+\graphfile[20]{./lena.jpg}[picture]
+\end{Figure}
+\par
+上面是一个插图的示范；\par
+\begin{Figure}[H]{asdf}[111]  \graphfile[34]{1.png}[picture1]  \graphfile[36]{1.png}[picture2]  \par  \end{Figure}
+\par 这是一个双插图的示范；\par
+
+\section{表格}
+表格相对比较复杂；\newpage
+\vspace{3ex}
+\begin{table}[htbp]%图片位置，htbp代表here, top, bottom, page
+  \centering%居中
+  \caption{This is my first table}\label{table}%label是便于自己查看是那张表的，可不用，注释掉即可，表头一般放在表格上方
+  \begin{tabular}{|c|c|c|}
+  \hline
+  1 & 2 & 3 \\
+  \hline
+  4 & 5 & 6 \\
+  \hline
+  7 & 8 & 9 \\
+  \hline
+\end{tabular}
+\end{table}
+\vspace{3ex}
+\indent 表格示范结束；\par
+
+\section{公式}
+公式是LATEX的优势所在； \par
+\indent 
+\begin{minipage}[h]{0.48\linewidth}
+$[\alpha \ge \delta {\rm{ + }}\overline {\eta * \beta } ]$
+\end{minipage}\par
+\begin{minipage}[h]{0.48\linewidth}
+$[\left[ {\begin{array}
+{*{20}{c}}{{a_1}}&{{a_2}}&\alpha &\beta \chi &\varphi &\gamma &\eta \theta &{{\zeta _3}}&\xi &\omega
+\end{array}}
+\right]$
+\end{minipage}
+\vspace{3ex}\par
+\indent 这是一个兔子；
+
+\section{结束}
+ 文章结束
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small
+\begin{thebibliography}{99}
+\setlength{\parskip}{0pt} %段落之间的竖直距离
+\bibitem{ref1}吴承恩. 西游记~[M], 明14XX年.
+\bibitem{ref2} 玄奘. 大唐西域记学报~[J], 唐6XX年, 1(2): 23-55.
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 文章结束
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\end{document}

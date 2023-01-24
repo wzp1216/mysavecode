@@ -326,3 +326,10 @@ sudo systemctl reenable xx.service
 查看启动日志 dmesg   内核日志
 其他日志     /var/log
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+font:
+/usr/shart/fonts/
+sudo mkfontscale  //生成核心字体信息；
+sudo mkfontdir    //生成字体目录信息；
+sudo fc-cache -fc //刷新字体缓存；
+

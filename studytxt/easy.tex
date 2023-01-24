@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX 模板，主要针对 A4 纸的中文Paper。
+% 文章模板：utf-8编码，A4 纸，10磅，文章类型为article，
+% 这里设置UTF8后，下面只需要使用ctex包就能直接用中文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[UTF8,a4paper,10pt]{article}
+\usepackage{ctex} % 中文支持
+\usepackage{lastpage} % 用于获得最大页数，页眉显示用
+\usepackage{geometry} % 用于设置页边距
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%定义页边距
+\geometry{left=3cm,right=3.8cm,top=2.5cm,bottom=2.5cm}
+%定义行间距为1.1倍行距
+\renewcommand{\baselinestretch}{1.1}
+
+\title{\textbf{\huge{Latex中文模板}}}
+\author{wanzhiping（浙江工业职业技术学院）}
+
+\begin{document}
+% 显示title
+\maketitle
+
+\begin{center}摘要\end{center}
+中文摘要详细内容
+
+\tableofcontents
+
+\section{第一章}
+\indent 文献中提到：这是文献一二中提到的内容；
+\subsection{列表}
+\begin{itemize}  \item 身是菩提树，心如明镜台  \item 时时勤拂拭，勿使惹尘埃.  \item 菩提本无树，明镜亦非台  \item 本来无一物，何处惹尘埃.  \end{itemize}\par
+这是一个列表的示范；
+
+\section{插入图片}
+pic和tex文件保存在同一路径下  graphfile[30]1.png[picture]\par
+可以在tex所在路径建立一个fig 文件夹放图片\par
+graphfile[60]fig.1.png[picture]\par
+
+\section{表格}
+表格相对比较复杂；\newpage
+
+\section{公式}
+公式是LATEX的优势所在； \par
+\indent 
+$[\alpha + \beta + \varphi + \gamma + \theta * \omega]$
+\vspace{3ex}\par
+\indent 这是一个兔子；
+
+\section{结束}
+ 文章结束
+\clearpage
+\end{document}

@@ -4,9 +4,22 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+accede	english_word.c	/^    od 路；hod路； 来自拉丁语methodus教学方法； meta-在后；-hod 路；词源同anode正极,cathode负极,accede正式加入;$/;"	m	struct:od	file:
 ag	english_word.c	/^ag(){$/;"	f
 agri	english_word.c	/^agri(){$/;"	f
 ann	english_word.c	/^ann(){$/;"	f
 astro	english_word.c	/^astro(){$/;"	f
 audi	english_word.c	/^audi(){$/;"	f
+bar	english_word.c	/^    bar=bal=ban  长木条，障碍；源于拉丁barra 横木；栏杆含义；动词有阻拦的意思；  条|杆|棒|酒吧|木条|律师|阻拦|栅栏|栏杆|障碍物；$/;"	m	struct:bar	file:
+bar	english_word.c	/^bar(){$/;"	s	file:
+cathode	english_word.c	/^    od 路；hod路； 来自拉丁语methodus教学方法； meta-在后；-hod 路；词源同anode正极,cathode负极,accede正式加入;$/;"	m	struct:od	file:
+construct	english_word.c	/^    construct;$/;"	m	file:
+destruct	english_word.c	/^    destruct;$/;"	m	file:
+ed	english_word.c	/^    embarrassed  尴尬的；  ed形容词后缀;$/;"	m	struct:bar	file:
 form	english_word.c	/^form(){$/;"	f
+ment	english_word.c	/^    embarrassment 尴尬； ment名词后缀 ;$/;"	m	struct:bar	file:
+microphone	english_word.c	/^        microphone; 小型扩音器；  micro-微小 phon  声音 e名词后缀;$/;"	m	file:
+obstruct	english_word.c	/^    obstruct;$/;"	m	file:
+od	english_word.c	/^od (){$/;"	s	file:
+structure	english_word.c	/^    structure;$/;"	m	file:
+unembarrassed	english_word.c	/^    unembarrassed  不尴尬的;$/;"	m	struct:bar	file:

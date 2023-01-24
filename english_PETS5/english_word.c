@@ -224,8 +224,64 @@ struct(){
 
     destruct;
 
+    nanostructure 纳米结构； nano-纳米 人名；
+    social-structural  社会结构的；social 社会的； soci-伙伴 al形容词后缀;  society  soci+e+ty  社会；
+    instruct in强调 struct 建造--强调建造---指导
+    instructor -or名词后缀表人； 指导员；
+    instruction  -ion名词后缀 指示；
+    instructive  -ive形容词后缀  有教育性的，有指导意义的；
+    instructional  -al形容词后缀 教学的；
+    instructionally 教学性地；
+    self-instruction 自学；
+    self-instructional  自学的；
+    infrastructure    infra下，学术用语； 基础结构；
+    infrastructural 基础结构的；
+    construct 建造；
+    construction  建造 n.
+    constructor  构造函数 构造器  or名词后缀 ;
+    constructive 建设性的；
+        constructivist 构成主义者；
+    constructivism 构成主义；
+    construction-paper  图画用纸；建筑用纸；
+    well-constructed  结构合理的；
+    reconstruction 再建 n.
+    reconstructionist 重建主义；  documentary 《the story of us》记录片；
+    reconstructed 重建的，改造的；
+    reconstructive 重建的 -ive形容词后缀 
+    unreconstructed 旧思想的   un-否定  -ed形容词后缀 不能重建的---思想不能更新---旧思想的；
+    deconstruct de分  ---分开构造---解构---拆分；
+    deconstruction n 解构；
+    deconstructive  ive 名词后缀；  解构主义；
+
+    destruct  自毁; 
+    destructor n 破坏者；
+    destruction  n  破坏；
+
 }
 
+od (){
+    od 路；hod路； 来自拉丁语methodus教学方法； meta-在后；-hod 路；词源同anode正极,cathode负极,accede正式加入;
+    method 方法；条理；  met-在后 hod 路 后路----方法策略；meth-强调 od 路 强调有路---方法；
+    methodical 有系统的，有方法的； -ic-  al形容词后缀;
+    methodology  o   logy名词后缀  方法学；
+    methodological  ic +al形容词后缀  方法论的；
+    methodologically   adv 方法学；在方法论上；
+    methodist  ist名词后缀表人；也表形容词后缀； 默守陈规的；；  adj 墨守陈规者的；
+    period  per完全+i连接用+od路  ----完整的一段路---周期;
+    preiodic   周期的；  -ic形容词后缀;
+    preiodical  -al形容词后缀 周期的；
+    odograph 里程表；  od路  o连词表  praph写----记录路---里程表；
+    odometer  od路 o连词  meter测量----里程表；
+    exodus  ex向外  od路  us名词后缀  n 大批的离去；
+    periodontal  牙周的；
+    
+}
 
-
-
+bar(){
+    bar=bal=ban  长木条，障碍；源于拉丁barra 横木；栏杆含义；动词有阻拦的意思；  条|杆|棒|酒吧|木条|律师|阻拦|栅栏|栏杆|障碍物；
+    embarrass;使局促不安；使困窘；  em使动 barr 木条（rr为方便读音）--障碍；  ass动词后缀，使动...    ;
+    embarrassment 尴尬； ment名词后缀 ;
+    embarrassed  尴尬的；  ed形容词后缀;
+    unembarrassed  不尴尬的;
+    embarrassing  ing形容词后缀表令...的修饰主语是人；
+}
