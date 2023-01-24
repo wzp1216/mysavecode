@@ -1,12 +1,18 @@
-import cv2 as cv
 import numpy as np
+import cv2 as cv
+from matplotlib import pyplot as plt 
 
-img =cv.imread('./image/star.png')
 
-imggray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-ret,thresh=cv.threshold(imggray,127,255,0)
+img=cv.imread("./image/star.png")
+gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+ret,thresh=cv.threshold(gray,127,255,0)
+
 contours,hieracy=cv.findContours(thresh,2,1)
 cnt=contours[0]
+
+print("hieracy")
+print(hieracy)
+
 
 hull=cv.convexHull(cnt,returnPoints=False)
 
@@ -24,8 +30,12 @@ for i in range(defects.shape[0]):
 
 print(start,end,far,d)
 
+plt.imshow(img);
+plt.show()
+'''
 cv.namedWindow('img',cv.WINDOW_NORMAL)
 cv.imshow('img',img)
 cv.waitKey(0)
 cv.destroyAllWindows()
+'''
 
