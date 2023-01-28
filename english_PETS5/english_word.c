@@ -6,11 +6,34 @@ astro
 audi
 vint-vict
 form
+struct
+od
+bar
+via
+
+
 
 前缀prefix
+de向下;
+sub向下;
+re再反复多次;
+in否定;
+un否定;
+
 
 
 后缀suffix
+ing形容词后缀表令;
+ed形容词后缀;
+al形容词后缀;
+able形容词后缀;
+-er=or名词后缀;
+-e动词后缀;
+-ium名词后缀;
+-ion名词后缀;
+-ive形容词后缀;
+-ly副词后缀;
+
 
 
 
@@ -284,4 +307,159 @@ bar(){
     embarrassed  尴尬的；  ed形容词后缀;
     unembarrassed  不尴尬的;
     embarrassing  ing形容词后缀表令...的修饰主语是人；
+
+
+    barriers 关卡； bar+i+er名词后缀;
+    bariier-free 无障碍的；free 自由；
+    balance  bal=bar长木条；--称杆--天平--ance名词后缀;
+    balancing  n平衡 ing名词后缀;
+    balanced  adj 平衡的；和谐的；安定的；
+    well-balanede adj 匀称的；神智健全的；通情达理的；明智的；
+    off-balanced; adj 不平衡的；
+    counterbalance n 平衡力  vt使平衡；  counter- 反；抵消；
+    balancer  n 平衡器；秤称的人；走钢丝的人；
+    imbalance   im表示不  不平衡 n.
+    imbalanced  adj 不平衡的；
+    abandon  a远离的意思 ban长木条--捆绑--解绑---弃置； -don动词后缀；  v 放弃；
+    abandonment n 抛弃； ment名词后缀;
+    ban vt  禁止；
+    banner  n 横幅广告；旗帜，标语；  er名词后缀;
+    banquet 宴会；   ban长条 quet名词后缀 ---晚宴用长条桌；
+    boradband borad宽的；band=ban 宽频带
+    barracks  兵营；bar 木板房  ask名词后缀 s表复数；好多长木条做的房子；
+    unbar   un否定； bar长木条;门拴；---没有门拴---打开，拔开
+    barred  bar禁止 ed形容词后缀  ---被禁止的；
+    no-holds-barred  hold拿  ---无拘无束的；
+    barricade n 街垒；路障；  bar障碍 ic连接 ade名词后缀
+    barrel  vt 把...装入桶内 n桶；枪管 vi快速移动； bar+el=al名词后缀可以动词化；
+    barreled ed形容词后缀 桶装的；有管的；
+    embargo  v禁止出入港口； n禁止禁令 em使动 bar禁止 go走；
+    bartender  tender服务人  酒吧招待；
+    barren   en一般表动词，在此形容词与名词后缀；bar长木条--平板--荒芜   adj 贫瘠的 n荒原不毛之地
+    barring  ing偶尔做介词后缀  prep 除非，除...以外；
+    sandbar  沙洲；沙堤；
+    barbell  杠铃；
+    crowbar   crow钩子   撬棍；铁撬；
+    barroom 酒吧间；
+    toolbar 工具栏；
+    barrette   bar 条状的  ette名词后缀小的含义  n条状发夹；
+    barstool  stool凳子   酒吧高脚凳
+    crossbar  cross十字 bar  ---门栓；n闩；横木；球门横木；
+    barmaid maid 女仆   洒吧女招待；
+    barrister  律师  bar法庭+ ister名词后缀表人---律师；
+    park-barrel  放肉的桶  政治拨款；
+    barman  酒吧店主；酒吧招待；
+    minibar  mini小   小型条状信号发生器；
+    barrel-chested   胸部发达的；  
+    double-barreled  双管枪；双筒的；
+    barrennes  不孕不育，荒芜；
+    taskbar 任务栏；
+    barkeep  酒吧老板；
+    disbarment  取消律师资格 ；
+    barcode 条码；
+    T-bar 丁字铁；
+    barre  e名词后缀   扶手杠；
+    barista  bar酒吧咖啡吧  ist名词后缀表人 a集合名词后缀 咖啡师；
+    bark   bar +注意用k  障碍；阻止；犹豫；
+    balky y形容词后缀  倔强的；
+    balkanization  巴尔干化；分割成小国；
+    baluster 栏杆  bal u连接 ster名词后缀  
+
+    bank 银行；岸；浅滩；（意大利，犹太人放贷；长条凳衍生）v 将...存入银行；v堆积;
+    banker 银行家；
+    banking 银行业；ing名词后缀;
+    embankment   em使动 bank ment名词后缀  路堤；
+    riverbank;
+    snowbank;
+    bankroll roll滚动 提供资金； n资金
+    banknote  note笔记，票据，注解  ---纸币;
+    databank  bank 存贮；  数据库；
+    banked  有坡面的，堆积的；
+    bankabel 银行能接受的；
+    interbank  inter在...之间  同业银行；国际银行；
+    mountebank  mounte安装 bank假装---骗子；
+    nonbank 非银行的;
+    bankbook 银行存折;;
+    banish  ish动词后缀；  长条---拦截--放逐，驱逐；;
+    banned adj 被禁的；  ban禁止；ed形容词后缀;;
+    banal ban al形容词后缀 拒绝更新---陈腐的；平庸的；老一套的；
+        banister; ban i连接 ster名词后缀； 楼梯扶拦；;
+    contrband contra-反+band禁止；  n走私；走私货；
+        banality n平凡；
+        banning  n禁止；adj禁止的；
+        bannister;
+    banco 银行；源于意大利；;
 }
+
+via(vi){
+    via道路；途经，经由，取道；;
+    obviate  ob相反 vi路 ate动词后缀;  vt 避免，消除；
+    obvious ob反--阻挡  vi路  ous形容词后缀;   挡在路中---显而易见的；
+    non-obviuos 不明显的；
+    pervious  pre前 vi ious形容词后缀； 
+    previously 前一集地；
+    
+    trivia  tri三  via路  三叉路----三学科，琐事 不足道的细枝末节；轻微的，琐细的;
+    trivial trivia +al形容词后缀  两个a省一个； 平常的，不重要的；
+        trivially ly副词后缀 琐细地;
+    deviant   de向下  vi  离开路，偏离正道；ant名词后缀表人；不正常的人; 不正常的;
+    deviate  v 偏离   ate动词后缀;
+    devation n 背离;
+    deviationist n异端分子
+        
+    devious 
+    deviously
+    deviance n
+    deviancy  n不正常；
+    deviated 
+    viatic 道路的; vi ate动词后缀 ic形容词后缀;
+    viameter  via  meter测量  n路程表
+        viaduct  via  duct引导---开路----架桥   高架桥;
+    viayage  
+    voyager er;
+    voyageur   -ur名词后缀表物或人  ar=er=or=ur名词后缀表物或人；
+        convoy  con加强语气强调 护送；
+    envoy 使者;
+
+    covey   一队  co在一起  vey路   ;
+    convey  con加强语气强调 vey路 ---传送;
+    converyor
+    vonveyer ;
+    converyance 运输；运输工具；
+
+    way  源自PIE原始印欧度语;各词在不同语种中发音一样;
+    awaw a远离的意思 ;
+    always;
+    anyway;
+    highway;
+    hallway;
+    doorway;
+    halfway;
+    driverway;
+    subway;
+    runway;
+    runaway 逃亡的；;
+    freeway; 高速公路;
+    underway;
+    railway;
+    walkway;
+    stairway;
+    getaway; 
+    roadway;
+    oneway; twoway 单程 双程;
+}
+
+script(-scrib-scrip-){
+    浊辅音结尾的词根一般用于动词；清辅音结尾一般用于名词或形容词后缀；;
+    刻；题写;铭记;
+    scrip 便条，纸条；临时凭证；  script;
+    scripting  v 为电影写剧本;
+    scribe scrib写 e名词后缀;
+    scirbal  scrib写 al形容词后缀
+    scriptorium 写字间； script  or i  ium名词后缀;
+    script; 脚本；
+        scripted;
+    subscript sub向下 下标；
+        unscripted 不用剧本的；
+        scribble 乱写 scrib写 b  le动词或名词后缀
+

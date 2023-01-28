@@ -269,6 +269,33 @@ notebook -setup 可以用于设置MATLAB与WORD交互
 A()  用于取其中的变量；
 A[B,C]  用于把两个矩阵B C 连接成A；
 
+#############################################
+mean    求平均数；
+median  求中位数；
+sort    排序
+minmax  按行求最值
+var     求方差
+std     求标准方差；
+noamlstat   expstat 分别可以求期望和方差；
+tbulate 正整数频率表；
+lsline  最小二乘拟合；
+normplot    正态分布概率图；
+poly2sym    利用系数建立多项式；
+polyval(p,x) 求多项式p在x处的值；
+roots   求多项式根；
+conv    多项式相乘，向量则卷积；
+dconv   多相式相除
+polyder 多项式求导
+pllyint 多项式积分；可以指定常数项，默认为0
+polyfit(x,y,5)  五阶拟合；
+interpft    插值，快速傅立叶法；
+interp1     三次样条插值；
+lagrange    拉格朗日插值；
+limit       求极限 limit(f,x,1);
+opt_Golden      求解最优化；
+最速下降法优化求解；模拟退火；遗传算法；
+
+
 
 
 
