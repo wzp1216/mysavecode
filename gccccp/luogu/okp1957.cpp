@@ -3,15 +3,18 @@
 #include <string>
 
 using namespace std;
+stringstream ss;
 
 int main(){
 	int a,b,c, n;
-	cin>>n;
-	cin.ignore();
+    string nst;
+    getline(cin,nst);
+    ss<<nst;
+    ss>>n;
+    ss.clear();
 	string st[n];
 	string yout[n];
 	char ch1,fuhao;
-	stringstream ss;
 	for (int i=0;i<n;i++){	
 		getline(std::cin,st[i]);
 		ch1=st[i][0];
