@@ -6,19 +6,15 @@
 #include <vector>
 using namespace std;
 int main(){
-    int n;cin>>n;
-    int x;    x=(n/52-21)/7;
-    int k=1,sum=(7*x+21*k)*52;
-    if(x>100){
-        k=(n/52-700)/21;
-        sum=(7*x+21*k)*52;
+    int l,m;
+    cin>>l>>m;
+    int u[m],v[m];
+    int sum=0;
+    for(int i=0;i<m;i++) {
+        cin>>u[i]>>v[i];
+        sum=sum+v[i]-u[i]+1;
     }
-    while (1) {
-        if (sum==n) break;
-        k++;
-        x=(n/52-21*k)/7;
-        sum=(7*x+21*k)*52;
-    }
-    cout<<x<<endl<<k<<endl;
+    cout<<l-sum;
+    return 0;
 }
 
