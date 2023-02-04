@@ -5,44 +5,47 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-struct point{
-    int x;int y;int z;};
-struct line{
-    point a;point b;};
+
+void psort(int *a){
+    vector <int> v;
+    for(int i=0;i<7;i++)
+        v.push_back(*(a+i));
+    sort(v.begin(),v.end());
+    for(int i=0;i<7;i++)
+        *(a+i)=*(v.begin()+i);
+}
 
 int main(){
-    int length,width,height; cin>>length>>width>>height;
     int n; cin>>n;
-    line ll[n];
+    int jiang[7];
+    for (int i=0;i<7;i++) cin>>jiang[i];
+    int piao[n][7];
+    for(int i=0;i<n;i++)
+        for(int j=0;j<7;j++)
+            cin>>piao[i][j];
+    psort(jiang);
+    for(int i=0;i<n;i++) psort(piao[i]);
+
+    for(int i=0;i<7;i++) cout<<jiang[i]<<"-";
+    cout<<endl;
+    for(int i=0;i<7;i++) cout<<piao[0][i]<<"-";
+    cout<<endl;
+    for(int i=0;i<7;i++) cout<<piao[1][i]<<"-";
+    cout<<endl;
+    int zh[8]={};
     for(int i=0;i<n;i++){
-        line l;
-        cin>>l.a.x>>l.a.y>>l.a.z>>l.b.x>>l.b.y>>l.b.z;
-        ll[i]=l;
-    }
-   
-    int a[length][width][height];
-    for(int i=0;i<length;i++)
-         for(int j=0;j<width;j++)
-            for(int k=0;k<height;k++)
-                a[i][j][k]=1;
-    int x=0;
-    for(int i=0;i<length;i++)
-         for(int j=0;j<width;j++)
-            for(int k=0;k<height;k++){
-                for(x=0;x<n;x++){
-                point pa=ll[x].a,pb=ll[x].b;
-                if (i>=pa.x && i<=pb.x && j>=pa.y && j<=pb.y &&  k>=pa.z && k<=pb.z  )
-                a[i][j][k]=0;
-                x++;
-                if (x>=n) break;
-                }
+        int zhosu=0;
+        for(int j=0;j<7;j++){
+            if (piao[i][j]==jiang[j]){
+                zhosu++;
+                if (piao[i][j]>jiang[j]) break;
             }
-    int sum=0;
-    for(int i=0;i<length;i++)
-         for(int j=0;j<width;j++)
-            for(int k=0;k<height;k++)
-                if (a[i][j][k]==1) sum++;
-    cout<<sum<<endl;
-    return 0;
+        }
+        if (zhosu>0) zh[zhosu]++;
+    }
+    for(int i=0;i<8;i++) cout<<zh[i]<<" ";
+
+                    
+
 }
 
