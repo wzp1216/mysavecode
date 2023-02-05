@@ -855,3 +855,7 @@ Git解决冲突的方法
 4、使用git push origin master将改动提交到远程分支
 
 >>>>>>> b24a16190fc6175294f270c1f425eeddb4b7f453
+
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+git clone https://github.com/wzp1216/mysavecode.git
