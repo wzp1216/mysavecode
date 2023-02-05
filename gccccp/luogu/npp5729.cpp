@@ -1,4 +1,4 @@
-#include <iostream>
+Hkkjk#include <iostream>
 #include <iomanip>
 #include <string>
 #include <cmath>
@@ -26,19 +26,17 @@ int main(){
             for(int k=0;k<height;k++)
                 a[i][j][k]=1;
     for(int x=0;x<n;x++){
-    point pa=ll[x].a,pb=ll[x].b;
-    for(int i=0;i<length;i++)
-         for(int j=0;j<width;j++)
-            for(int k=0;k<height;k++){
-                if (i>=pa.x && i<=pb.x && j>=pa.y && j<=pb.y &&  k>=pa.z && k<=pb.z  )
+        line l=ll[x];
+    for(int i=l.a.x;i<=l.b.x;i++)
+         for(int j=l.a.y;j<=l.b.y;j++)
+            for(int k=l.a.z;k<=l.b.z;k++)
                 a[i][j][k]=0;
-                }
     }
-    int sum=0;
+   int sum=0;
     for(int i=0;i<length;i++)
          for(int j=0;j<width;j++)
             for(int k=0;k<height;k++)
-                if (a[i][j][k]==1) sum++;
+                sum=sum+a[i][j][k];
     cout<<sum<<endl;
     return 0;
 }

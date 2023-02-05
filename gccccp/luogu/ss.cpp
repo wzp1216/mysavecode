@@ -1,51 +1,43 @@
-#include <iostream>
+Hkkjk#include <iostream>
 #include <iomanip>
 #include <string>
 #include <cmath>
 #include <algorithm>
 #include <vector>
 using namespace std;
-
-void psort(int *a){
-    vector <int> v;
-    for(int i=0;i<7;i++)
-        v.push_back(*(a+i));
-    sort(v.begin(),v.end());
-    for(int i=0;i<7;i++)
-        *(a+i)=*(v.begin()+i);
-}
+struct point{
+    int x;int y;int z;};
+struct line{
+    point a;point b;};
 
 int main(){
+    int length,width,height; cin>>length>>width>>height;
     int n; cin>>n;
-    int jiang[7];
-    for (int i=0;i<7;i++) cin>>jiang[i];
-    int piao[n][7];
-    for(int i=0;i<n;i++)
-        for(int j=0;j<7;j++)
-            cin>>piao[i][j];
-    psort(jiang);
-    for(int i=0;i<n;i++) psort(piao[i]);
-
-    for(int i=0;i<7;i++) cout<<jiang[i]<<"-";
-    cout<<endl;
-    for(int i=0;i<7;i++) cout<<piao[0][i]<<"-";
-    cout<<endl;
-    for(int i=0;i<7;i++) cout<<piao[1][i]<<"-";
-    cout<<endl;
-    int zh[8]={};
+    line ll[n];
     for(int i=0;i<n;i++){
-        int zhosu=0;
-        for(int j=0;j<7;j++){
-            if (piao[i][j]==jiang[j]){
-                zhosu++;
-                if (piao[i][j]>jiang[j]) break;
-            }
-        }
-        if (zhosu>0) zh[zhosu]++;
+        line l;
+        cin>>l.a.x>>l.a.y>>l.a.z>>l.b.x>>l.b.y>>l.b.z;
+        ll[i]=l;
     }
-    for(int i=0;i<8;i++) cout<<zh[i]<<" ";
-
-                    
-
+   
+    int a[length][width][height];
+    for(int i=0;i<length;i++)
+         for(int j=0;j<width;j++)
+            for(int k=0;k<height;k++)
+                a[i][j][k]=1;
+    for(int x=0;x<n;x++){
+        line l=ll[x];
+    for(int i=l.a.x;i<=l.b.x;i++)
+         for(int j=l.a.y;j<=l.b.y;j++)
+            for(int k=l.a.z;k<=l.b.z;k++)
+                a[i][j][k]=0;
+    }
+   int sum=0;
+    for(int i=0;i<length;i++)
+         for(int j=0;j<width;j++)
+            for(int k=0;k<height;k++)
+                sum=sum+a[i][j][k];
+    cout<<sum<<endl;
+    return 0;
 }
 
