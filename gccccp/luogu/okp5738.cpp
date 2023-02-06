@@ -1,26 +1,44 @@
 #include <iostream>
 #include <sstream>
-#include <cmath>
+#include <string>
 using namespace std;
-bool zhi(int x){
-    for (int i=2;i<=(x/2+1);i++)
-        if (x%i==0) return 0;
-    return 1;
-}
-
 int main(){
-    int n;cin>>n;int s;
-    int a[n];
-    int len=0;
-    for(int i=0;i<n;i++) {a[i]=0;}
-    for(int i=0;i<n;i++) {
-        cin>>s;
-        if (zhi(s)){ a[i]=s;  len++;}
+    string str[4];
+    int a[26]={};
+    for (int i=0; i<4;i++){
+        std::getline(std::cin,str[i]);
+        int len=str[i].size();
+        for(int j=0;j<len;j++){
+            int x=str[i][j]-'A';
+            if ((x>=0)&&(x<=26)) a[x]++;
+        }
     }
-    for(int i=0;i<n;i++) {
-        if (a[i]!=0)
-        cout<<a[i]<<" ";
+    int max=0;
+    for (int i=0;i<26;i++){
+        //cout<<a[i]<<"*";
+        if (a[i]>max) max=a[i];
     }
+    int tu[max][26];
+    for(int i=max-1;i>=0;i--){
+        for (int j=0;j<26;j++){
+            if(i>=(max-a[j])) tu[i][j]=1;
+            else tu[i][j]=0;
+        }
+    }
+    string tmp;
+    for(int i=0;i<max;i++){
+        tmp="";
+        for (int j=0;j<26;j++){
+            if (tu[i][j]==0) tmp=tmp+" ";
+            else tmp=tmp+"*";
+        }
+        cout<<tmp<<endl;
+    }
+    for(int i=0;i<26;i++){
+        char ch;ch='A'+i;
+        cout<<ch;
+    }
+
 
     return 0;
 }
