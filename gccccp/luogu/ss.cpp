@@ -3,43 +3,30 @@
 #include <string>
 using namespace std;
 int main(){
-    //freopen("title.in","r",stdin);
-    //freopen("title.out","w",stdout);
-    string str[4];
-    int a[26]={};
-    for (int i=0; i<4;i++){
-        std::getline(std::cin,str[i]);
-        int len=str[i].size();
-        for(int j=0;j<len;j++){
-            int x=str[i][j]-'A';
-            if ((x>=0)&&(x<=26)) a[x]++;
-        }
+    string astr,bstr;
+    cin>>astr>>bstr;
+    int a[510]={};int b[510]={},c[510]={};
+    int lena=astr.size(), lenb=bstr.size();
+    int lenc; lenc=lena>lenb?lena:lenb; lenc++;
+    for(int i=0;i<lena;i++) a[i]=astr[i]-'0';
+    for(int i=0;i<lenb;i++) b[i]=bstr[i]-'0';
+    for(int i=lenc;i>=0;i--){
+        if(i>=(lenc-lena)) a[i]=a[i+lena-lenc];
+        else a[i]=0;
+        if(i>=(lenc-lenb)) b[i]=b[i+lenb-lenc];
+        else b[i]=0;
     }
-    int max=0;
-    for (int i=0;i<26;i++){
-        //cout<<a[i]<<"*";
-        if (a[i]>max) max=a[i];
+    int j=0;
+    for(int i=lenc;i>0;i--){
+        int he=a[i]+b[i]+j;
+        c[i]=he%10;
+        j=he/10;
     }
-    int tu[max][26];
-    for(int i=max-1;i>=0;i--){
-        for (int j=0;j<26;j++){
-            if(i>=(max-a[j])) tu[i][j]=1;
-            else tu[i][j]=0;
-        }
+    bool xian=0;
+    for(int i=0;i<lenc;i++){
+        if (c[i]!=0) xian=1;
+        if (xian) cout<<c[i];
     }
-    string tmp;
-    for(int i=0;i<max;i++){
-        tmp="";
-        for (int j=0;j<26;j++){
-            if (tu[i][j]==0) tmp=tmp+"  ";
-            else tmp=tmp+"* ";
-        }
-        cout<<tmp<<endl;
-    }
-    for(int i=0;i<26;i++){
-        char ch;ch='A'+i;
-        if(i<25) cout<<ch<<" ";
-        else cout<<ch;
-    }
-    return 0;
+    cout<<endl;
+        return 0;
 }
