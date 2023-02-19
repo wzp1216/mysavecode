@@ -6,17 +6,25 @@
 using namespace std;
 
 int main(){
-    int n;cin>>n;
-    string st;
-    cin>>st;
-    int len=st.size();
-    for(int i=0;i<len;i++){
-        st[i]=st[i]+n;
-        if(st[i]>'z') st[i]='a'+st[i]-'z'-1;
+    int n;n=9;
+    int a[n];int b[n];
+    for(int i=0;i<n;i++){ cin>>a[i]; }
+    for(int i=0;i<n;i++){ b[i]=a[i]; }
+
+    for(int i=0;i<n;i++)
+        for(int j=i;j<n;j++){
+            b[i]=0;b[j]=0;
+            int sum=0;
+            for(int x=0;x<n;x++) sum+=b[x];
+            if(sum==100)break;
+            for(int x=0;x<n;x++) b[x]=a[x];
+        }
+
+    for(int i=0;i<n;i++){
+        if(b[i]!=0) cout<<b[i]<<endl; 
     }
-    cout<<st;
-    
-        return 0;
+
+            return 0;
 }
 
 
