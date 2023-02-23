@@ -20,4 +20,6 @@ matplotlib.use("TkAgg")
 
 ##################################################
 opencv与PYQT5冲突；可以安装opencv-crontib-python-headless,但安装这个包，不能使用imshow函数；
-
+qt.qpa.plugin::couldnotlaod platfromplugin "xcb"
+安装pip install pyqt5==5.12 即可正常；opencv不能用更高版本pyqt
+##################################################
