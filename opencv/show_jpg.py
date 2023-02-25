@@ -9,7 +9,7 @@ if __name__=='__main__':
     w = QWidget()
     w.setWindowTitle('Test Image')
     label = QLabel(w)
-    pixmap = QPixmap('./test.jpg')
+    pixmap = QPixmap('./lena.jpg')
     label.setPixmap(pixmap)
     w.resize(pixmap.width(),pixmap.height())
     w.show()
