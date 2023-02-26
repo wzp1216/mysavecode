@@ -5,28 +5,29 @@
 #include <vector>
 using namespace std;
 
-struct chengji{
-    string name;
-    int yuwen;
-    int shuxue;
-    int eng;
-};
-
 int main(){
+    vector <int> v;
     int n;cin>>n;
-    chengji a,b;
-    int x=0,sum=0;
-    for(int i=0;i<n;i++){
-        cin>>a.name>>a.yuwen>>a.shuxue>>a.eng;
-        sum=a.yuwen+a.shuxue+a.eng;
-        if (sum>x) {x=sum;b=a;}
+    for(int i=0;i<n;i++) {
+        int x;cin>>x;
+        v.push_back(x);
     }
-    cout<<b.name<<" "<<b.yuwen<<" "<<b.shuxue<<" "<<b.eng;
+    
+    int s=0;
+    sort(v.begin(),v.end());
+    for (auto a=v.begin();a!=v.end()-2;a++){
+        for(auto b=a+1;b!=v.end()-1;b++)
+            for(auto c=b+1;c!=v.end();c++){
+                if((*a+*b)==*c) {
+                    s++;
+                    cout<<s<<"-"<<*a<<"-"<<*b<<"-"<<*c<<endl;
+                }
+            }
+    }
+
+    cout<<s;
 
 
-
-
+    
     return 0;
 }
-
-
