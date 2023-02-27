@@ -1,3 +1,0 @@
-/home/wzp/git/mysavecode/cppopencv/example_cmake/build/CMakeFiles/rebuild_cache.dir
-/home/wzp/git/mysavecode/cppopencv/example_cmake/build/CMakeFiles/edit_cache.dir
-/home/wzp/git/mysavecode/cppopencv/example_cmake/build/CMakeFiles/opencv_example.dir
