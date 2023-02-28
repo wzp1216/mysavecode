@@ -17,7 +17,8 @@ void testimshow()
         qDebug()<<myfile.toStdString().data();
         cv::Mat img;
         //img=cv::imread("/home/wzp/git/mysavecode/qtopencv/image/lena.jpg");
-        img=cv::imread(myfile.toStdString().data());
+        img=cv::imread("/home/wzp/git/mysavecode/qtopencv/image/lena.jpg");
+        //img=cv::imread(myfile.toStdString().data());
         cv::namedWindow("win",cv::WINDOW_AUTOSIZE);
         cv::imshow("win",img);
         cv::waitKey(0);
