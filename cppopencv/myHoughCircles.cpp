@@ -1,4 +1,4 @@
-#include <opencv2/opencv.hpp>
+#include <opencv2\opencv.hpp>
 #include <iostream>
 #include <vector>
 
@@ -7,26 +7,25 @@ using namespace std;
 
 int main()
 {
-	Mat img = imread("bing11.png");
+	Mat img = imread("keys.jpg");
 	if (img.empty())
 	{
 		cout << "请确认图像文件名称是否正确" << endl;
 		return -1;
 	}
-	imshow("img", img);
+	imshow("原图", img);
 	Mat gray;
 	cvtColor(img, gray, COLOR_BGR2GRAY);
-	GaussianBlur(gray, gray, Size(7, 7), 10, 10);  //平滑滤波
-                                                 //
-	imshow("gray", gray);
+	GaussianBlur(gray, gray, Size(9, 9), 2, 2);  //平滑滤波
+
 												 //检测圆形
 	vector<Vec3f> circles;
 	double dp = 2; //
-	double minDist = 20;  //两个圆心之间的最小距离
-	double	param1 = 30;  //Canny边缘检测的较大阈值
-	double	param2 = 50;  //累加器阈值
-	int min_radius = 15;  //圆形半径的最小值
-	int max_radius = 25;  //圆形半径的最大值
+	double minDist = 10;  //两个圆心之间的最小距离
+	double	param1 = 100;  //Canny边缘检测的较大阈值
+	double	param2 = 100;  //累加器阈值
+	int min_radius = 20;  //圆形半径的最小值
+	int max_radius = 100;  //圆形半径的最大值
 	HoughCircles(gray, circles, HOUGH_GRADIENT, dp, minDist, param1, param2,
 		min_radius, max_radius);
 
@@ -44,7 +43,7 @@ int main()
 	}
 
 	//显示结果
-	imshow("end", img);
+	imshow("圆检测结果", img);
 	waitKey(0);
 	return 0;
 }
