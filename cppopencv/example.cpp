@@ -45,22 +45,30 @@ int main(int argc,char* argv[])
 	//图像中标记出圆形
     int sum=0;
     float radius; 
-    for (size_t i = 0; i < circles.size(); i++)
-	{
+    for (size_t i = 0; i < circles.size(); i++)	{
 		radius = circles[i][2];
         sum+=radius;
 	}
     int circle_number=circles.size();
     float radius_avg;
+    Point cirpoints[circle_number];
     if (circle_number!=0) radius_avg=sum/circle_number;
     else radius=0;
-	for (size_t i = 0; i < circles.size(); i++)
-	{
+    int i=0;
+	//for (size_t i = 0; i < circles.size(); i++)
+	for (auto p=circles.begin();p!=circles.end();p++){
 		//读取圆心
-		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+		Point center(cvRound((*p)[0]), cvRound((*p)[1]));
+        cirpoints[i]=center;i++;
 		circle(gray, center, cvRound(radius_avg), Scalar(0, 0, 255), -1, 8, 0);
 	}
-	imshow("circle", gray);
+    threshold(gray,gray,10,255,THRESH_BINARY);
+	imshow("bin", gray);
+    
+    const Point* ppt=cirpoints;
+    int npt=circle_number;
+    fillPoly(gray,&ppt,&npt,1,Scalar(0,255,255));
+    imshow("end",gray);
 
 	waitKey(0);
 	return 0;
