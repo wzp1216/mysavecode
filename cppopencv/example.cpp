@@ -1,5 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
+#include <sstream>
 #include <cmath>
 #include <string>
 #include <vector>
@@ -63,31 +64,61 @@ int main(int argc,char* argv[])
         else
             circle(bin_gray,*p,cvRound(radius_avg),Scalar(0,0,255),2,LINE_AA);
 	}
-	imshow("cir_add", bin_gray);
+	//imshow("cir_add", bin_gray);
 	//444 找出六边形
     vector<float> dist;  
     vector<Point> liu;  
-	for (auto p=cpoints.begin();p!=cpoints.end();p++){
-        dist.push_back(getDistance((*p),key_center));
+	for (auto p:cpoints){
+        dist.push_back(getDistance((p),key_center));
     }
     sort(dist.begin(),dist.end());
     float min_dist=*(dist.end()-7);
-	for (auto p=cpoints.begin();p!=cpoints.end();p++){
-        if ((getDistance((*p),key_center)-min_dist)>0.001)
-            liu.push_back(*p);
+	for (auto p:cpoints){
+        if ((getDistance((p),key_center)-min_dist)>0.001)
+            liu.push_back(p);
     }
     cout<<"fonund key point:"<<liu.size()<<endl;
-    sort(liu.begin(),liu.end());
-    /*
-	for (auto p=liu.begin();p!=liu.end();p++){
-        if(p==(liu.end()-1))
-            line(gray,(*p),(*liu.begin()),Scalar(0,0,255),2,8,0);
-        else
-            line(gray,(*p),(*(p+1)),Scalar(0,0,255),2,8,0);
+	for (auto p:liu){
+        line(bin_gray,p,key_center,Scalar(0,0,255),6,8,0);
     }
-	imshow("liu_add", gray);
-    */
-
+	//imshow("liu_add",bin_gray);
+    //555计算每条直线与水平直线的角度
+    float jiao[6];
+    for (unsigned int i = 0; i<6; i++)  {
+        float k=0; //直线斜率
+        float x1,y1,x2,y2;
+        x1=key_center.x;y1=key_center.y;
+        x2=liu[i].x;y2=liu[i].y;
+        if((x2>=x1)&&(y2<=y1)){
+            k =(y1-y2)/(x2-x1);
+            jiao[i]=atan(k)*180/CV_PI;
+        }   
+        else if((x2<x1)&&(y2<=y1)){
+            k =(y1-y2)/(x1-x2);
+            jiao[i]=180-atan(k)*180/CV_PI;
+        }   
+        else if((x2<x1)&&(y2>y1)){
+            k =(y2-y1)/(x1-x2);
+            jiao[i]=180+atan(k)*180/CV_PI;
+        }   
+        else if((x2>=x1)&&(y2>y1)){
+            k =(y2-y1)/(x2-x1);
+            jiao[i]=360-atan(k)*180/CV_PI;
+        }   
+    }
+    vector<float> vjiao;
+    for (unsigned int i=0; i<6; i++)  {
+        vjiao.push_back(jiao[i]);
+    }
+    sort(vjiao.begin(),vjiao.end());
+    stringstream ss;
+    string textout;
+    ss.clear();
+    for(auto it:vjiao) {cout<<it<<endl; ss<<it<<",";}
+    ss>>textout;
+    Point pp(20,60);
+    putText(bin_gray,textout,pp,FONT_HERSHEY_SIMPLEX,1,Scalar(0,0,0),3,8,0);
+	imshow("liu_add",bin_gray);
 
 	waitKey(0);
 	return 0;
