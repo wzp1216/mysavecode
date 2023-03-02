@@ -1,5 +1,4 @@
 # cmake needs this line
-
 cmake_minimum_required(VERSION 3.1)
 
 # Define project name
@@ -25,5 +24,3 @@ add_executable(opencv_example example.cpp)
 
 # Link your application with OpenCV libraries
 target_link_libraries(opencv_example PRIVATE ${OpenCV_LIBS})
-set(CUDA_USE_STATIC_CUDA_RUNTIME 0FF)
-

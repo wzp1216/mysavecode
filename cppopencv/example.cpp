@@ -51,24 +51,24 @@ int main(int argc,char* argv[])
 	}
     int circle_number=circles.size();
     float radius_avg;
-    Point cirpoints[circle_number];
+    vector<Point> cpoints;
     if (circle_number!=0) radius_avg=sum/circle_number;
     else radius=0;
-    int i=0;
 	//for (size_t i = 0; i < circles.size(); i++)
 	for (auto p=circles.begin();p!=circles.end();p++){
 		//¶ÁÈ¡Ô²ÐÄ
 		Point center(cvRound((*p)[0]), cvRound((*p)[1]));
-        cirpoints[i]=center;i++;
+        cpoints.push_back(center);
 		circle(gray, center, cvRound(radius_avg), Scalar(0, 0, 255), -1, 8, 0);
 	}
-    threshold(gray,gray,10,255,THRESH_BINARY);
-	imshow("bin", gray);
-    
-    const Point* ppt=cirpoints;
-    int npt=circle_number;
-    fillPoly(gray,&ppt,&npt,1,Scalar(0,255,255));
-    imshow("end",gray);
+    Mat bin_gray;
+    threshold(gray,bin_gray,10,255,THRESH_BINARY);
+	imshow("bin", bin_gray);
+    Point2f key_center;
+    float big_radius=0;
+    minEnclosingCircle(cpoints,key_center,big_radius);
+    circle(bin_gray,key_center,cvRound(big_radius),Scalar(0,0,255),2,LINE_AA);
+    imshow("end",bin_gray);
 
 	waitKey(0);
 	return 0;
