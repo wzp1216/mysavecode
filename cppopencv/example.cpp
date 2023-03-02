@@ -114,11 +114,20 @@ int main(int argc,char* argv[])
     stringstream ss;
     string textout;
     ss.clear();
-    for(auto it:vjiao) {cout<<it<<endl; ss<<it<<",";}
+    for(auto it:vjiao) {
+        it=cvRound(it*100)/100.0;
+        cout<<it<<endl; ss<<it<<",";}
     ss>>textout;
     Point pp(20,60);
     putText(bin_gray,textout,pp,FONT_HERSHEY_SIMPLEX,1,Scalar(0,0,0),3,8,0);
 	imshow("liu_add",bin_gray);
+    //666难证6个点差值是不是60
+    bool check;check=1;
+    for(auto it=vjiao.begin();it!=vjiao.end();it++){
+        float cha=*(it+1)-*it;
+        if((cha<55)||(cha>65)) check=false;
+    }
+
 
 	waitKey(0);
 	return 0;
