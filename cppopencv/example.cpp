@@ -1,9 +1,11 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <sstream>
+#include <cstdlib>
 #include <cmath>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace cv;
 using namespace std;
@@ -111,22 +113,31 @@ int main(int argc,char* argv[])
         vjiao.push_back(jiao[i]);
     }
     sort(vjiao.begin(),vjiao.end());
+        //666验证6个点差值是不是60
+    vector<float> cha;
+    for(auto it=vjiao.begin()+1;it!=vjiao.end()-2;it++){
+        float cha1=*(it)-*(it-1);
+        float cha2=*(it+1)-*it;
+        cha.push_back(fabs(cha1)+fabs(cha2));
+    }
+    for(auto it:vjiao) {
+        it=cvRound(it*100)/100.0;
+        cout<<it<<endl; }
+    int min_pos=min_element(cha.begin(),cha.end())-cha.begin();
     stringstream ss;
     string textout;
     ss.clear();
-    for(auto it:vjiao) {
-        it=cvRound(it*100)/100.0;
-        cout<<it<<endl; ss<<it<<",";}
+    if(min_pos==0)  ss<<*vjiao.begin();
+    else if(min_pos==1)  ss<<*(vjiao.begin()+1)-60;
+    else if(min_pos==2)  ss<<*(vjiao.begin()+2)-120;
+    else if(min_pos==3)  ss<<*(vjiao.begin()+3)-180;
+    else ss<<"error";
     ss>>textout;
     Point pp(20,60);
     putText(bin_gray,textout,pp,FONT_HERSHEY_SIMPLEX,1,Scalar(0,0,0),3,8,0);
 	imshow("liu_add",bin_gray);
-    //666难证6个点差值是不是60
-    bool check;check=1;
-    for(auto it=vjiao.begin();it!=vjiao.end();it++){
-        float cha=*(it+1)-*it;
-        if((cha<55)||(cha>65)) check=false;
-    }
+
+    
 
 
 	waitKey(0);
