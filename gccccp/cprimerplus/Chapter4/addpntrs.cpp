@@ -28,7 +28,9 @@ int main()
          << ", *(stacks + 1) =  " << *(stacks + 1) << endl;
 
     cout << sizeof(wages) << " = size of wages array\n";
+    cout << sizeof(stacks) << " = size of stacks array\n";
     cout << sizeof(pw) << " = size of pw pointer\n";
+    cout << sizeof(ps) << " = size of ps pointer\n";
     // cin.get();
     return 0; 
 }
