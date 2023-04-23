@@ -1,3 +1,16 @@
+source catin_ws/devel/setup.bash
+roslaunch robot_sim_demo rebot_spawn.launch
+启动
+
+
+
+
+
+
+
+
+
+
 ROS command
 #######################################################
 shell command: 
