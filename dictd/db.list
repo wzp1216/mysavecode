@@ -18,13 +18,17 @@
 # Optional order override file /etc/dictd/dictd.order found.
 # Ignoring default order.
 
-# No dictionary databases were found.
-# This dummy entry allows dictd to start.
-
-database dummy {
-  data  /dev/null
-  index /dev/null
+database gcide
+ {
+  data  /usr/share/dictd/gcide.dict.dz
+  index /usr/share/dictd/gcide.index
 }
+database wn
+ {
+  data  /usr/share/dictd/wn.dict.dz
+  index /usr/share/dictd/wn.index
+}
+
 database langdaoen_ch{
   data  /var/lib/dictd/langdao-ec.dict.dz
   index /var/lib/dictd/langdao-ec.index
