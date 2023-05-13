@@ -17,6 +17,18 @@ cd 目录；  进入目录；
 ls  查看目录内容；
 	-l 查看详细信息；
 	-a 查看所有项目 ；
+    -t sort of time;
+
+cat 
+tail
+head 
+less
+
+mkdir -p 递归创建目录
+ln  file1 file2 硬链接；
+ln -s  file1 file2 软链接；
+
+
 	可以合并为-al;
 	-D可以查看子目录内容；
 ps	--查看进程  -aux可查看所有进程；
@@ -332,4 +344,17 @@ font:
 sudo mkfontscale  //生成核心字体信息；
 sudo mkfontdir    //生成字体目录信息；
 sudo fc-cache -fc //刷新字体缓存；
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+terminal:
+ctrl+L   清除屏幕并到顶部
+ctrl+U   从光标剪切到行首；
+ctrl+K   从光标剪切到行尾；
+ctrl+W   从光标剪切到光标左边一个单词；
+ctrl+Y   paste;
+ctrl+A   goto the A head;
+ctrl+E   goto end;
+ctrl+D   shutdown terminal
+
+w 查看用户情况
 

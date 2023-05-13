@@ -1,59 +1,113 @@
+/*
+ * shape_context.cpp -- Shape context demo for shape matching
+ */
+#include "opencv2/shape.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
+#include <opencv2/core/utility.hpp>
 #include <iostream>
-using namespace cv;
+#include <string>
 using namespace std;
-Mat src, src_gray;
-int maxCorners = 23;
-int maxTrackbar = 100;
-RNG rng(12345);
-const char* source_window = "Image";
-void goodFeaturesToTrack_Demo( int, void* );
-int main( int argc, char** argv )
+using namespace cv;
+static void help()
 {
-    CommandLineParser parser( argc, argv, "{@input | pic3.png | input image}" );
-    src = imread( samples::findFile( parser.get<String>( "@input" ) ) );
-    if( src.empty() )
+    printf("\n"
+            "This program demonstrates a method for shape comparison based on Shape Context\n"
+            "You should run the program providing a number between 1 and 20 for selecting an image in the folder ../data/shape_sample.\n"
+            "Call\n"
+            "./shape_example [number between 1 and 20, 1 default]\n\n");
+}
+static vector<Point> simpleContour( const Mat& currentQuery, int n=300 )
+{
+    vector<vector<Point> > _contoursQuery;
+    vector <Point> contoursQuery;
+    findContours(currentQuery, _contoursQuery, RETR_LIST, CHAIN_APPROX_NONE);
+    for (size_t border=0; border<_contoursQuery.size(); border++)
     {
-        cout << "Could not open or find the image!\n" << endl;
-        cout << "Usage: " << argv[0] << " <Input image>" << endl;
-        return -1;
+        for (size_t p=0; p<_contoursQuery[border].size(); p++)
+        {
+            contoursQuery.push_back( _contoursQuery[border][p] );
+        }
     }
-    cvtColor( src, src_gray, COLOR_BGR2GRAY );
-    namedWindow( source_window );
-    createTrackbar( "Max corners:", source_window, &maxCorners, maxTrackbar, goodFeaturesToTrack_Demo );
-    imshow( source_window, src );
-    goodFeaturesToTrack_Demo( 0, 0 );
+    // In case actual number of points is less than n
+    int dummy=0;
+    for (int add=(int)contoursQuery.size()-1; add<n; add++)
+    {
+        contoursQuery.push_back(contoursQuery[dummy++]); //adding dummy values
+    }
+    // Uniformly sampling
+    cv::randShuffle(contoursQuery);
+    vector<Point> cont;
+    for (int i=0; i<n; i++)
+    {
+        cont.push_back(contoursQuery[i]);
+    }
+    return cont;
+}
+int main(int argc, char** argv)
+{
+    string path = "data/shape_sample/";
+    cv::CommandLineParser parser(argc, argv, "{help h||}{@input|1|}");
+    if (parser.has("help"))
+    {
+        help();
+        return 0;
+    }
+    int indexQuery = parser.get<int>("@input");
+    if (!parser.check())
+    {
+        parser.printErrors();
+        help();
+        return 1;
+    }
+    if (indexQuery < 1 || indexQuery > 20)
+    {
+        help();
+        return 1;
+    }
+    cv::Ptr <cv::ShapeContextDistanceExtractor> mysc = cv::createShapeContextDistanceExtractor();
+    Size sz2Sh(300,300);
+    stringstream queryName;
+    queryName<<path<<indexQuery<<".png";
+    Mat query=imread(queryName.str(), IMREAD_GRAYSCALE);
+    Mat queryToShow;
+    resize(query, queryToShow, sz2Sh, 0, 0, INTER_LINEAR_EXACT);
+    imshow("QUERY", queryToShow);
+    moveWindow("TEST", 0,0);
+    vector<Point> contQuery = simpleContour(query);
+    int bestMatch = 0;
+    float bestDis=FLT_MAX;
+    for ( int ii=1; ii<=20; ii++ )
+    {
+        if (ii==indexQuery) continue;
+        waitKey(30);
+        stringstream iiname;
+        iiname<<path<<ii<<".png";
+        cout<<"name: "<<iiname.str()<<endl;
+        Mat iiIm=imread(iiname.str(), 0);
+        Mat iiToShow;
+        resize(iiIm, iiToShow, sz2Sh, 0, 0, INTER_LINEAR_EXACT);
+        imshow("TEST", iiToShow);
+        moveWindow("TEST", sz2Sh.width+50,0);
+        vector<Point> contii = simpleContour(iiIm);
+        float dis = mysc->computeDistance( contQuery, contii );
+        if ( dis<bestDis )
+        {
+            bestMatch = ii;
+            bestDis = dis;
+        }
+        std::cout<<" distance between "<<queryName.str()<<" and "<<iiname.str()<<" is: "<<dis<<std::endl;
+    }
+    destroyWindow("TEST");
+    stringstream bestname;
+    bestname<<path<<bestMatch<<".png";
+    Mat iiIm=imread(bestname.str(), 0);
+    Mat bestToShow;
+    resize(iiIm, bestToShow, sz2Sh, 0, 0, INTER_LINEAR_EXACT);
+    imshow("BEST MATCH", bestToShow);
+    moveWindow("BEST MATCH", sz2Sh.width+50,0);
     waitKey();
     return 0;
 }
-void goodFeaturesToTrack_Demo( int, void* )
-{
-    maxCorners = MAX(maxCorners, 1);
-    vector<Point2f> corners;
-    double qualityLevel = 0.01;
-    double minDistance = 10;
-    int blockSize = 3, gradientSize = 3;
-    bool useHarrisDetector = false;
-    double k = 0.04;
-    Mat copy = src.clone();
-    goodFeaturesToTrack( src_gray,
-                         corners,
-                         maxCorners,
-                         qualityLevel,
-                         minDistance,
-                         Mat(),
-                         blockSize,
-                         gradientSize,
-                         useHarrisDetector,
-                         k );
-    cout << "** Number of corners detected: " << corners.size() << endl;
-    int radius = 4;
-    for( size_t i = 0; i < corners.size(); i++ )
-    {
-        circle( copy, corners[i], radius, Scalar(rng.uniform(0,255), rng.uniform(0, 256), rng.uniform(0, 256)), FILLED );
-    }
-    namedWindow( source_window );
-    imshow( source_window, copy );
-}
+
