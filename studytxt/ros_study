@@ -4,7 +4,47 @@ roslaunch robot_sim_demo rebot_spawn.launch
 
 
 
+topic总结三点：
+topic通信方式是异步的，发送时调用publish()方法，发送完成立即返回，不用等待反馈。
+subscriber通过回调函数的方式来处理消息。
+topic可以同时有多个subscribers，也可以同时有多个publishers。ROS中这样的例子有：/rosout、/tf等等。
 
+topic list  列出当前所有的topic
+rostopic info topic_name    显示某个topic的属性信息
+rostopic echo topic_name    显示某个topic的内容
+rostopic pub topic_name ... 向某个topic发布内容
+rostopic bw topic_name  查看某个topic的带宽
+rostopic hz topic_name  查看某个topic的频率
+rostopic find topic_type    查找某个类型的topic
+rostopic type topic_name    查看某个topic的类型(msg)
+
+名称    Topic   Service
+通信方式    异步通信    同步通信
+实现原理    TCP/IP  TCP/IP
+通信模型    Publish-Subscribe   Request-Reply
+映射关系    Publish-Subscribe(多对多)   Request-Reply（多对一）
+特点    接受者收到数据会回调（Callback）    远程过程调用（RPC）服务器端的服务
+应用场景    连续、高频的数据发布    偶尔使用的功能/具体的任务
+举例    激光雷达、里程计发布数据    开关传感器、拍照、逆解计算
+
+在实际应用中，service通信方式的命令时rosservice，具体的命令参数如下表：
+rosservice 命令 作用
+rosservice list 显示服务列表
+rosservice info 打印服务信息
+rosservice type 打印服务类型
+rosservice uri  打印服务ROSRPC uri
+rosservice find 按服务类型查找服务
+rosservice call 使用所提供的args调用服务
+rosservice args 打印服务参数
+
+使用命令行来维护参数服务器，主要使用rosparam语句来进行操作的各种命令，如下表：
+rosparam 命令   作用
+rosparam set param_key param_value  设置参数
+rosparam get param_key  显示参数
+rosparam load file_name 从文件加载参数
+rosparam dump file_name 保存参数到文件
+rosparam delete 删除参数
+rosparam list   列出参数名称
 
 
 
