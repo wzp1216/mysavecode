@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
+import os
 import openai
 import json
+
+
+
 completion=openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
@@ -13,6 +17,6 @@ completion=openai.ChatCompletion.create(
     
 )
 
-print(completion.get('choices'))
+print(completion)
 
 
