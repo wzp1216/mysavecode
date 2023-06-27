@@ -1,7 +1,5 @@
-@echo off
  
-title GIT一键提交
-color 3
+echo git-pull-add-push当前目录是：%cd%
 echo 当前目录是：%cd%
 echo;
  
@@ -25,4 +23,3 @@ echo;
 echo 执行完毕！
 echo;
  
-pause
