@@ -13,7 +13,7 @@ echo;
  
 set 提交的commit信息为时间；
 git add -u;
-git commit -m "generated files on `date +'%Y-%m-%d %H:%M:%s'`";
+git commit -m "changed files on `date +'%Y-%m-%d %H:%M:%s'`";
 echo;
  
 echo 将变更情况提交到远程自己分支：git push 
