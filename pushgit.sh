@@ -3,7 +3,7 @@ echo git-pull-add-push当前目录是：%cd%
 echo 当前目录是：%cd%
 echo;
  
-echo 本地主分支拉取远程主分支：git pull origin master
+echo 本地主分支拉取远程主分支：git pull 
 git pull 
 echo;
 
