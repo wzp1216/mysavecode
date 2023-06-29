@@ -1,6 +1,6 @@
  
-echo git-pull-add-push当前目录是：%cd%
-echo 当前目录是：%cd%
+CURRENT_DIR=$(cd$(dirname$0);pwd) 
+echo git-pull-add-push:$CURRENT_DIR 
 echo;
  
 echo 本地主分支拉取远程主分支：git pull 
