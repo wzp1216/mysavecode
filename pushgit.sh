@@ -1,5 +1,5 @@
  
-CURRENT_DIR=$(cd$(dirname$0);pwd) 
+CURRENT_DIR=$(pwd) 
 echo git-pull-add-push:$CURRENT_DIR 
 echo;
  
