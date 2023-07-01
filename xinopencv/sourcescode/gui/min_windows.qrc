@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="最小化">
+    <file>最小化.png</file>
+  </qresource>
+</RCC>

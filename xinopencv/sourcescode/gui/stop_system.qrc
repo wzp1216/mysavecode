@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="暂停">
+    <file>暂停.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="设置阈值">
+    <file>阈值.png</file>
+  </qresource>
+</RCC>

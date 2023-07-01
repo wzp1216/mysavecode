@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="设置端面方法和阈值">
+    <file>圆.png</file>
+  </qresource>
+</RCC>

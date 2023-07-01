@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="侧面检测方法">
+    <file>检测方法.png</file>
+  </qresource>
+</RCC>

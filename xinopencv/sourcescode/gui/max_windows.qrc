@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="最大化">
+    <file>最大化.png</file>
+  </qresource>
+</RCC>

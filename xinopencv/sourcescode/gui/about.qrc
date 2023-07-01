@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="关于">
+    <file>关于.png</file>
+  </qresource>
+</RCC>

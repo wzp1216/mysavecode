@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="IP配置">
+    <file>IP.png</file>
+  </qresource>
+</RCC>

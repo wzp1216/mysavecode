@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="退出">
+    <file>退出.png</file>
+  </qresource>
+</RCC>

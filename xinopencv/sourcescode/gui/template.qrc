@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="设置模板">
+    <file>样本录入.png</file>
+  </qresource>
+</RCC>

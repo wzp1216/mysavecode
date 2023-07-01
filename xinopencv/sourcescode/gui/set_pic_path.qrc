@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="设置保存路径">
+    <file>设置保存路径.png</file>
+  </qresource>
+</RCC>

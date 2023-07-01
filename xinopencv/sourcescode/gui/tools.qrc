@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="工具">
+    <file>工具.png</file>
+  </qresource>
+</RCC>

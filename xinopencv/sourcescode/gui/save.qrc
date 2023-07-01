@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="保存">
+    <file>保存.png</file>
+  </qresource>
+</RCC>
