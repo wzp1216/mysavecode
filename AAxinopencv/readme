@@ -2,6 +2,34 @@
 
 menu:
 
-File--Open  Save  Save-As  Exit
-Opencvtest--imshow  video  
+File--Save  Exit
+文件--保存检测结果  退出
+
+detect--start  stop
+检测  开始检测  停止检测
+
+option  file_setting detect_setting PLC_setting Time_setting
+设置  文件路径设置 检测参数设置  PLC通信设置 检测速度设置 
+
+view  view_def
+视图  恢复默认视图  
+
 Help--Help  About
+帮助  帮助 关于
+
+
+工具栏：
+存盘  退出  开始  停止  参数设置  PLC  IP  帮助  关于 
+
+下面4个图像显示窗口；
+右侧一个窗口；下面为统计数据
+相机状态：
+PLC状态：
+数据统计
+开始时间：      工作时长：
+产品型号：     检测总数：    
+良品率：      不合格数：
+顶面不合格数：
+侧面不合格数：
+
+
