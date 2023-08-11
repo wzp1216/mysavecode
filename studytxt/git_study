@@ -859,3 +859,8 @@ Git解决冲突的方法
 git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy http://127.0.0.1:7890
 git clone https://github.com/wzp1216/mysavecode.git
+
+######################################
+git pull 必须查看结果后 git push
+######################################
+
