@@ -35,6 +35,7 @@ class my_main_win(QMainWindow):
         lay.addWidget(label1)
         lay.addWidget(check1)
         lay.addWidget(view)
+        self.setLayout(lay)
         centerwidget.setLayout(lay)
         self.setCentralWidget(centerwidget)
         
