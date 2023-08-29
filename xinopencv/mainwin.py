@@ -10,14 +10,6 @@ from PyQt5.QtGui import QImage,QPixmap
 
 import cv2 as cv
 
-'''
-class my_main_win(QWidget):
-    def __init__(self):
-        super(my_main_win,self).__init__()
-        self.initUI()
-    def initUI(self):
-=======
-'''
 class my_main_win(QMainWindow):
     def __init__(self):
         super(my_main_win,self).__init__()
@@ -28,7 +20,7 @@ class my_main_win(QMainWindow):
         #set title and add label1  check1  view
         centerwidget=QWidget()
         self.setWindowTitle('QMainWindow')
-        label1=QLabel("main windows test")
+        label1=QLabel("show a important message!")
         check1=QCheckBox('check box test:',self)
         view=QGraphicsView()
         lay=QVBoxLayout()
@@ -56,12 +48,13 @@ class my_main_win(QMainWindow):
         view.setScene(self.scene)
         view.fitInView(QGraphicsPixmapItem(QPixmap(imgshow)))
 
-
     def addmenu(self):
         self.menubar = QtWidgets.QMenuBar(self)
-        self.menubar.setObjectName("menubar")
-        self.menuFIle = QtWidgets.QMenu(self.menubar)
-        self.menuFIle.setObjectName("menuFIle")
+        self.menubar.setObjectName("menuMain")
+        self.menuFile = QtWidgets.QMenu(self.menubar)
+        self.menuFile.setObjectName("menuFile")
+        self.menuTools= QtWidgets.QMenu(self.menubar)
+        self.menuTools.setObjectName("menuTools")
         self.menuHelp = QtWidgets.QMenu(self.menubar)
         self.menuHelp.setObjectName("menuHelp")
         self.setMenuBar(self.menubar)
@@ -74,35 +67,37 @@ class my_main_win(QMainWindow):
         self.actionsave.setObjectName("actionsave")
         self.actionexit = QtWidgets.QAction(self)
         self.actionexit.setObjectName("actionexit")
+        self.action_test_camera=QtWidgets.QAction(self)
+        self.action_test_camera.setObjectName("action_test_camera")
         self.actionHelp = QtWidgets.QAction(self)
         self.actionHelp.setObjectName("actionHelp")
         self.actionAbout = QtWidgets.QAction(self)
         self.actionAbout.setObjectName("actionAbout")
-        self.menuFIle.addSeparator()
-        self.menuFIle.addAction(self.actionopen)
-        self.menuFIle.addAction(self.actionsave)
-        self.menuFIle.addSeparator()
-        self.menuFIle.addAction(self.actionexit)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionopen)
+        self.menuFile.addAction(self.actionsave)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionexit)
+        self.menuTools.addAction(self.action_test_camera)
         self.menuHelp.addAction(self.actionHelp)
         self.menuHelp.addAction(self.actionAbout)
-        self.menubar.addAction(self.menuFIle.menuAction())
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuTools.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
-
-        self.actionexit.triggered.connect(self.close)
 
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.menuFIle.setTitle(_translate("MainWindow", "File"))
-        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
+        self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionopen.setText(_translate("MainWindow", "open"))
         self.actionsave.setText(_translate("MainWindow", "save"))
         self.actionexit.setText(_translate("MainWindow", "exit"))
+        self.menuTools.setTitle(_translate("MainWindow", "Tools"))
+        self.action_test_camera.setText(_translate("MainWindow", "Test_camera"))
+        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionHelp.setText(_translate("MainWindow", "Help"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
-
-
-       
-
+#add connect action
+        self.actionexit.triggered.connect(self.close)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
