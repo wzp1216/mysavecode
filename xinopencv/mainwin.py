@@ -10,6 +10,8 @@ from PyQt5.QtGui import QImage,QPixmap
 
 import cv2 as cv
 
+#from test_camera import *
+
 class my_main_win(QMainWindow):
     def __init__(self):
         super(my_main_win,self).__init__()
@@ -97,7 +99,12 @@ class my_main_win(QMainWindow):
         self.actionHelp.setText(_translate("MainWindow", "Help"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
 #add connect action
+        self.action_test_camera.triggered.connect(self.test_camera)
         self.actionexit.triggered.connect(self.close)
+    def test_camera(self):
+        pass
+        
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
