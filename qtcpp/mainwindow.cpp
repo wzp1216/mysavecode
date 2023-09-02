@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<iostream>
 
-#include<QFileDialog>
+#include <iostream>
+#include <QFileDialog>
+#include <QImage>
+#include <QPixmap>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core.hpp>
@@ -43,8 +45,9 @@ void MainWindow::Button_clicked()
          cv::cvtColor(srcImage, srcImage, cv::COLOR_BGR2RGB);
 
          // 将图像显示到 QLabel 上
-         QImage image(srcImage.data, srcImage.cols, srcImage.rows, static_cast<int>(srcImage.step), Format_RGB888);
-         ui->label->setPixmap(fromImage(image));
+
+         QImage image(srcImage.data, srcImage.cols, srcImage.rows, static_cast<int>(srcImage.step),QImage::Format_RGB888);
+         ui->label->setPixmap(QPixmap::fromImage(image));
 
          // 调整 QLabel 的大小以适应图像
          ui->label->setScaledContents(true);

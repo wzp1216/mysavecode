@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../qtcpp -I. -I../qtcpp -I../../../anaconda3/envs/py38/include/qt -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../qtcpp -I. -I../qtcpp -I../../../anaconda3/envs/py38/include/qt -isystem /usr/local/include/opencv4 -isystem /usr/local/include/opencv4/opencv2 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = qtcpp1.0.0
 DISTDIR = /home/wzp/git/mysavecode/build-qtcpp-unknown-Debug/.tmp/qtcpp1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) /usr/local/lib/libopencv_* /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -53,9 +53,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../qtcpp/main.cpp \
-		../qtcpp/mainwindow.cpp 
+		../qtcpp/mainwindow.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
-		mainwindow.o
+		mainwindow.o \
+		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -112,6 +113,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../qtcpp/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -200,6 +202,7 @@ Makefile: ../qtcpp/qtcpp.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -277,6 +280,7 @@ Makefile: ../qtcpp/qtcpp.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -346,8 +350,14 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all:
+compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
+	-$(DEL_FILE) moc_mainwindow.cpp
+moc_mainwindow.cpp: ../qtcpp/mainwindow.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/wzp/git/mysavecode/build-qtcpp-unknown-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/wzp/git/mysavecode/qtcpp -I/home/wzp/git/mysavecode/qtcpp -I/home/wzp/anaconda3/envs/py38/include/qt -I/usr/local/include/opencv4 -I/usr/local/include/opencv4/opencv2 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../qtcpp/mainwindow.h -o moc_mainwindow.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
@@ -365,7 +375,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_uic_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -373,8 +383,136 @@ main.o: ../qtcpp/main.cpp ../qtcpp/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../qtcpp/main.cpp
 
 mainwindow.o: ../qtcpp/mainwindow.cpp ../qtcpp/mainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/QVariant \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qvariant.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qatomic.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qglobal.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qconfig-bootstrapped.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qconfig.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qtcore-config.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qsystemdetection.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qprocessordetection.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qcompilerdetection.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qtypeinfo.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qsysinfo.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qlogging.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qflags.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qglobalstatic.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qmutex.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qnumeric.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qversiontagging.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qbasicatomic.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qatomic_bootstrap.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qgenericatomic.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qatomic_cxx11.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qatomic_msvc.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qbytearray.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qrefcount.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qnamespace.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qarraydata.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qstring.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qchar.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qstringbuilder.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qlist.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qalgorithms.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qiterator.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qhashfunctions.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qpair.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qbytearraylist.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qstringlist.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qregexp.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qstringmatcher.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qmetatype.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qvarlengtharray.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qcontainerfwd.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qobjectdefs.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qobjectdefs_impl.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qmap.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qdebug.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qhash.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qtextstream.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qiodevice.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qobject.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qcoreevent.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qscopedpointer.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qobject_impl.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qlocale.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qshareddata.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qvector.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qpoint.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qset.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qcontiguouscache.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qsharedpointer.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qsharedpointer_impl.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QApplication \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qapplication.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qtwidgetsglobal.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qtguiglobal.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qtgui-config.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qtwidgets-config.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qcoreapplication.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qeventloop.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qwindowdefs.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qwindowdefs_win.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qsize.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qcursor.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qdesktopwidget.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qwidget.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qmargins.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpaintdevice.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qrect.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpalette.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qcolor.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qrgb.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qrgba64.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qbrush.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qmatrix.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpolygon.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qregion.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qdatastream.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qline.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qtransform.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpainterpath.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qimage.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpixelformat.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qpixmap.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qfont.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qfontmetrics.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qfontinfo.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qsizepolicy.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qkeysequence.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qevent.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qurl.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qurlquery.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qfile.h \
+		../../../anaconda3/envs/py38/include/qt/QtCore/qfiledevice.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qvector2d.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qtouchdevice.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qguiapplication.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qinputmethod.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QLabel \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qlabel.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qframe.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QMainWindow \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qmainwindow.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qtabwidget.h \
+		../../../anaconda3/envs/py38/include/qt/QtGui/qicon.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QMenuBar \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qmenubar.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qmenu.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qaction.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qactiongroup.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QPushButton \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qpushbutton.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qabstractbutton.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QStatusBar \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/qstatusbar.h \
+		../../../anaconda3/envs/py38/include/qt/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../qtcpp/mainwindow.cpp
+
+moc_mainwindow.o: moc_mainwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 ####### Install
 

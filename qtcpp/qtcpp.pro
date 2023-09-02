@@ -29,3 +29,11 @@ FORMS += \
 
 HEADERS += \
     mainwindow.h
+
+
+
+
+INCLUDEPATH += /usr/local/include/opencv4 \
+                /usr/local/include/opencv4/opencv2
+
+LIBS += /usr/local/lib/libopencv_* \

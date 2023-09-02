@@ -15,10 +15,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void Button_clicded();
+    void Button_clicked();
 
 
 private:
     Ui::MainWindow *ui;
+};
 
 #endif // MAINWINDOW_H
