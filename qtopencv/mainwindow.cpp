@@ -21,4 +21,5 @@ void MainWindow::initUI()
 {
     this->resize(800,600);
 
+
 }

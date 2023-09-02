@@ -4,7 +4,7 @@
 
 int main(int argc,char** argv){
     QApplication a(argc,argv);
-    cv::Mat img=cv::imread("./image/lena.jpg");
+    cv::Mat img=cv::imread("/home/wzp/lena.jpg");
 
     QImage qimg(img.data,img.cols,img.rows,img.step,QImage::Format_RGB888);
 
