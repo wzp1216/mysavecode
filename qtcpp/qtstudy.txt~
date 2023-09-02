@@ -1,0 +1,98 @@
+qt first:
+edit cpp file;
+qmake -project -o aaa.pro //生成PRO
+qmake                     //生成MAKEFILE
+make                      //生成可执行文件
+如提示 QApplication 找不到；在pro最后加一句
+QT += widgets
+############################################################
+#include "mainwindow.h"
+#include <QApplication>
+#include <QMainWindow>
+#include <QLabel>
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    QLabel *lab1=new QLabel("hell qt!");
+    lab1->show();
+    //MainWindow w;
+    //w.show();
+    return a.exec();
+}
+可以使用HTML样式
+    QLabel *lab1=new QLabel("<h2><i>Hello</i><font color=red>QT!</font></h2>");
+############################################################
+    QPushButton *button=new QPushButton("Quit");
+    QObject::connect(button,SIGNAL(clicked()),&a,SLOT(quit()));
+    button->show();
+connect:button  clicked()---->a SLOT(quit())
+############################################################
+ QApplication a(argc, argv);
+    QWidget *win=new QWidget;
+    win->setWindowTitle("enter age");
+    QSpinBox *spinbox=new QSpinBox;
+    QSlider  *slider=new QSlider(Qt::Horizontal);
+    spinbox->setRange(0,150);
+    slider->setRange(0,150);
+
+    QObject::connect(spinbox,SIGNAL(valueChanged(int)),
+                     slider,SLOT(setValue(int)));
+    QObject::connect(slider,SIGNAL(valueChanged(int)),
+                     spinbox,SLOT(setValue(int)));
+    spinbox->setValue(20);
+
+    QHBoxLayout *lay=new QHBoxLayout;
+    lay->addWidget(spinbox);
+    lay->addWidget(slider);
+    win->setLayout(lay);
+    win->show();
+两个控件，信号关联；
+    connect(sender,SIGNAL(singnal),receiver,SLOT(slot));
+    sender,reveiver是指向QObject的指针；
+    singal slot是不带参数的函数名；
+    发射信号时，会调用相对应的槽函数；
+    要把信号成功连接到槽，两个函数必须具有相同的参数类型与顺序；
+##################################################
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+
+############################################################
+
+
