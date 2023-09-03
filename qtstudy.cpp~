@@ -1,3 +1,8 @@
+study qt  with cpp  and opencv
+
+############################################################
+
+
 qt first:
 edit cpp file;
 qmake -project -o aaa.pro //生成PRO

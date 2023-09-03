@@ -128,6 +128,7 @@ INCLUDEPATH += /usr/local/include/opencv4 \
 
 LIBS += /usr/local/lib/libopencv_* \
 
+############################################################
      mainwindow add button ;add label ;read file and show image in label
 
 void MainWindow::Button_clicked()
