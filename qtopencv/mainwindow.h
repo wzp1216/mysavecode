@@ -7,6 +7,7 @@
 #include<QAction>
 #include<QGraphicsScene>
 #include<QStatusBar>
+#include<QPushButton>
 #include<QLabel>
 #include<QGraphicsPixmapItem>
 
@@ -18,7 +19,11 @@ public:
     ~MainWindow();
 private:
     void initUI();
-
+    QWidget *dlg=new QWidget(this);
+    QPushButton* but1=new QPushButton("OpenFile");
+    QLabel* lab1=new QLabel("ShowImage");
+private slots:
+    void openfile();
 };
 
 

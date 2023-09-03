@@ -25,3 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += mainwindow.h 
 SOURCES += main.cpp \
     mainwindow.cpp
+
+INCLUDEPATH +=/usr/local/include/opencv4 \
+             /usr/local/include/opencv/opencv2
+
+LIBS += /usr/local/lib/libopencv*
+
+
+
