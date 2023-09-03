@@ -1,3 +1,8 @@
+study qt  with cpp  and opencv
+
+############################################################
+
+
 qt first:
 edit cpp file;
 qmake -project -o aaa.pro //生成PRO
@@ -117,5 +122,34 @@ findDlg类，其中添加了BUTTON LINEEDIT 并进行了布局；
 结果没有错误提示；不进入信号处理函数；增加
 qDebug()后调试发现错误；
 ############################################################
+OPENCV add pro file:
+INCLUDEPATH += /usr/local/include/opencv4 \
+                /usr/local/include/opencv4/opencv2
 
+LIBS += /usr/local/lib/libopencv_* \
 
+     mainwindow add button ;add label ;read file and show image in label
+
+void MainWindow::Button_clicked()
+{
+ QString fileName = QFileDialog::getOpenFileName(this, "Open Image", "", "Images (*.png *.jpg)");
+
+ if (!fileName.isEmpty()) {
+     // 从选定的文件加载图像
+     cv::Mat srcImage = cv::imread(fileName.toStdString());
+
+     if (!srcImage.empty()) {
+         // 将颜色空间从BGR转换为RGB
+         cv::cvtColor(srcImage, srcImage, cv::COLOR_BGR2RGB);
+
+         // 将图像显示到 QLabel 上
+
+         QImage image(srcImage.data, srcImage.cols, srcImage.rows, static_cast<int>(srcImage.step),QImage::Format_RGB888);
+         ui->label->setPixmap(QPixmap::fromImage(image));
+
+         // 调整 QLabel 的大小以适应图像
+         ui->label->setScaledContents(true);
+         ui->label->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+     }
+ }
+}
