@@ -31,5 +31,8 @@ INCLUDEPATH +=/usr/local/include/opencv4 \
 
 LIBS += /usr/local/lib/libopencv*
 
+DISTFILES += \
+    README
+
 
 
