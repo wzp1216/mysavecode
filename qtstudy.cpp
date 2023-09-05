@@ -128,6 +128,9 @@ INCLUDEPATH += /usr/local/include/opencv4 \
 
 LIBS += /usr/local/lib/libopencv_* \
 
+构建环境中，设置
+LD_LIBRARY_PATH  /usr/local/lib
+
 ############################################################
      mainwindow add button ;add label ;read file and show image in label
 
