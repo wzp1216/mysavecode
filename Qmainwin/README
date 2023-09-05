@@ -1,0 +1,27 @@
+
+
+File  New  open save save as;  |  a.file  b.file | Exit;
+Edit  cut copy paste Delete Selsect(Row Column All) | Find ; Go to Cell;
+Tools  Recalculate   Sort
+Options   Show Grid, Auto-Recalculate
+Help  About,   About Qt
+
+利用QT resource system : make a resource file
+add in xxx.pro file:
+RESOURCES = spreadsheet.qrc
+文件内容参考如下：
+<RCC>
+<qresource>
+    <file>images/aaa.png</file>
+    <file>images/bbb.png</file>
+</qresource>
+</RCC>
+所有资源文件会编译到可执行文件中；
+注意：使用是需带路径前缀:/    :/image/aaa.png
+资源可以是任意类型文件；
+
+创建菜单与工具栏方法：
+1、创建并设置动作；  createActions();
+2、创建菜单并把动作添加到菜单；createMenus()
+3、创建工具栏，并把动作添加到工具栏；createTools()
+
