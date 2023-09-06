@@ -157,3 +157,7 @@ void MainWindow::Button_clicked()
      }
  }
 }
+
+
+debeg:  #include <QDebug>   qDebug()<<"debug infor";
+
