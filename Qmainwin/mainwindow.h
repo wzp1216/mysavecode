@@ -54,14 +54,37 @@ private:
     enum {MaxRecentFiles=5};
     QAction *recentFileAction[MaxRecentFiles];
     QAction *separatorAction;
+
+
     QMenu *fileMenu;
     QMenu *edutMenu;
+    QMenu *selectSubMenu;
+    QMenu *toolsMenu;
+    QMenu *optionMenu;
+    QMenu *helpMenu;
+
     QToolBar *fileToolBar;
     QToolBar *editToolBar;
+
     QAction *newAction;
     QAction *openAction;
+    QAction *saveAction;
+    QAction *saveAsAction;
     QAction *exitAction;
-
+    QAction *cutAction;
+    QAction *copyAction;
+    QAction *pasteAction;
+    QAction *deleteAction;
+    QAction *selectRowAction;
+    QAction *selectColAction;
+    QAction *selectALLAction;
+    QAction *findAction;
+    QAction *gotoCellAction;
+    QAction *recalculateAction;
+    QAction *sortAction;
+    QAction *showGridAction;
+    QAction *autoRecalcAction;
+    QAction *aboutAction;
     QAction *aboutQtAction;
 };
 #endif // MAINWINDOW_H

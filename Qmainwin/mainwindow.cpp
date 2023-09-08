@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCurrentFile("");
 }
 
+
 void MainWindow::createActions(){
     newAction= new QAction(tr("&New"),this);
     newAction->setIcon(QIcon(":/images/new.png"));
@@ -51,9 +52,50 @@ void MainWindow::createActions(){
     aboutQtAction =new QAction(tr("About &Qt"),this);
     aboutQtAction->setStatusTip(tr("Show the Qt About windows!"));
     connect(aboutQtAction,SIGNAL(triggered()),qApp,SLOT(aboutQt()));
+}
 
 
+void MainWindow::createMenus()
+{
+    fileMenu= menuBar()->addMenu(tr("&File"));
+    fileMenu->addAction(newAction);
+    fileMenu->addAction(openAction);
+    fileMenu->addAction(saveAction);
+    fileMenu->addAction(saveAsAction);
+    separatorAction = fileMenu->addSeparator();
+    for (int i = 0; i < MaxRecentFiles; ++i)
+        fileMenu->addAction(recentFileActions[i]);
+    fileMenu->addSeparator();
+    fileMenu->addAction(exitAction);
 
+    editMenu = menuBar()->addMenu(tr("&Edit"));
+    editMenu->addAction(cutAction);
+    editMenu->addAction(copyAction);
+    editMenu->addAction(pasteAction);
+    editMenu->addAction(deleteAction);
+
+    selectSubMenu = editMenu->addMenu(tr("&Select"));
+    selectSubMenu->addAction(selectRowAction);
+    selectSubMenu->addAction(selectColAction);
+    selectSubMenu->addAction(selectAllAction);
+
+    editMenu->addSeparator();
+    editMenu->addAction(findAction);
+    editMenu->addAction(goToCellAction);
+
+    toolsMenu = menuBar()->addMenu(tr("&Tools"));
+    toolsMenu->addAction(recalculateAction);
+    toolsMenu->addAction(sortAction);
+
+    optionsMenu = menuBar()->addMenu(tr("&Options"));
+    optionsMenu->addAction(showGridAction);
+    optionsMenu->addAction(autoRecalcAction);
+
+    menuBar()->addSeparator();
+
+    helpMenu = menuBar()->addMenu(tr("&Help"));
+    helpMenu->addAction(aboutAction);
+    helpMenu->addAction(aboutQtAction);
 }
 
 MainWindow::~MainWindow()
