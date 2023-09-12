@@ -50,7 +50,7 @@ class LoadWin(QWidget,Ui_load):  # 启动画面类 -----------
     def process_set(self):
         self.progressBar.setValue(self.step)
         if self.status== 0:
-            self.timer.start(20, self)  # 启动QBasicTimer, 每20毫秒调用一次回调函数
+            self.timer.start(10, self)  # 启动QBasicTimer, 每20毫秒调用一次回调函数
 
         self.label_hit.setText("正在加载系统资源...")
             

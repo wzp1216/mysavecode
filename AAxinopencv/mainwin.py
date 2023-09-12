@@ -8,7 +8,18 @@ from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtGui import QImage,QPixmap
 
 import cv2 as cv
+from main_dlg import main_dlg
 
+##主窗口；
+##MENU：
+##FILE  
+##设置
+##检测
+##工具
+##HELP：help  about about Qt;
+##工具栏
+## main_dlg; 5 image; result; message;
+##状态栏
 
 class my_main_win(QMainWindow):
     def __init__(self):
@@ -18,37 +29,10 @@ class my_main_win(QMainWindow):
 
     def initUI(self):
         #set title and add label1  check1  view
-        centerwidget=QWidget()
-        self.setWindowTitle('QMainWindow')
-        label1=QLabel("main windows test")
-        check1=QCheckBox('check box test:',self)
-        view=QGraphicsView()
+        mainDlg=main_dlg()
+        self.setCentralWidget(mainDlg)
+        mainDlg.show()
         
-        lay=QVBoxLayout()
-        lay.addWidget(label1)
-        lay.addWidget(check1)
-        lay.addWidget(view)
-        centerwidget.setLayout(lay)
-        self.setCentralWidget(centerwidget)
-        
-
-        #add a image;
-        img=cv.imread("./gui/zjipc.png",cv.IMREAD_GRAYSCALE)
-        #res=cv.equalizeHist(img)
-        res=cv.cvtColor(img,cv.COLOR_GRAY2BGR)
-        cv.putText(res,"text",(10,50),cv.FONT_HERSHEY_COMPLEX,2,(0,255,0),2)
-        frame=cv.cvtColor(res,cv.COLOR_BGR2RGB)
-        h,w,c=frame.shape
-        imgshow=QImage(frame,w,h,w*3,QImage.Format_RGB888)
-        pix=QPixmap.fromImage(imgshow)
-        self.item=QGraphicsPixmapItem(pix)
-        self.scene=QGraphicsScene()
-        self.scene.addItem(self.item)
-        self.scene.clearSelection()
-        self.item.setSelected(True)
-        view.setScene(self.scene)
-        view.fitInView(QGraphicsPixmapItem(QPixmap(imgshow)))
-
 
     def addmenu(self):
         self.menubar = QtWidgets.QMenuBar(self)
@@ -83,15 +67,15 @@ class my_main_win(QMainWindow):
 
         self.actionexit.triggered.connect(self.close)
 
-        _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.menuFIle.setTitle(_translate("MainWindow", "File"))
-        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
-        self.actionopen.setText(_translate("MainWindow", "open"))
-        self.actionsave.setText(_translate("MainWindow", "save"))
-        self.actionexit.setText(_translate("MainWindow", "exit"))
-        self.actionHelp.setText(_translate("MainWindow", "Help"))
-        self.actionAbout.setText(_translate("MainWindow", "About"))
+        _tr= QtCore.QCoreApplication.translate
+        self.setWindowTitle(_tr("MainWindow","瑕疵检测系统zjipc_0.1"))
+        self.menuFIle.setTitle(_tr("MainWindow","File"))
+        self.menuHelp.setTitle(_tr("MainWindow","Help"))
+        self.actionopen.setText(_tr("MainWindow","open"))
+        self.actionsave.setText(_tr("MainWindow","save"))
+        self.actionexit.setText(_tr("MainWindow","exit"))
+        self.actionHelp.setText(_tr("MainWindow","Help"))
+        self.actionAbout.setText(_tr("MainWindow","About"))
 
 
        

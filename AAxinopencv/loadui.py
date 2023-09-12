@@ -76,6 +76,6 @@ class Ui_load(object):
         _translate = QtCore.QCoreApplication.translate
         load.setWindowTitle(_translate("load", "Zjipc"))
         self.label_hit.setText(_translate("load", "资源加载中......"))
-        self.label_designer.setText(_translate("load", "designed by zjipc"))
+        self.label_designer.setText(_translate("load", "Designed by ZJIPC EMAIL:wzp1216@163.com   "))
         self.label.setText(_translate("load", " "))
         self.label_2.setText(_translate("load", " "))
