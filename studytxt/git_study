@@ -860,7 +860,15 @@ git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy http://127.0.0.1:7890
 git clone https://github.com/wzp1216/mysavecode.git
 
+<<<<<<< HEAD
 ######################################
 git pull 必须查看结果后 git push
 ######################################
+=======
+===============================================================
+git  放弃本地修改直接拉取远程
+git fetch --all
+git reset --hard origin/<branch>     origin/master
+
+>>>>>>> 27ea2e14 (change git study)
 
