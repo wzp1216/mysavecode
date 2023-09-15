@@ -21,6 +21,9 @@ from main_dlg import main_dlg
 ## main_dlg; 5 image; result; message;
 ##状态栏
 
+global app
+
+
 class my_main_win(QMainWindow):
     def __init__(self):
         super(my_main_win,self).__init__()
@@ -29,7 +32,10 @@ class my_main_win(QMainWindow):
 
     def initUI(self):
         #set title and add label1  check1  view
-        mainDlg=main_dlg()
+        screen=app.primaryScreen()
+        w=screen.size().width()-40
+        h=screen.size().height()-60
+        mainDlg=main_dlg(w,h)
         self.setCentralWidget(mainDlg)
         self.show()
         
