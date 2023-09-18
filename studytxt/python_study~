@@ -30,18 +30,3 @@ if __name__=='__main__':
     sys.exit(app.exec_())
 
 
-##################################################################################
-if (x>1):
-elif  xx:
-elif  xx:
-else:
-
-    for x in a:
-        print(x)
-
-    for  in range(5)
-    for i in rangle(len(list1))
-    pass 可以暂时空语句，后期再补；
-    def   用于定义函数；
-    
-

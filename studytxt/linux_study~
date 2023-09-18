@@ -360,5 +360,4 @@ alt+f  forward 向前一个单词
 alt+b  backward 向后一个单词
 
 w 查看用户情况
-ls -lh 可以使文件大小按MB显示
 
