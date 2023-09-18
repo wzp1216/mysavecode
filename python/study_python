@@ -1,0 +1,95 @@
+
+基础###############################################
+x=input("please input:")
+pow(2,3) 乘方； abs;  round;
+import math;   int(math.floor(33.2))
+sqrt()   
+import cmath (复数数学库） 用j表示虚数单位；
+z=complex(3,4) 构成一个复数；
+打印注释# 或'''   '''
+“”  '' 可以通用；但打印引号时可以使用另一个；print("x'get")
+列表 list
+a[-1]   a[0:2]  a[:-3]  a[0:20:2]0-20；2步长；注意最右边不在分片内；
+a[0:-1:1] 最后一个没有包括进来；
+LIST--------------------------------
+list 可以相加；相乘；
+检查一个元素是否在一个list中可以用in;
+a.len   a.min   a.max 长度 最小 最大
+可以用list构造可改变的字符串；s=list("hello");
+s[0]='H';  for x in s:print(s,end='');
+del s[2]删除
+分片赋值： x[3:]='3-end';  s[2:5]=[]可以多个删除；
+append  count 增加；计数；extend;扩展，增加多个元素；
+index 查元素位置，多个出第一次的；insert(n,yuansu)
+pop 弹出最后一个； remove;移出第一个匹配项；
+reverse 逆序；sort 排序；
+整除运算://
+Tuple--------------------------------
+tuple() 把list转换为元组;
+元组是不可改变的列表；
+string--------------------------------
+字符串是不可变的；s='aaaa'; s[2]='b'则无法运行；
+可以用%号格式化字符串   x=5;print("this is %d",x) this is 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################################################################
+ipython:   debug  command
+%run -d xx.py
+s    #step 
+b 6  #break at 6;
+n    #next
+q    #quit
+l    #list
+w    #where
+
+
+
+
+##################################################################################
+PYQT
+mainwin:
+新建一个类，在主函数中调用此类即可；
+
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow,QWidget,QFileDialog
+from main import Ui_MainWindow
+class mywin(QMainWindow,Ui_MainWindow):
+    def __init__(self):
+        super(mywin,self).__init__()
+        self.setupUi(self)
+if __name__=='__main__':
+    app = QApplication(sys.argv)
+    mainwin=mywin();
+    mainwin.show()
+    sys.exit(app.exec_())
+
+
+##################################################################################
+if (x>1):
+elif  xx:
+elif  xx:
+else:
+
+    for x in a:
+        print(x)
+
+    for  in range(5)
+    for i in rangle(len(list1))
+    pass 可以暂时空语句，后期再补；
+    def   用于定义函数；
+    
+
