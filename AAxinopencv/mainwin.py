@@ -21,7 +21,7 @@ from main_dlg import main_dlg
 ## main_dlg; 5 image; result; message;
 ##状态栏
 
-global app
+import appstart
 
 
 class my_main_win(QMainWindow):
