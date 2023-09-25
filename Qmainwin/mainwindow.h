@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
 
 class QAction;
 class QLabel;
