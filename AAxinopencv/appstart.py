@@ -68,15 +68,15 @@ class LoadWin(QWidget,Ui_load):  # 启动画面类 -----------
 
     def show_main(self):
         self.main_win = my_main_win()  # 进度结束后要显示的主页
-        '''
         screen = QDesktopWidget().screenGeometry()
-        high = screen.height()
-        width = screen.width()
+        h = screen.height()
+        w = screen.width()
         '''
         screen=app.primaryScreen();
         s=screen.size()
         w=s.width();h=s.height()
         print(w,h)
+        '''
         self.main_win.resize(w,h)
         self.main_win.move(0,0)
         self.main_win.showMaximized()
@@ -104,6 +104,7 @@ class LoadThread(QThread):  # 自定义计算线程类 -----------
 
 
 if __name__ == '__main__':
+    global app
     app = QApplication(sys.argv)
     w = LoadWin()
     w.show()
