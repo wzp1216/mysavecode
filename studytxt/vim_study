@@ -216,6 +216,10 @@ zc  close
 zR  open all   Reset;
 zM  close all  Make;
 za  打开则关闭，关闭则打开；
+
+set foldmarker=/*,*/
+set foldmethod=marker
+可以实现/* */折叠；也可以实现多层折叠；
  
 <<<<<<< HEAD
 
