@@ -1,7 +1,10 @@
 import sys
 import cv2 as cv
+import matplotlib
+matplotlib.use("TkAgg")
+
 import numpy as np
-from PyQt5.QtGui import QImage,QPixmap
+from PyQt5.QtGui import  QImage,QPixmap
 from PyQt5.QtWidgets import QApplication,QDialog,QFileDialog,QGridLayout,QLabel,QPushButton
 
 class win(QDialog):

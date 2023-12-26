@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import QCheckBox,QLabel,QGraphicsView,QGraphicsScene,QGraph
 from PyQt5.QtWidgets import QVBoxLayout
 from PyQt5.QtGui import QImage,QPixmap
 
-import cv2 as cv
 from main_dlg import main_dlg
 
 ##主窗口；

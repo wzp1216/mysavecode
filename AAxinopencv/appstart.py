@@ -7,6 +7,9 @@ ver-0.1
 
 import sys
 import time
+import matplotlib 
+matplotlib.use("TkAgg")
+
 from PyQt5 import QtCore
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QVBoxLayout,QProgressBar,QDesktopWidget
@@ -104,7 +107,6 @@ class LoadThread(QThread):  # 自定义计算线程类 -----------
 
 
 if __name__ == '__main__':
-    global app
     app = QApplication(sys.argv)
     w = LoadWin()
     w.show()
