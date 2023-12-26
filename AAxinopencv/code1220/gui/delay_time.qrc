@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="延时">
+    <file>延时.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="警告">
+    <file>yello_circle_32.png</file>
+  </qresource>
+</RCC>

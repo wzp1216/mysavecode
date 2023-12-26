@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="选择图片路径">
+    <file>待选择.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="正常">
+    <file>green_circle_32.png</file>
+  </qresource>
+</RCC>
