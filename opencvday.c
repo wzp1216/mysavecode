@@ -3,10 +3,10 @@
 
 
 old_study
-/*
+{{
 
 about light
-/*
+{{
 光源选型（很重要）
 背光源：，提升对比度，漫反射背光，平行背光（用的多，边缘模糊度低）（测量产品尺寸时候）；
 同轴光：消除反光，均匀性提高，提升对比度（镀银45度反射）；
@@ -20,9 +20,9 @@ about light
 条形光：字迹检查；
 LIM条形组合光：可以调整角度，大产品尺寸检查；
 RID球积分照明：提升对比度，抑制金属反光；
-*/
+}}
 g++ using opencv
-/*
+{{
 g++ example.cpp -o example  $(pkg-config --cflags --libs opencv)
 编译exceple.cpp文件
 
@@ -31,10 +31,10 @@ g++ example.cpp -o example  $(pkg-config --cflags --libs opencv)
 cmake .
 make 
 可以生成可执行文件；
-*/
+}}
 
 sample show a jpg 
-/*
+{{
 ##############################################################
 import sys
 import os
@@ -94,10 +94,10 @@ if __name__=="__main__":
     cv.destroyWindow("sample")
 
 ##############################################################
-*/
+}}
 
 sample: draw a circle;
-/*
+{{
 import cv2 as cv
 import numpy as np
 
@@ -136,9 +136,9 @@ while(1):
 cv.destroyWindow('image')
 
 ##############################################################
-*/
+}}
 sample: RGB trackbar;
-/*
+{{
 滑动条改变着色
 import cv2 as cv
 import numpy as np
@@ -198,9 +198,9 @@ if __name__=='__main__':
     cv.destroyWindow('image')
 
 ##############################################################
-*/
+}}
 sample: use pyplot
-/*
+{{
 
 import cv6 as cv
 import numpy as np
@@ -256,11 +256,11 @@ if __name__=='__main__':
 
     k=cv.waitKey(0)
 
-*/
+}}
 
 
 opencv python error:
-/*
+{{
 ##############################################################
 opencv 库引入后 matplotlib 不能使用办法：
 apt insatll python3-tk
@@ -271,7 +271,7 @@ import matplotlib; matplotlib.use("TkAgg")
 export OPENCV_SAMPLES_DATA_PATH=/home/wzp/opencv-4.5.2/samples/data
 #############################################################
 
-*/
+}}
 
-*/
+}}
 

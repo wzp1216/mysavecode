@@ -1,6 +1,7 @@
 每天抄写一个新概念，完全掌控其内容；
 
 Lesson1-1
+{{
 Excuse me!
 Yes?
 Is this your handbag?
@@ -8,12 +9,63 @@ Pardon?  (I beg your pardon.)
 Is this your handbag?
 Yes it is.
 Thank you very much.
-
+}}
 
 Lesson1-3
-My coat and umbrella please.Here is my ticket.
+{{
+
+My coat and umbrella please.
+    Here is my ticket.
 Thank you,sir. Number five.
 Here's your coat and your umbrella.
+This is not my umbrella.Sorry,sir.
+Is this not your umbrella?
+No, it isn't.
+Is this it ?
+Yes, it is.
+Thank you very much!
+
+sir  是对不相识的男子  年长者 上级的尊称；
+
+}}
+
+Lesson1-5
+{{
+    Good morning.
+    Good morinig,Mr. Blake.
+    This is Miss Sophie Dupont.
+    Sophi is a new student.
+    She is French.
+    Sophie, this is Hans.He is German.
+    Nice to meet you.
+    And this is Naoko.She's Japanese.
+    And this is Chang-woo.He's Korean.
+    Nice to meet you.
+    And this is LuMing.He's Chinese.
+    Nice to meet you.
+    And this is XiaoHui.She's Chinese too.
+    Nice to meet you .
+
+    Mr. 先生；  Miss 小姐；
+    Miss一般用于未婚女子；
+    Nice to meet you用于朋友非正式场合，正式场合用How do you do.
+    或It's a pleasure to meet you.
+    "How do you do?" 的回答可以是 "How do you do?" 或者 "Very well, thank you. How do you do?"
+
+"Nice to meet you." 的回答可以是 "Nice to meet you too." 或者 "The pleasure is mine."
+
+"Pleased to meet you." 的回答可以是 "Pleased to meet you too." 或者 "Likewise."
+
+"It's a pleasure to meet you." 的回答可以是 "The pleasure is mine." 或者 "Likewise."
+
+"Good morning/afternoon/evening." 的回答可以是 "Good morning/afternoon/evening." 或者相同的问候语。
+
+"Hello, I'm [Your Name]." 的回答可以是 "Hello, I'm [Your Name]." 或者 "Hello, nice to meet you. I'm [Your Name]."
+
+"Welcome." 的回答可以是 "Thank you." 或者 "Thank you for having me."
+
+likewise是一个常用语句，用于回答对方，表示对方的话也适用于自己
+}}
 
 
 
@@ -30,43 +82,8 @@ Here's your coat and your umbrella.
 
 
 
-
-目录
-
-目录
-
-英语	2
-
-方法	2
-
-音标	3
-
-英语发音自己总结	3
-
-词汇	9
-
-记单词的办法	9
-
-单词词缀	9
-
-联想记词	9
-
-文章与句子	11
-
-Game Theory for Wireless Sensor Networks：A Survey	11
-
-俞洪敏经典50句	12
-
-
-
-
-
-
-
-英语
-
-方法
-
+英语方法
+{{
 要学好英语的话，最好对自己狠一点，制定一个英语学习计划然后狠狠地执行下去。　　
 
 1、先用1～2个星期把音标练准了。　
@@ -79,8 +96,10 @@ Game Theory for Wireless Sensor Networks：A Survey	11
 6、当你完成以上的工作后，应该很有点成就感了，现在开始学语法，1个月。学英语语法可以借助一些英语语法口诀35，以帮助记忆语法规则。　　
 7、语法学得差不多，现在可以做两件事，一是看FRIENDS练听力（其实BBC的讲自然科学的节目也很好），二是找本写作的书学学。　　
 8、第7步如果完成的还可以，friends能不看字幕懂8成以上，会完整的写短文和简单商务公文，就可以说你已经会英语了。比90％本科毕业生英语应用水平都强（英文专业除外）。如果有精力，去把BEC高级考了。能考及格，可以你说基本掌握英文了，在外企一般的工作都够用了。
+}}
 
 音标
+{{
 英语发音自己总结
 http://www.starfall.com/
 
@@ -135,14 +154,7 @@ Y          yo-yo
 Z         zebra         zipper          zoo
 
 
-
-
-
-
-
 元音音素： 
-
- 
 
 /i:/  【衣    发长点】                 /I/     【衣    急促地发声】 
 
@@ -165,17 +177,11 @@ Z         zebra         zipper          zoo
 /n/  【嘴巴微张，舌尖顶住上颚，气流从鼻子出来而不是从嘴巴出来，浊音】 /ŋ/  【嘴巴长大，舌头向下弯曲，气流从鼻子出来而不是从嘴巴出来，浊音】 /l/  【有两个读音。一是放在音标结尾发呕，浊音；而是放在音标中发了，浊音】 /w/【喔    不要把ǒ给发出来，浊音】/j/     【噎    不要把ǎ给发出来，浊音】  
 
 所谓浊音，就是声带要振动的音；轻音就是发出了但声带却不振动的音 所有的元音都是浊音，声带都要振动。
-
-
-
-
-
-
-
+}}
 
 
 英语单词发音规则 
-
+{{
 一、元音字母在重读音节中的读音
 
  元音字母 读 音 例 词  
@@ -224,6 +230,137 @@ u /E/ autumn difficult  
 
 动词中的a如果处在开音节位置，a读/ei/音，例如：operate  u处在开音节位置，又在辅音字母j l r s后面时，读/u(:)/音，例如：July influence February issue  
 
+在非重读音节中，许多单词中的元音字母a e i 即可以读作/E/音，也可以读作音。  四、-r音节元音字组在重读音节中的读音  元音字组 读 音 例 词  
+
+arar在/w/音后面 /_:/ car farm dark sharpener  /C:/ warm quarter towards  
+
+oror在/w/音后面 /C:/ forty morning short  /E:/ word worker worse  
+
+er ir ur /E:/ certainly bird Thursday  辅音字母r双写时，前面的元音字母不能与r构成-r音节,而是按重读闭音节的拼读规则发音。例如： carry sorry hurry  
+
+-r音节在非重读音节中通常读/E/音，例如：dollar teacher martyr forget Saturday 
+
+ 五、-re音节元音字组在重读音节中的读音
+
+  元音字组 读 音 例 词
+
+  are /錏/ care dare hare  
+
+ere /iE/ here mere  
+
+ire /aiE/ fire hire wire  
+
+ore /C:/ more score before  ure /juE/ pure cure  
+
+are ere ire ore很少出现在非重读音节中，ure在非重读音节中读/E/音，例如：picture pleasure  
+
+重读元音字母加Rr，再加非重读元字组时，重读元音字母应按-re音节拼读规则拼读，字母Rr读/r/音。例如：parent zero story during inspiring  
+
+某些常用词及多音节词经常出现长音短化现象。例如：orange very American paragraph  六、元音字组在重读音节中的读音  元音字组 读 音 例 词  
+
+ai/ay /ei/ afraid rain wait day play  air /錏/ air hair chair pair repair  
+
+alal在f m前 /C/ small ball talk wall all  /C:l/ always also salt almost  /_:/ half calm  
+
+au/aw /C:/ autumn daughter draw  ea /i:/ teach easy cheap please  /e/ heavy bread sweater weather  /ei/ break great  
+
+ear /iE/ hear dear near clear year  /錏/ bear pear wear swear  /E:/ earth learn early  ee /i:/ jeep week green three  eer /iE/ pioneer deer beer  ei/ey /ei/ eight neighbour they  /i:/ either key  
+
+eu/ew在j l r s后 /ju:/ new few newspaper  /u:/ flew brew jewelry  
+
+ie/ei/s/音之后 /i:/ piece field receive  
+
+oa /ou/ coat Joan boat goal  oar/oor /C:/ roar board door floor  oi/oy /Ci/ noise point boy toilet  oo /u:/ broom food tooth school  book look cook foot good  
+
+ou/ow /au/ flower house count down  /ou/ know row throw though  /∧/ young country enough  /u:/ group you soup  our /C:/ course your four  /auE/ our hour ours  /E:/ journey  
+
+ui在j l r s后 /ju:i/ fluid suicide tuition  /u:/ juice fruit suit  
+
+七、非重读音节中元音字组和字群的读音  元音字组或字群 读 音 例 词  
+
+ai/ay ei/ey Sunday foreign monkey  ow /ou/ yellow sparrow tomorrow  
+
+元音字组在非重读音节中读/E/音或。例如:neighbour serious famous biscuit coffee  -sion -tion /Fn/ impression nation  
+
+-sion在元音字母后 /Vn/ vision decision occasion  -tion在s后 /tFEn/ question suggestion  -sten /sn/ listen  -stle /sl/ whistle  
+
+-sure /VE/ pleasure measure  
+
+-ture /tFE/ picture culture  
+
+八、元字组在复合词非重读音节中的读音  
+
+复合词中的第二部分不标注重音符号，但其中的元音字母或元音字组仍按重读音节拼读规则拼读。例如： everyday/ei/ handbag/æ/ blackboard/C:/  
+
+有些词随着语言的发展，前后两部分已失去其单独存在的意义，融合成为一个词。其中的非重读部分要按非重读音节的读音规则发音。例如： sun太阳 + day/ei/日子 ＞ Sunday 星期天 holy神圣 + day/ei/日子 ＞ holiday 假日 break中断 + fast/_:/斋戒 ＞ breakfast/E/ 早餐 cup茶杯 + board木板/C:/ ＞ cupboard/E/ 碗柜  九、辅字组的读音  辅字组 读 音 例 词  b bike bus bag  /// bomb tomb  
+
+cc在e前或在i/y前 /k/ cake picture coat music  /s/ face decide cinema  
+
+ch /tF/ much chick rich teacher  /k/ school headache chemistry  /F/ machine  
+
+-ck /k/ cock pocket black knock  d /d/ doctor bread hand day  
+
+-dge /dV/ bridge fridge  dr- /dr/ children driver drink  f /f/ five four breakfast  
+
+gg在e i/y前 /^/ bag garden go  /dV/ orange large German  gh /f/ cough enough  
+
+/// light daughter high  
+
+gu- -guegu在非重读音节中 /^/ guess league dialogue  /^w/ language anguish  h /h/ hot head house hand  /// hour honest  
+
+j /dV/ jeep jar joke join July  k /k/ kind bike skate make week  kn- /n/ knife know knock  l /l/ life milk school tall  m /m/ monkey come autumn  
+
+-mn /m/ autumn column solemn  
+
+nn在/k/ /g/音前 /n/ not shine ten note  /N/ uncle thank hungry  
+
+-ng /N/ morning young wrong  p /p/ paper plane pig ship pen  ph /f/ elephant photo telephone  q /k/ Iraq  
+
+qu- /kw/ quality quite  r /r/ red rubber ruler  
+
+s在词首或清辅音前元音字母间或浊辅音前 /s/ sit sleep desk  /z/ music husband  
+
+sc- /sk/ scarlet  /s/ muscle science  
+
+sh /F/ she fish shirt wash  
+
+t在通常情况下在弱读字母ia ie io前 /t/ ten letter meet  /F/ patient nation  
+
+tch /tF/ watch  
+
+th在通常情况下在冠词 代词 介词 连词中在词尾-the -ther中 /鑍 thin thirty method  /T/ the these with than  /T/ clothe fathe r weather  tr- /tr/ tree train country truck  v /v/ very voice love leave  
+
+w /w/ week win wake sweet wait  
+
+/// Answer two  
+
+wh-wh-在字母o前 /w/ what when white why  /h/ who whose whole  
+
+x在重读元音前 /ks/ box text exercise  /gz/ example exist exact  
+
+}}
+
+词汇
+{{
+记单词的办法
+
+联系：基于共同主题的单词更容易。建立你的词汇之间的联系，可能的话以蛛网那样组织。
+
+写：实际使用词汇会有助于在你心理巩固它。用新词汇造句或用一组单词或短语编一个故事。
+
+画：显露你的艺术家天赋，画和你学的单词有关的图画。你的绘画会帮助你在将来激活记忆。
+
+创作：设计英文抽认卡并在你的闲暇时间学习。每周制作新的，但是持续温习所有的。
+
+联想：赋予不同单词不同颜色。这种联想会帮助你在后面回忆单词。
+
+听：　　想想其他和你正学的单词发音相似的单词，尤其对于复杂的单词。用这个新单词联想其他单词有助于你记住发音。
+
+选择：　　记住你感兴趣的话题你更容易学。因此，仔细选择你会觉得有用或有趣的单词。即使选择的过程也有助于记忆。
+
+限制：　　别试图在一天内记住整个字典！限制你每天15个单词，你会获得自信而非不堪重负
+
+观察：　　读或听英语的时候留意看有没有你正在学的单词。
 
 
 
@@ -235,6 +372,157 @@ u /E/ autumn difficult  
 
 
 
+
+
+
+
+英语方法
+{{
+要学好英语的话，最好对自己狠一点，制定一个英语学习计划然后狠狠地执行下去。　　
+
+1、先用1～2个星期把音标练准了。　
+    2周    12.16---12.22    每天读音标  20次 中午10次   下午
+12.23--12.19
+2、找本单词书，3000单词量左右的就可以了，最好的就是用4级的单词书，用1到2个月时间背完，所谓背完并不是一个不漏的全记住，能记住7～8成就可以了。背的时间用金山词霸软件跟着练单词发音，每个单词的发音都要查。
+3、然后拿新概念英语1（最好是带视频的）跟着练习说基本句型，练发音，1个月以内完成，期间对单词书只要有空就翻翻。　
+4、练好发音和基本句型后找本英语情景对话的口语书，一个月学完。能大致记住啥情景常用哪些话并能基本上能用嘴巴说出来。　
+5、然后自己根据口语教材整理出一些完整的情景。因为教材的情景一般都很袖珍，每个情景就几句话，所以要自己整理超长情景。比如：你约5个朋友吃饭，一个个打电话约，每个约的时候都不一样，然后朋友到你家，大家就开始聊天，聊到日常中常见的N个话题，聊一会就开始吃饭，吃饭期间又开始聊怎么做菜啊哪里的馆子好吃啊啥的，饭后相互告别，还约了下次在哪里玩。把这一整套英语学习计划自己整理出来，至少也要有个300句话左右。然后这样日常生活中常用的场景整理出10个8个。等你整完这些后，日常的口语已经比较熟练了。这项工作花1个月时间。　
+6、当你完成以上的工作后，应该很有点成就感了，现在开始学语法，1个月。学英语语法可以借助一些英语语法口诀35，以帮助记忆语法规则。　　
+7、语法学得差不多，现在可以做两件事，一是看FRIENDS练听力（其实BBC的讲自然科学的节目也很好），二是找本写作的书学学。　　
+8、第7步如果完成的还可以，friends能不看字幕懂8成以上，会完整的写短文和简单商务公文，就可以说你已经会英语了。比90％本科毕业生英语应用水平都强（英文专业除外）。如果有精力，去把BEC高级考了。能考及格，可以你说基本掌握英文了，在外企一般的工作都够用了。
+}}
+
+音标
+{{
+英语发音自己总结
+http://www.starfall.com/
+
+A 发音：/æ/阿    apple  alligator  astronaut
+
+B  ball   bouncing   ball   big brown bear
+
+C           /k/ car  cow computer   camp
+
+D        /d/  doll ducks
+
+E    爱    ə     elephants   eggs
+
+F     fox  fish five  fingers
+
+F    girl  go
+
+H      horses
+
+I    ink
+
+J             jump
+
+K            kind  key
+
+L  locks
+
+Mmoon
+
+N  near  nest  name
+
+O  OX
+
+P             pink pigs
+
+Q       一般qu合用   queen   /kwestʃən/ question
+
+S       snake
+
+T            table   top  taxi
+
+U          under the  unmbrela!  sun         look at us on the bus!
+
+V          violin
+
+W        wolf  
+
+X          OX
+
+Y          yo-yo
+
+Z         zebra         zipper          zoo
+
+
+元音音素： 
+
+/i:/  【衣    发长点】                 /I/     【衣    急促地发声】 
+
+/e/   【哎    发这个音的时候不要把“哎”的ī给读出来，嘴唇放松自然地读】 /æ/   【哎    发这个音的时候不要把“哎”的ī给读出来，嘴唇扁平地发】 /ə:/ 【额    发长音】                /ə/     【额    发短音】 /∧/ 【阿    嘴巴微微地张开发出这个音就可以了】  /a:/    【啊    嘴巴张到最大】 /ɔ/   【凹  急促】  /ɔ:/    【 凹   声音拖长】 /u/     【乌    急促】 /u:/  【乌    声音拖长】   /eI/    【有点像答应人的“诶”的声音】 
+
+/aI/  【唉】 /I/    【－喂    连读】 /əu/    【呕】 /au/  【傲】 /iə/    【衣－饿    连读】 
+
+/εə/    【哎－饿    连读】/uə/    【乌－饿    连读】 
+
+ 
+
+辅音音素： 
+
+ 
+
+/p/  【泼   轻音】                       /b/     【波   浊音】 /t/  【特   轻音】                       /d/     【得   浊音】 /k/  【克   轻音】                       /g/     【哥   浊音】 /f/   【福   轻音】                      /v/    【呜  浊音】 
+
+/s/   【丝   轻音】                       /z/    【就是/s/的浊音】      /θ/  【牙齿咬住舌头的轻音】             /δ/  【牙齿咬住舌头的浊音】  /∫/  【湿   轻音】                        /з/   【衣  浊音】    /h/   【喝   轻音】                       /r/   【若   浊音】   /t∫/  【吃 轻音】                        /dз/  【知  浊音】    /tr/   【戳   轻音】                      /dr/  【捉   浊音】    /ts/  【疵   轻音】                       /dz/  【滋  浊音】 /m/  【嘴巴闭住，然后发音，气流从鼻子出来，浊音】 
+
+/n/  【嘴巴微张，舌尖顶住上颚，气流从鼻子出来而不是从嘴巴出来，浊音】 /ŋ/  【嘴巴长大，舌头向下弯曲，气流从鼻子出来而不是从嘴巴出来，浊音】 /l/  【有两个读音。一是放在音标结尾发呕，浊音；而是放在音标中发了，浊音】 /w/【喔    不要把ǒ给发出来，浊音】/j/     【噎    不要把ǎ给发出来，浊音】  
+
+所谓浊音，就是声带要振动的音；轻音就是发出了但声带却不振动的音 所有的元音都是浊音，声带都要振动。
+}}
+
+
+英语单词发音规则 
+{{
+一、元音字母在重读音节中的读音
+
+ 元音字母 读 音 例 词  
+
+a    在开音节中 /ei/ name plane Jane baby cake  
+
+在闭音节中 /æ/ bag dad hat map black back  
+
+e    在开音节中 /i:/ he these me Chinese  
+
+在闭音节中 /e/ bed let pen desk yes egg  
+
+i 在开音节中 /ai/ bike fly drive time nice kite  在闭音节中 fish big drink sit milk swim  
+
+o 在开音节中 /ou/ those close go hoe home no  在闭音节中 /C/ clock not box shop sock  
+
+u 在开音节中 /ju:/ student excuse duty Tuesday  在闭音节中 /∧/ bus cup jump much lunch  
+
+在开音节中，元音字母u在辅音字母j l r s后面时读/u:/音，例如：June blue ruler super  二、二、元音字母在重读音节中的特殊读音  
+
+元音字母 读 音 例 词  
+
+a在/w/音后面 /C/ want what watch wash quality  
+
+a在f n sk ph sp ss st th前 /_:/ after plant graph ask grasp glass fast father 
+
+ i在-nd -ld和gh前 /ai/ find child light high  
+
+o在-st -ld前 /ou/ most postcard old cold  
+
+o在m n v th前 /∧/ come monkey love mother  
+
+三、元音字母在非重读音节中的读音  元音字母 读 音 例 词  
+
+a /E/E China another woman breakfast  orange comrade village cabbage  
+
+e /E/ hundred student open weekend  chicken pocket begin children  
+
+i /E// holiday beautiful family animal  /ai/ exercise satellite  
+
+o /E/ second tonight somebody welcome  /Eu/ also zero photo  
+
+u /E/ autumn difficult  
+
+/ju:/ popular congratulation January  
+
+动词中的a如果处在开音节位置，a读/ei/音，例如：operate  u处在开音节位置，又在辅音字母j l r s后面时，读/u(:)/音，例如：July influence February issue  
 
 在非重读音节中，许多单词中的元音字母a e i 即可以读作/E/音，也可以读作音。  四、-r音节元音字组在重读音节中的读音  元音字组 读 音 例 词  
 
@@ -276,18 +564,6 @@ eu/ew在j l r s后 /ju:/ new few newspaper  /u:/ flew brew jewelry 
 
 ie/ei/s/音之后 /i:/ piece field receive  
 
-
-
-
-
-
-
-
-
-
-
-
-
 oa /ou/ coat Joan boat goal  oar/oor /C:/ roar board door floor  oi/oy /Ci/ noise point boy toilet  oo /u:/ broom food tooth school  book look cook foot good  
 
 ou/ow /au/ flower house count down  /ou/ know row throw though  /∧/ young country enough  /u:/ group you soup  our /C:/ course your four  /auE/ our hour ours  /E:/ journey  
@@ -317,18 +593,6 @@ cc在e前或在i/y前 /k/ cake picture coat music  /s/ face decide cin
 ch /tF/ much chick rich teacher  /k/ school headache chemistry  /F/ machine  
 
 -ck /k/ cock pocket black knock  d /d/ doctor bread hand day  
-
-
-
-
-
-
-
-
-
-
-
-
 
 -dge /dV/ bridge fridge  dr- /dr/ children driver drink  f /f/ five four breakfast  
 
@@ -368,20 +632,10 @@ wh-wh-在字母o前 /w/ what when white why  /h/ who whose whole  
 
 x在重读元音前 /ks/ box text exercise  /gz/ example exist exact  
 
-
-
-
-
-
-
-
-
-
+}}
 
 词汇
-
-
-
+{{
 记单词的办法
 
 联系：基于共同主题的单词更容易。建立你的词汇之间的联系，可能的话以蛛网那样组织。
@@ -401,9 +655,10 @@ x在重读元音前 /ks/ box text exercise  /gz/ example exist exact �
 限制：　　别试图在一天内记住整个字典！限制你每天15个单词，你会获得自信而非不堪重负
 
 观察：　　读或听英语的时候留意看有没有你正在学的单词。
+}}
 
 单词词缀
-
+{{
 a-① 加在单词或词根前面，表示"不，无，非" 
 
 acentric    asocial   amoral  apolitical  anomalous
@@ -413,17 +668,17 @@ acentric    asocial   amoral  apolitical  anomalous
 Asleep    aside   ahead   alive    awash . 
 
 
+}}
 
 
 
 联想记词
-
-;B在C前，所以先ban禁止再can可以吃can罐头；
+{{
+B在C前，所以先ban禁止再can可以吃can罐头；
 
 Journal期刊  每年拒J你our   annual 每年
 
 每Monday开始拿NI  torch 火炬监控Monitor 
-
 
 
 月wane的夜晚 一位sane老人拄着cane走在lane上。
@@ -528,76 +783,13 @@ Sugar中间dug(dig的过去式，挖)个洞，把bug拖tug进去；
 
 Oasis 是生命Basis 基础；
 
+}}
 
-
-
-
-文章与句子
-
-Game Theory for Wireless Sensor Networks：A Survey
-
-博弈学在无线传感器网络中的应用
-
-Hai-Yan Shi1,2, Wan-Liang Wang1,*, Ngai-Ming Kwok3and Sheng-Yong Chen1,
-
-*1 College of Computer Science and Technology, Zhejiang University of Technology,
-
-Hangzhou 310023, China; E-Mail: csshy@usx.edu.cn
-
-2School of Computer Science and Technology, Shaoxing University, Shaoxing 312000, China
-
-3School of Mechanical and Manufacturing Engineering, The University of New South Wales,Sydney, NSW 2052, Australia; E-Mail: nmkwok@unsw.edu.au
-
-* Authors to whom correspondence should be addressed; E-Mails: wwl@zjut.edu.cn (W.-L.W.);sy@ieee.org (S.-Y.C.); Tel./Fax: +86-571-8529-0309.Received: 22 May 2012; in revised form: 21 June / Accepted: 26 June 2012 /Published: 2 July 2012
-
-Abstract: Game theory (GT) is a mathematical method that describes the phenomenon of conflict and cooperation between intelligent rational decision-makers. In particular, the theory has been proven very useful in the design of wireless sensor networks (WSNs). This article surveys the recent developments and findings of GT, its applications in WSNs, and provides the community a general view of this vibrant research area. We first introduce the typical formulation of GT in the WSN application domain. The roles of GT are described that include routing protocol design, topology control, power control and energy saving,packet forwarding, data collection, spectrum allocation, bandwidth allocation, quality of service control, coverage optimization, WSN security, and other sensor management tasks.Then, three variations of game theory are described, namely, the cooperative,non-cooperative, and repeated schemes. Finally, existing problems and future trends are identified for researchers and engineers in the field.
-
-Keywords: wireless sensor network; game theory; scheduling; optimization; mechanism
-
-1. Introduction 
-
-1.1. Wireless Sensor Networks 
-
-A wireless sensor network (WSN) is a network of thousands of resource-constrained sensors whose communications with a central station are conveyed by means of wireless signals. A sensor node is generally comprised of four basic elements, including a sensing unit, a processing unit, a transceiver unit, and a power unit. The WSN is frequently deployed for sensing the area of interest where data captured encompass light, pressure, sound, and others. Sensor nodes in WSN mainly use a broadcast communication paradigm where the sensor signals  are used in further analyses of the sensed environment. WSN is preferred as the sensor system architecture with regard to its inherent redundancy but is susceptible to disadvantages caused by limited operation life-time. Differ from other wired networks, the use of WSNs  are usually restricted by energy stored, computation capability, memory, plethoric information flow, and short communication distance /1/. Since the sensor nodes are often densely deployed in a sensing  field, it is difficult and costly  to replace faulty sensor nodes manually. Furthermore, sensor nodes may have no global information of the whole network and the topology of a WSN varies frequently /2,3/. 
-
-1.2. Application Examples 
-
-With the high degree of deployment flexibility, applications of WSN are vast and can be broadly 
-
-classified into the monitoring and tracking categories. Monitoring applications include environmental monitoring such as forest fire detection, biocomplexity mapping of  the environment, flood detection, precision agriculture; health monitoring contains tele-monitoring of human physiological data, monitoring doctors and patients conditions and drug  administration in hospitals; inventory location monitoring; factory, machine, chemical and structural monitoring. Military monitoring examples can be found in monitoring friendly forces, equipment and ammunition, battlefield and terrain surveillance, 
-
-reconnaissance of opposing forces,  targeting, battle damage assessment, nuclear, biological and 
-
-chemical attack detection. Tracking applications include objects,  animals, humans, vehicles, and 
-
-military enemy tracking. These applications are made possible due to the fact that WSN has a short 
-
-system setup time and sensors can be disposed with acceptable operation cost. 
-
-1.3. Need for Game Theory 
-
-The flexibility, fault tolerance, high sensing fidelity, low-cost and rapid deployment characteristics 
-
-of WSNs are desirable features in creating many new and exciting application areas for remote sensing, 
-
-detecting, tracking, and monitoring. However, it is non-trivial and very involved to design an optimal 
-
-WSN to satisfy performance objectives such as maximum sensing coverage and extended operation 
-
-periods. In order to obtain a practical and feasible WSN and due to the operation nature of the network, 
-
-game theory (GT) is regarded as an attractive and suitable basis to accomplish the design goal. Game 
-
-theory is a branch of mathematics and can be used to analyze system operations in decentralized and 
-
-self-organizing networks. GT describes the behavior of  players in a game. Players may be either 
-
-cooperate or non-cooperative while striving to maximize their outcomes from the game. In this regard,
 
 
 
 俞洪敏经典50句
-
+{{
   1. Typical of the grassland dwellers of the continent is the American  antelope, or pronghorn. 
 
   1.美洲羚羊，或称叉角羚，是该大陆典型的草原动物。
@@ -907,7 +1099,7 @@ cooperate or non-cooperative while striving to maximize their outcomes from the 
   their economy. 
 
   50.北美远古的Hopewell人很可能种植了玉米和其他农作物，但打猎和采集对他们的经济贸易仍是至关重要的。
-
+}}
     
 
 
