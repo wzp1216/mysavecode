@@ -1,3 +1,6 @@
+
+import matplotlib
+
 from PyQt5.QtWidgets import QWidget,QGraphicsView, QGraphicsScene, QGraphicsPixmapItem,QVBoxLayout
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
@@ -13,7 +16,7 @@ class testview(QWidget):
         scene = QGraphicsScene()
         
         # 创建一个图像项
-        pixmap = QPixmap("lena.jpg")
+        pixmap = QPixmap("./pcb.png")
         item = QGraphicsPixmapItem(pixmap)
         
         # 将图像项添加到场景
@@ -33,3 +36,4 @@ class testview(QWidget):
         layout.addWidget(view)
         self.setLayout(layout)
         view.show()
+

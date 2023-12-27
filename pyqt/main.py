@@ -1,4 +1,5 @@
 import sys
+import matplotlib
 from PyQt5.QtWidgets import QApplication, QWidget
 from test import testview
 

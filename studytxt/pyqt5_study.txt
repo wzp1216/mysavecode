@@ -30,4 +30,7 @@ lay.addWidget(lab,a,b,rowspan,colspan) 在a行，b列添加一个控件；
 控件占行数为rowspan;所占列数为colspan;
 ##################################################
 
+提示找不到Xcb时的解决办法：
+ dpkg  -L libqt5gui5  |grep platforms
+ sudo ln -sf /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms /usr/bin/
 

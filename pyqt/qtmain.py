@@ -1,6 +1,6 @@
 import sys
 import matplotlib
-matplotlib.use("TkAgg")
+#matplotlib.use("TkAgg")
 from PyQt5.QtWidgets import QApplication, QMainWindow,QWidget,QFileDialog
 from PyQt5.QtWidgets import QWidget,QCheckBox
 from PyQt5.QtCore import Qt
