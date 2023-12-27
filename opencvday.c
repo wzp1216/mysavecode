@@ -1,5 +1,19 @@
 
+python
+{{
+    pyqt5中的信号
+    {{
+         from PyQt5.QtCore import QOject ,pyqtSignal
+         class a(QOject):
+             mysignal=pyqtSignal(int)
+             def send(self):
+                 self.mysignal.emit(23);
+    ss=a();ss.send()即可以发射23；
+    ss.mysignal.connect(p.func);
+    则可以将23传到p对象；
+     }}
 
+ }}
 
 
 old_study
