@@ -21,11 +21,6 @@ from loadui import  Ui_load
 # load界面类 -----------
 from mainwin import my_main_win
 # 主页界面类 -----------
-global app
-
-
- 
-
 
 class LoadWin(QWidget,Ui_load):  # 启动画面类 -----------
     def __init__(self):
@@ -107,12 +102,10 @@ class LoadThread(QThread):  # 自定义计算线程类 -----------
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app= QApplication(sys.argv)
     w = LoadWin()
     w.show()
     sys.exit(app.exec_())
-
-
 
 
 # if __name__ == "__main__":

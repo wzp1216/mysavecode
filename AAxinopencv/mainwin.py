@@ -20,8 +20,6 @@ from main_dlg import main_dlg
 ## main_dlg; 5 image; result; message;
 ##状态栏
 
-#import appstart
-
 
 class my_main_win(QMainWindow):
     def __init__(self):
@@ -31,9 +29,8 @@ class my_main_win(QMainWindow):
 
     def initUI(self):
         #set title and add label1  check1  view
-        screen=app.primaryScreen()
-        w=screen.size().width()-40
-        h=screen.size().height()-60
+        w=self.width()-40
+        h=self.height()-60
         mainDlg=main_dlg(w,h)
         self.setCentralWidget(mainDlg)
         self.show()
@@ -69,25 +66,21 @@ class my_main_win(QMainWindow):
         self.menuHelp.addAction(self.actionAbout)
         self.menubar.addAction(self.menuFIle.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
-
-        self.actionexit.triggered.connect(self.close)
-
+        #显示内容设置
         _tr= QtCore.QCoreApplication.translate
         self.setWindowTitle(_tr("MainWindow","瑕疵检测系统zjipc_0.1"))
-        self.menuFIle.setTitle(_tr("MainWindow","File"))
-        self.menuHelp.setTitle(_tr("MainWindow","Help"))
-        self.actionopen.setText(_tr("MainWindow","open"))
-        self.actionsave.setText(_tr("MainWindow","save"))
-        self.actionexit.setText(_tr("MainWindow","exit"))
-        self.actionHelp.setText(_tr("MainWindow","Help"))
-        self.actionAbout.setText(_tr("MainWindow","About"))
+        self.menuFIle.setTitle(_tr("MainWindow","文件"))
+        self.menuHelp.setTitle(_tr("MainWindow","帮助"))
+        self.actionopen.setText(_tr("MainWindow","打开"))
+        self.actionsave.setText(_tr("MainWindow","保存"))
+        self.actionexit.setText(_tr("MainWindow","退出"))
+        self.actionHelp.setText(_tr("MainWindow","帮助"))
+        self.actionAbout.setText(_tr("MainWindow","简介"))
+        #动作设置
+        self.actionexit.triggered.connect(self.close)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w=my_main_win()
-    screen=app.primaryScreen()
-    w.resize(screen.size())
-    w.move(0,0)
     w.show()
     sys.exit(app.exec_())
-
