@@ -1,5 +1,12 @@
 每天抄写一个新概念，完全掌控其内容；
+抄写一句英语，并写在本子上；
 
+20240110
+ Children with parents whose guidance is firm, consistent, and rational are inclined to possess high levels of self-confidence. 
+ 父母的教导如果坚定，始终如一和理性，孩子就有可能充满自信。 
+20240111
+Of the millions who saw Haley’s comet in 1986, how many people will live long enough to see it return in the twenty-first century.
+   1986年看见哈雷慧星的千百万人当中，有多少人能够长寿到足以目睹它在二十一世纪的回归呢？ 
 Lesson1-1
 {{
 Excuse me!
